@@ -12,6 +12,7 @@ $shadowColor: #272736;
 
 body {
   background-color: $backgroundColor;
+  background-image: linear-gradient($backgroundColor, #c0c7d7);
   font-family: Alegreya;
   box-sizing: border-box;
   color: $mainFontColor;
