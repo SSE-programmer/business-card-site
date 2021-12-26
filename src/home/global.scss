@@ -1,0 +1,59 @@
+$base-font-size: 20;
+$backgroundColor: #e8efff;
+$mainFontColor: #3f3f41;
+$h1Color: #39393A;
+$h2Color: #343434;
+$shadowColor: #272736;
+
+@function rem-calc($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+
+body {
+  background-color: $backgroundColor;
+  font-family: Alegreya;
+  box-sizing: border-box;
+  color: $mainFontColor;
+}
+
+h1 {
+  color: $h1Color;
+}
+
+h2 {
+  font-family: "Alegreya Italic";
+  color: $h2Color;
+}
+
+p, ul {
+  font-size: rem-calc(25);
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("../resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Patua One";
+  src: url("../resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Alegreya";
+  src: url("../resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("../resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
