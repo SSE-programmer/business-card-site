@@ -10,7 +10,8 @@ $footerFontColor: #c0c0c0;
   width: 100%;
   height: rem-calc(80);
   background-color: $footerBackgroundColor;
-  font-family: "Patua One";
+  font-family: "Patua One", sans-serif;
+
   p {
     color: $footerFontColor;
     text-align: center;

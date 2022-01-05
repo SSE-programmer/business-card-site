@@ -4,6 +4,7 @@ $mainFontColor: #3f3f41;
 $h1Color: #39393A;
 $h2Color: #343434;
 $shadowColor: #272736;
+$borderColor: #272736;
 
 @function rem-calc($size) {
   $remSize: $size / $base-font-size;
@@ -13,7 +14,7 @@ $shadowColor: #272736;
 body {
   background-color: $backgroundColor;
   background-image: linear-gradient($backgroundColor, #c0c7d7);
-  font-family: Alegreya;
+  font-family: "Alegreya", serif;
   box-sizing: border-box;
   color: $mainFontColor;
 }
@@ -23,7 +24,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Alegreya Italic";
+  font-family: "Alegreya Italic", serif;
   color: $h2Color;
 }
 
