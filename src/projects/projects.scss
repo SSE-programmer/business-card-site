@@ -22,7 +22,7 @@ $cardBorderRadius: 20px;
     .project {
       display: flex;
       flex-direction: row;
-      border: $borderColor 2px solid;
+      border: $borderColor 2px dashed;
       border-bottom-style: dotted;
       border-top-style: dotted;
       padding: 10px 20px;
@@ -30,7 +30,7 @@ $cardBorderRadius: 20px;
       width: 100%;
       min-width: 270px;
       max-width: 1200px;
-      margin: 20px auto;
+      margin: 10px auto;
       transition: 0.5s;
 
       .infoLeft, .infoRight {
@@ -56,6 +56,7 @@ $cardBorderRadius: 20px;
           border: $borderColor 2px dotted;
           border-radius: 10px;
           margin: 30px auto 15px;
+          transition: 0.5s;
         }
 
         .createDate {
@@ -74,19 +75,21 @@ $cardBorderRadius: 20px;
     }
 
     .project:hover {
-      box-shadow: 0 0 10px $shadowColor, 0 0 100px $backgroundColor inset;
-      -webkit-transform-origin: center;
-      border-color: $cardBackgroundColor;
+      box-shadow: $shadowColor 0 0 10px inset;
+
+      .image {
+        box-shadow: $shadowColor 0 0 10px inset;
+      }
     }
 
     .project:first-child {
-      border-top-style: solid;
+      border-top-style: dashed;
       border-top-left-radius: $cardBorderRadius;
       border-top-right-radius: $cardBorderRadius;
     }
 
     .project:last-child {
-      border-bottom-style: solid;
+      border-bottom-style: dashed;
       border-bottom-left-radius: $cardBorderRadius;
       border-bottom-right-radius: $cardBorderRadius;
     }
