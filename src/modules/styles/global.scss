@@ -6,6 +6,7 @@ $h1Color: #39393A;
 $h2Color: #343434;
 $shadowColor: #272736;
 $borderColor: #272736;
+$cardBorderRadius: 20px;
 
 @function rem-calc($size) {
   $remSize: $size / $base-font-size;
@@ -21,6 +22,34 @@ body {
   background-repeat: no-repeat;
   font-family: "Alegreya", serif;
   color: $mainFontColor;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: rem-calc(120) auto rem-calc(140);
+  flex-wrap: wrap;
+  max-width: 1200px;
+
+  .title {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .description {
+    text-indent: 20px;
+    margin: 0 auto;
+
+    p {
+      margin: 0 auto 20px;
+    }
+  }
 }
 
 h1 {

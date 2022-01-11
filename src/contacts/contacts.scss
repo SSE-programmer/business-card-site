@@ -3,17 +3,7 @@
 @import "../modules/styles/global";
 
 .main {
-  display: flex;
-  justify-content: center;
-  width: 80%;
-  margin: rem-calc(120) auto rem-calc(140);
-  flex-wrap: wrap;
-
   .contacts {
-    .title {
-      text-align: center;
-    }
-
     .links {
       display: flex;
       flex-wrap: wrap;

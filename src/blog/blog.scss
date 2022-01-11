@@ -3,13 +3,13 @@
 @import "../modules/styles/global";
 
 .main {
-  .projects {
+  .posts {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px auto;
 
-    .project {
+    .post {
       display: flex;
       flex-direction: row;
       border: $borderColor 2px dashed;
@@ -61,7 +61,7 @@
       }
     }
 
-    .project:hover {
+    .post:hover {
       box-shadow: $shadowColor 0 0 10px inset;
       background-color: $cardBackgroundColor;
       border-left-style: solid;
@@ -75,7 +75,7 @@
       }
     }
 
-    .project:first-child {
+    .post:first-child {
       border-top-style: dashed;
       border-top-left-radius: $cardBorderRadius;
       border-top-right-radius: $cardBorderRadius;
@@ -85,7 +85,7 @@
       }
     }
 
-    .project:last-child {
+    .post:last-child {
       border-bottom-style: dashed;
       border-bottom-left-radius: $cardBorderRadius;
       border-bottom-right-radius: $cardBorderRadius;
@@ -105,8 +105,8 @@
 
 @media (max-width: 1040px) {
   .main {
-    .projects {
-      .project {
+    .posts {
+      .post {
         flex-direction: column;
 
         .infoLeft {
