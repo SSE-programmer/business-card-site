@@ -22,6 +22,8 @@
         &:hover {
           box-shadow: $shadowColor 0 0 10px inset;
           padding-top: 31px;
+          border-style: solid;
+          border-radius: $cardBorderRadius;
 
           p {
             margin-bottom: 0;
