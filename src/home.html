@@ -7,6 +7,8 @@
 
     <link href="home/home.css" rel="stylesheet" type="text/css">
 
+    <script src="modules/js/header.js"></script>
+
     <title>SSE-programmer - Home</title>
 </head>
 
@@ -15,8 +17,10 @@
     <nav id="nav">
         <div id="nav-logo">
             <a>SSE - programmer</a>
+            <div id="menuButton" onclick="responsiveNavbar()">
+            </div>
         </div>
-        <ul class="nav-links">
+        <ul id="nav-links">
             <li><a href="home.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="blog.html">Blog</a></li>
@@ -36,15 +40,15 @@
         <ul class="links">
             <li>
                 <a href="mailto:stolbennikov@gmail.com" target="_blank">
-                    <img src="resources/icons/mail_icon.svg"></a>
+                    <img src="resources/icons/mail_icon.svg" alt="mail"></a>
             </li>
             <li>
                 <a href="https://github.com/SSE-programmer" target="_blank">
-                    <img src="resources/icons/github_icon.svg"></a>
+                    <img src="resources/icons/github_icon.svg" alt="github"></a>
             </li>
             <li>
                 <a href="https://www.instagram.com/sse.public/" target="_blank">
-                    <img src="resources/icons/instagram_icon.svg"></a>
+                    <img src="resources/icons/instagram_icon.svg" alt="instagram"></a>
             </li>
         </ul>
     </div>

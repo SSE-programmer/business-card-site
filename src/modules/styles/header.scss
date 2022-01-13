@@ -1,6 +1,7 @@
 @import "global";
 
-$navBackgroundColor: #272736;
+$navBackgroundColor: #222231;
+$navLinksBackgroundColor: #272736;
 $navLinksColor: #c0c0c0;
 $logoColor: #d5d4d4;
 
@@ -14,34 +15,59 @@ header {
     flex-grow: 1;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: $navBackgroundColor;
+
     height: auto;
     line-height: rem-calc(60);
     z-index: 100;
 
     #nav-logo {
-      margin: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      flex-grow: 1;
+      padding: 0 20px;
       color: white;
       font-family: "Titan One", cursive;
       font-size: rem-calc(35);
       text-align: center;
+      background-color: $navBackgroundColor;
 
       a {
         white-space: nowrap;
         color: $logoColor;
         text-decoration: none;
       }
+
+      #menuButton {
+        height: rem-calc(60);
+        width: rem-calc(60);
+        display: none;
+        background-image: url("../resources/icons/menu_icon.svg");
+        background-size: 60% 60%;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: 0.5s;
+
+        &:hover {
+          filter: opacity(0.5);
+          transform: scale(1.1);
+          cursor: pointer;
+        }
+      }
     }
 
-    .nav-links {
+    #nav-links {
       display: flex;
       flex-wrap: nowrap;
       justify-content: flex-end;
       height: 100%;
       list-style-type: none;
-      margin: 0 20px;
-      padding: 0;
+      padding: 0 20px;
+      margin: 0;
       overflow: hidden;
+      background-color: $navBackgroundColor;
+      z-index: -1;
+      opacity: 1;
+      position: static;
 
       li {
         text-transform: uppercase;
@@ -76,18 +102,35 @@ header {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   header {
     #nav {
+      flex-wrap: nowrap;
       flex-direction: column;
 
       #nav-logo {
-        align-self: center;
+        flex-wrap: nowrap;
+        padding-right: 0;
+
+        #menuButton {
+          display: flex;
+          min-width: rem-calc(60);
+        }
       }
 
-      .nav-links {
+      #nav-links {
         flex-direction: column;
+        background-color: $navLinksBackgroundColor;
+        transition: 0.5s;
+        position: relative;
+        top: -300px;
+        opacity: 0;
       }
+
+      .no-transition {
+        transition: none !important;
+      }
+
     }
   }
 }

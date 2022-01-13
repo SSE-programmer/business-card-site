@@ -11,7 +11,7 @@
     flex-direction: column;
     min-width: 300px;
     text-align: center;
-    margin: 0 100px 20px 100px;
+    margin: 0 0 20px;
 
     .photo {
       width: 200px;
@@ -81,6 +81,7 @@
       font-weight: bold;
       margin: 0 auto;
       width: auto;
+      padding-bottom: 20px;
       border-bottom: 2px solid $borderColor;
 
       p {
@@ -175,8 +176,6 @@
 
 @media (max-width: 600px) {
   .main {
-    margin-top: rem-calc(320);
-
     .rightSide {
       display: flex;
       flex-grow: 2;
