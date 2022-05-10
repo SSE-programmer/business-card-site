@@ -1,0 +1,47 @@
+body {
+  background-color: #e8efff;
+  background-image: linear-gradient(#e8efff, #c0c7d7);
+  font-family: "Alegreya", serif;
+  box-sizing: border-box;
+  color: #3f3f41;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("../../resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("../../resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("../../resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("../../resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+
+/*# sourceMappingURL=global.css.map */

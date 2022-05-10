@@ -1,0 +1,416 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+header #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  line-height: 3rem;
+  z-index: 100;
+}
+header #nav #nav-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 0 20px;
+  color: white;
+  font-family: "Titan One", cursive;
+  font-size: 1.75rem;
+  text-align: center;
+  background-color: #222231;
+}
+header #nav #nav-logo a {
+  white-space: nowrap;
+  color: #d5d4d4;
+  text-decoration: none;
+}
+header #nav #nav-logo #menuButton {
+  height: 3rem;
+  width: 3rem;
+  display: none;
+  background-image: url("../resources/icons/menu_icon.svg");
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+header #nav #nav-logo #menuButton:hover {
+  filter: opacity(0.5);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+header #nav #nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  list-style-type: none;
+  padding: 0 20px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #222231;
+  z-index: -1;
+  opacity: 1;
+  position: static;
+}
+header #nav #nav-links li {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 5px;
+  padding: 0 10px;
+  transition: 0.3s;
+}
+header #nav #nav-links li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #c0c0c0;
+  font-family: "Patua One", sans-serif;
+  font-size: 1.25rem;
+  line-height: inherit;
+}
+header #nav #nav-links li:hover {
+  background-color: #272736;
+  border: 0 solid #e8efff;
+  transform: scale(1.1);
+  text-shadow: 0 0 30px #131322;
+}
+header #nav #nav-links li:hover a {
+  color: #e8efff;
+}
+
+@media (max-width: 800px) {
+  header #nav {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  header #nav #nav-logo {
+    flex-wrap: nowrap;
+    padding-right: 0;
+  }
+  header #nav #nav-logo #menuButton {
+    display: flex;
+    min-width: 3rem;
+  }
+  header #nav #nav-links {
+    flex-direction: column;
+    background-color: #272736;
+    transition: 0.5s;
+    position: relative;
+    max-height: 0;
+    top: -300px;
+    opacity: 0;
+  }
+  header #nav .no-transition {
+    transition: none !important;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #44445e;
+  font-family: "Patua One", sans-serif;
+}
+#footer p {
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+.main .contacts .links {
+  display: flex;
+  flex-wrap: wrap;
+}
+.main .contacts .links .email, .main .contacts .links .instagram, .main .contacts .links .vk, .main .contacts .links .github {
+  position: relative;
+  width: 45%;
+  min-width: 350px;
+  height: 8rem;
+  border: #272736 2px dashed;
+  margin: 10px 10px;
+  padding: 10px 20px;
+  flex: 1 1 auto;
+  transition: 0.5s;
+}
+.main .contacts .links .email:hover, .main .contacts .links .instagram:hover, .main .contacts .links .vk:hover, .main .contacts .links .github:hover {
+  box-shadow: #272736 0 0 10px inset;
+  padding-top: 31px;
+  border-style: solid;
+  border-radius: 20px;
+}
+.main .contacts .links .email:hover p, .main .contacts .links .instagram:hover p, .main .contacts .links .vk:hover p, .main .contacts .links .github:hover p {
+  margin-bottom: 0;
+}
+.main .contacts .links .email h2, .main .contacts .links .instagram h2, .main .contacts .links .vk h2, .main .contacts .links .github h2 {
+  text-align: center;
+  margin-bottom: 0;
+}
+.main .contacts .links .email p, .main .contacts .links .instagram p, .main .contacts .links .vk p, .main .contacts .links .github p {
+  text-align: center;
+  white-space: nowrap;
+  margin-top: 0;
+  transition: 0.5s;
+}
+.main .contacts .links .email::after, .main .contacts .links .instagram::after, .main .contacts .links .vk::after, .main .contacts .links .github::after {
+  content: "";
+  opacity: 0.05;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  transition: 0.5s;
+}
+.main .contacts .links .email:hover::after, .main .contacts .links .instagram:hover::after, .main .contacts .links .vk:hover::after, .main .contacts .links .github:hover::after {
+  opacity: 0.8;
+  background-color: #d9e2fc;
+  background-size: auto 30%;
+  background-position: 50% 15%;
+}
+.main .contacts .links .email::after {
+  background: url("../resources/images/contacts/email.png") center/auto 90% no-repeat;
+}
+.main .contacts .links .instagram::after {
+  background: url("../resources/images/contacts/instagram.png") center/auto 90% no-repeat;
+}
+.main .contacts .links .vk::after {
+  background: url("../resources/images/contacts/vk.png") center/auto 90% no-repeat;
+}
+.main .contacts .links .github::after {
+  background: url("../resources/images/contacts/github.png") center/auto 90% no-repeat;
+}
+
+@media (max-width: 600px) {
+  .main .contacts .links {
+    flex-direction: column;
+  }
+}
+
+/*# sourceMappingURL=contacts.css.map */

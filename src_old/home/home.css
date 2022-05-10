@@ -1,0 +1,493 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+header #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  line-height: 3rem;
+  z-index: 100;
+}
+header #nav #nav-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 0 20px;
+  color: white;
+  font-family: "Titan One", cursive;
+  font-size: 1.75rem;
+  text-align: center;
+  background-color: #222231;
+}
+header #nav #nav-logo a {
+  white-space: nowrap;
+  color: #d5d4d4;
+  text-decoration: none;
+}
+header #nav #nav-logo #menuButton {
+  height: 3rem;
+  width: 3rem;
+  display: none;
+  background-image: url("../resources/icons/menu_icon.svg");
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+header #nav #nav-logo #menuButton:hover {
+  filter: opacity(0.5);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+header #nav #nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  list-style-type: none;
+  padding: 0 20px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #222231;
+  z-index: -1;
+  opacity: 1;
+  position: static;
+}
+header #nav #nav-links li {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 5px;
+  padding: 0 10px;
+  transition: 0.3s;
+}
+header #nav #nav-links li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #c0c0c0;
+  font-family: "Patua One", sans-serif;
+  font-size: 1.25rem;
+  line-height: inherit;
+}
+header #nav #nav-links li:hover {
+  background-color: #272736;
+  border: 0 solid #e8efff;
+  transform: scale(1.1);
+  text-shadow: 0 0 30px #131322;
+}
+header #nav #nav-links li:hover a {
+  color: #e8efff;
+}
+
+@media (max-width: 800px) {
+  header #nav {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  header #nav #nav-logo {
+    flex-wrap: nowrap;
+    padding-right: 0;
+  }
+  header #nav #nav-logo #menuButton {
+    display: flex;
+    min-width: 3rem;
+  }
+  header #nav #nav-links {
+    flex-direction: column;
+    background-color: #272736;
+    transition: 0.5s;
+    position: relative;
+    top: -300px;
+    opacity: 0;
+  }
+  header #nav .no-transition {
+    transition: none !important;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #44445e;
+  font-family: "Patua One", sans-serif;
+}
+#footer p {
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+/* ICONS: https://icon-icons.com/ */
+.main .leftSide {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  min-width: 300px;
+  text-align: center;
+  margin: 0 0 20px;
+}
+.main .leftSide .photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  overflow: hidden;
+  margin: 1rem auto 1rem auto;
+  background-image: url("../resources/images/home/photo.jpg");
+  background-size: 100% 100%;
+  box-shadow: 0 0 20px #272736, 0 0 10px #272736 inset;
+  transition: 0.5s;
+}
+.main .leftSide .photo:hover {
+  box-shadow: 0 0 30px #272736, 0 0 15px #272736 inset;
+  -webkit-transform-origin: center;
+  transform: scale(1.1);
+}
+.main .leftSide h1 {
+  margin: 0 auto;
+}
+.main .leftSide h2 {
+  margin: 0 auto;
+}
+.main .leftSide .links {
+  list-style-type: none;
+  margin: 15px 20px;
+  padding: 0;
+}
+.main .leftSide .links li {
+  display: inline;
+  margin: 0 10px;
+}
+.main .leftSide .links li img {
+  width: 50px;
+  height: auto;
+  padding: 2px;
+  transition: 0.3s;
+}
+.main .leftSide .links li img:hover {
+  filter: brightness(1.5);
+  -webkit-transform-origin: center;
+  transform: scale(1.3);
+}
+.main .leftSide .links li img:active {
+  filter: drop-shadow(0px 0px 5px #3f3f41);
+}
+.main .rightSide {
+  display: flex;
+  flex-grow: 2;
+  flex-direction: column;
+  margin: 0 auto;
+  width: auto;
+}
+.main .rightSide .welcome {
+  text-align: center;
+  font-weight: bold;
+  margin: 0 auto;
+  width: auto;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #272736;
+}
+.main .rightSide .welcome p {
+  margin: 5px 20px;
+}
+.main .rightSide .info {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: start;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.main .rightSide .info .interests, .main .rightSide .info .education, .main .rightSide .info .workExperience {
+  margin: 10px 10px;
+  width: 30%;
+  min-width: 500px;
+  padding-left: 30px;
+  border: #272736 2px dashed;
+  flex-grow: 1;
+}
+.main .rightSide .info .interests ul, .main .rightSide .info .education ul, .main .rightSide .info .workExperience ul {
+  padding-left: 0;
+}
+.main .rightSide .info .interests ul li, .main .rightSide .info .education ul li, .main .rightSide .info .workExperience ul li {
+  margin-left: 0;
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+.main .rightSide .info .interests ul li p, .main .rightSide .info .education ul li p, .main .rightSide .info .workExperience ul li p {
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.main .rightSide .info .interests ul li::before, .main .rightSide .info .education ul li::before, .main .rightSide .info .workExperience ul li::before {
+  content: "";
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  background-image: url("../resources/icons/idea.svg");
+  background-size: contain;
+  background-position: center;
+  margin-right: 10px;
+}
+.main .rightSide .info .interests ul li::before {
+  background-image: url("../resources/icons/idea.svg");
+}
+.main .rightSide .info .education ul li::before {
+  background-image: url("../resources/icons/education.svg");
+}
+.main .rightSide .info .workExperience ul li::before {
+  background-image: url("../resources/icons/work.svg");
+}
+.main .rightSide .info .workExperience .employmentsDates {
+  color: #4f4f50;
+}
+.main .rightSide .info .workExperience .employmentsDates p {
+  font-weight: normal;
+  margin-top: 0;
+}
+.main .rightSide .info .workExperience .employmentsDates p strong {
+  margin-right: 5px;
+}
+
+@media (max-width: 600px) {
+  .main .rightSide {
+    display: flex;
+    flex-grow: 2;
+    flex-direction: column;
+  }
+  .main .rightSide .info {
+    flex-direction: column;
+  }
+  .main .rightSide .info .interests, .main .rightSide .info .education, .main .rightSide .info .workExperience {
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/*# sourceMappingURL=home.css.map */

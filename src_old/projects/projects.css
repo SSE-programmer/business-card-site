@@ -1,0 +1,431 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+header #nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: auto;
+  line-height: 3rem;
+  z-index: 100;
+}
+header #nav #nav-logo {
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 0 20px;
+  color: white;
+  font-family: "Titan One", cursive;
+  font-size: 1.75rem;
+  text-align: center;
+  background-color: #222231;
+}
+header #nav #nav-logo a {
+  white-space: nowrap;
+  color: #d5d4d4;
+  text-decoration: none;
+}
+header #nav #nav-logo #menuButton {
+  height: 3rem;
+  width: 3rem;
+  display: none;
+  background-image: url("../resources/icons/menu_icon.svg");
+  background-size: 60% 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: 0.5s;
+}
+header #nav #nav-logo #menuButton:hover {
+  filter: opacity(0.5);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+header #nav #nav-links {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  height: 100%;
+  list-style-type: none;
+  padding: 0 20px;
+  margin: 0;
+  overflow: hidden;
+  background-color: #222231;
+  z-index: -1;
+  opacity: 1;
+  position: static;
+}
+header #nav #nav-links li {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 0 5px;
+  padding: 0 10px;
+  transition: 0.3s;
+}
+header #nav #nav-links li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #c0c0c0;
+  font-family: "Patua One", sans-serif;
+  font-size: 1.25rem;
+  line-height: inherit;
+}
+header #nav #nav-links li:hover {
+  background-color: #272736;
+  border: 0 solid #e8efff;
+  transform: scale(1.1);
+  text-shadow: 0 0 30px #131322;
+}
+header #nav #nav-links li:hover a {
+  color: #e8efff;
+}
+
+@media (max-width: 800px) {
+  header #nav {
+    flex-wrap: nowrap;
+    flex-direction: column;
+  }
+  header #nav #nav-logo {
+    flex-wrap: nowrap;
+    padding-right: 0;
+  }
+  header #nav #nav-logo #menuButton {
+    display: flex;
+    min-width: 3rem;
+  }
+  header #nav #nav-links {
+    flex-direction: column;
+    background-color: #272736;
+    transition: 0.5s;
+    position: relative;
+    max-height: 0;
+    top: -300px;
+    opacity: 0;
+  }
+  header #nav .no-transition {
+    transition: none !important;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+#footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+  background-color: #44445e;
+  font-family: "Patua One", sans-serif;
+}
+#footer p {
+  color: #c0c0c0;
+  text-align: center;
+  font-size: 1.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #e8efff;
+  background-repeat: no-repeat;
+  font-family: "Alegreya", serif;
+  color: #3f3f41;
+}
+
+header, main, footer {
+  min-width: 270px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 4rem auto 7rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+}
+main .title {
+  text-align: center;
+  margin: 0 auto;
+}
+main .description {
+  text-indent: 20px;
+  margin: 0 auto;
+}
+main .description p {
+  margin: 0 auto 20px;
+}
+
+h1 {
+  color: #39393A;
+}
+
+h2 {
+  font-family: "Alegreya Italic", serif;
+  color: #343434;
+}
+
+p, ul {
+  font-size: 1.25rem;
+}
+
+@font-face {
+  font-family: "Titan One";
+  src: url("/src_old/resources/fonts/TitanOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Patua One";
+  src: url("/src_old/resources/fonts/PatuaOne.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya";
+  src: url("/src_old/resources/fonts/Alegreya.ttf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Alegreya Italic";
+  src: url("/src_old/resources/fonts/Alegreya-Italic.ttf") format("truetype");
+  font-style: italic;
+  font-weight: normal;
+}
+.main .projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 10px auto;
+}
+.main .projects .project {
+  display: flex;
+  flex-direction: row;
+  border: #272736 2px dashed;
+  border-bottom-style: dotted;
+  border-top-style: dotted;
+  padding: 10px 20px;
+  width: 100%;
+  margin: 10px auto;
+  transition: 0.5s;
+}
+.main .projects .project .infoLeft, .main .projects .project .infoRight {
+  margin: 10px 30px;
+}
+.main .projects .project .infoLeft .description {
+  text-indent: 20px;
+}
+.main .projects .project .infoRight {
+  border-radius: 5px;
+}
+.main .projects .project .infoRight .image {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  background-image: url("../resources/images/projects/sse-programmer.jpg");
+  background-size: 100% 100%;
+  border: #272736 2px dotted;
+  border-radius: 10px;
+  margin: 30px auto 15px;
+  transition: 0.5s;
+}
+.main .projects .project .infoRight .createDate {
+  text-align: center;
+}
+.main .projects .project .infoRight .createDate .title {
+  font-weight: bold;
+  display: inline;
+}
+.main .projects .project .infoRight .createDate .value {
+  display: inline;
+}
+.main .projects .project:hover {
+  box-shadow: #272736 0 0 10px inset;
+  background-color: #d9e2fc;
+  border-left-style: solid;
+  border-right-style: solid;
+  border-top-style: dashed;
+  border-bottom-style: dashed;
+}
+.main .projects .project:hover .image {
+  box-shadow: #272736 0 0 10px inset;
+  border-style: dashed;
+}
+.main .projects .project:first-child {
+  border-top-style: dashed;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.main .projects .project:first-child:hover {
+  border-top-style: solid;
+}
+.main .projects .project:last-child {
+  border-bottom-style: dashed;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.main .projects .project:last-child:hover {
+  border-bottom-style: solid;
+}
+
+@media (max-width: 1040px) {
+  .main .projects .project {
+    flex-direction: column;
+  }
+  .main .projects .project .infoLeft .title {
+    text-align: center;
+  }
+}
+
+/*# sourceMappingURL=projects.css.map */
