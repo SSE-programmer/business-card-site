@@ -1,16 +1,19 @@
 <header>
   <nav
     id="nav"
+    [ngClass]="{'drop': drop}"
     (clickOutside)="closeMenu()"
   >
     <div id="nav-logo">
       <a>SSE - programmer</a>
       <div
         id="menuButton"
-        (click)="responsiveNavbar()">
+        (click)="switchNavbar()">
       </div>
     </div>
-    <ul id="nav-links">
+    <ul
+      id="nav-links"
+      (click)="closeMenu()">
       <li>
         <a
           routerLink="/home"

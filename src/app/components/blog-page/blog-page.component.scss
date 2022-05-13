@@ -10,6 +10,7 @@
     .post {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
       border: $borderColor 2px dashed;
       border-radius: $cardBorderRadius;
       padding: 10px 20px;
@@ -36,9 +37,9 @@
           width: 220px;
           height: 220px;
           overflow: hidden;
-          background-image: url("/assets/images/projects/sse-programmer.jpg");
+          background-image: url("/assets/images/blog/release.jpg");
           background-size: 100% 100%;
-          border: $borderColor 2px dotted;
+          border: $borderColor 2px solid;;
           border-radius: 10px;
           margin: 30px auto 15px;
           transition: 0.5s;
@@ -64,9 +65,10 @@
         border-style: solid;
         border-radius: 0;
 
-        .image {
-          box-shadow: $shadowColor 0 0 10px inset;
-          border-style: dashed;
+        .infoRight {
+          .image {
+            box-shadow: $shadowColor 0 0 10px inset;
+          }
         }
       }
     }

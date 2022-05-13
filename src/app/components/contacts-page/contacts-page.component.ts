@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
   templateUrl: './contacts-page.component.html',
   styleUrls: ['./contacts-page.component.scss']
 })
-export class ContactsPageComponent {}
+export class ContactsPageComponent {
+  redirect(link: string) {
+    window.open(link);
+  }
+}

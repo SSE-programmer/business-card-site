@@ -6,34 +6,20 @@ import {Component, HostListener} from '@angular/core';
   styleUrls: ['./app.header.component.scss'],
 })
 export class AppHeaderComponent {
-  links: HTMLElement | null = null;
-
-  ngAfterViewInit() {
-    this.links = document.getElementById('nav-links');
-  }
+  drop: boolean = false;
 
   closeMenu(): void {
-    if (!this.links) return;
-
-    this.links.classList.remove('drop');
+    this.drop = false;
   }
 
-  responsiveNavbar(): void {
-    if (!this.links) return;
-
-    if (this.links.classList.contains('drop')) {
-      this.links.classList.remove('drop');
-    } else {
-      this.links.classList.add('drop');
-    }
+  switchNavbar(): void {
+    this.drop = !this.drop;
   }
 
   @HostListener('window:resize', ['$event'])
   onResize(event: { target: any }) {
-    if (!this.links) return;
-
     if (window.matchMedia("(min-width: 800px)").matches) {
-      this.links.classList.remove('drop');
+      this.drop = false;
     }
   }
 }
