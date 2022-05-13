@@ -19,6 +19,7 @@
       background-size: 100% 100%;
       box-shadow: 0 0 20px $shadowColor, 0 0 10px $shadowColor inset;
       transition: 0.5s;
+      cursor: pointer;
     }
 
     .photo:hover {
