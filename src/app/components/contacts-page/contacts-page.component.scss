@@ -5,11 +5,11 @@
     .links {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
 
       .email, .instagram, .vk, .github {
         position: relative;
         width: 45%;
-        min-width: 350px;
         height: rem-calc(160);
         border: $borderColor 2px dashed;
         margin: 10px 10px;
@@ -36,7 +36,7 @@
 
         p {
           text-align: center;
-          white-space: nowrap;
+          word-break: break-word;
           margin-top: 0;
           transition: 0.5s;
         }
@@ -80,11 +80,16 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .main {
     .contacts {
       .links {
         flex-direction: column;
+
+        .email, .instagram, .vk, .github {
+          width: 100%;
+          margin: 10px 0;
+        }
       }
     }
   }
