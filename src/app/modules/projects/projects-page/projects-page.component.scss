@@ -1,18 +1,19 @@
-@import "src/styles.scss";
+@import "../../../../styles";
 
 .main {
-  .posts {
+  .projects {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 10px auto;
 
-    .post {
+    .project {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       border: $borderColor 2px dashed;
-      border-radius: $cardBorderRadius;
+      border-bottom-style: dotted;
+      border-top-style: dotted;
       padding: 10px 20px;
       width: 100%;
       margin: 10px auto;
@@ -37,9 +38,9 @@
           width: 220px;
           height: 220px;
           overflow: hidden;
-          background-image: url("/assets/images/blog/release.jpg");
+          background-image: url("/assets/images/projects/sse-programmer.jpg");
           background-size: 100% 100%;
-          border: $borderColor 2px solid;;
+          border: $borderColor 2px solid;
           border-radius: 10px;
           margin: 30px auto 15px;
           transition: 0.5s;
@@ -58,18 +59,40 @@
           }
         }
       }
+    }
+
+    .project:hover {
+      box-shadow: $shadowColor 0 0 10px inset;
+      background-color: $cardBackgroundColor;
+      border-left-style: solid;
+      border-right-style: solid;
+      border-top-style: dashed;
+      border-bottom-style: dashed;
+
+      .infoRight {
+        .image {
+          box-shadow: $shadowColor 0 0 10px inset;
+        }
+      }
+    }
+
+    .project:first-child {
+      border-top-style: dashed;
+      border-top-left-radius: $cardBorderRadius;
+      border-top-right-radius: $cardBorderRadius;
 
       &:hover {
-        box-shadow: $shadowColor 0 0 10px inset;
-        background-color: $cardBackgroundColor;
-        border-style: solid;
-        border-radius: 0;
+        border-top-style: solid;
+      }
+    }
 
-        .infoRight {
-          .image {
-            box-shadow: $shadowColor 0 0 10px inset;
-          }
-        }
+    .project:last-child {
+      border-bottom-style: dashed;
+      border-bottom-left-radius: $cardBorderRadius;
+      border-bottom-right-radius: $cardBorderRadius;
+
+      &:hover {
+        border-bottom-style: solid;
       }
     }
   }
@@ -77,8 +100,8 @@
 
 @media (max-width: 1040px) {
   .main {
-    .posts {
-      .post {
+    .projects {
+      .project {
         flex-direction: column;
 
         .infoLeft {
