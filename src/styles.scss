@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 $base-font-size: 20;
 $backgroundColor: #e8efff;
 $cardBackgroundColor: #d9e2fc;
@@ -9,92 +13,92 @@ $borderColor: #272736;
 $cardBorderRadius: 20px;
 
 @function rem-calc($size) {
-  $remSize: $size / $base-font-size;
+    $remSize: $size / $base-font-size;
 
-  @return #{$remSize}rem;
+    @return #{$remSize}rem;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-  background-color: $backgroundColor;
-  background-repeat: no-repeat;
-  font-family: "Alegreya", serif;
-  color: $mainFontColor;
+    background-color: $backgroundColor;
+    background-repeat: no-repeat;
+    font-family: "Alegreya", serif;
+    color: $mainFontColor;
 }
 
 header, main, footer {
-  min-width: 270px;
+    min-width: 270px;
 }
 
 main {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 80%;
-  margin: rem-calc(80) auto rem-calc(140);
-  flex-wrap: wrap;
-  max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 80%;
+    margin: rem-calc(80) auto rem-calc(140);
+    flex-wrap: wrap;
+    max-width: 1200px;
 
-  @media screen and (max-width: 768px) {
-    width: 100%;
-  }
-
-  .title {
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  .description {
-    text-indent: 20px;
-    margin: 0 auto;
-
-    p {
-      margin: 0 auto 20px;
+    @media screen and (max-width: 768px) {
+        width: 100%;
     }
-  }
+
+    .title {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .description {
+        text-indent: 20px;
+        margin: 0 auto;
+
+        p {
+            margin: 0 auto 20px;
+        }
+    }
 }
 
 h1 {
-  color: $h1Color;
+    color: $h1Color;
 }
 
 h2 {
-  font-family: "Alegreya Italic", serif;
-  color: $h2Color;
+    font-family: "Alegreya Italic", serif;
+    color: $h2Color;
 }
 
 p, ul {
-  font-size: rem-calc(25);
+    font-size: rem-calc(25);
 }
 
 @font-face {
-  font-family: "Titan One";
-  src: url("/assets/fonts/TitanOne.ttf") format('truetype');
-  font-style: normal;
-  font-weight: normal;
+    font-family: "Titan One";
+    src: url("/assets/fonts/TitanOne.ttf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: "Patua One";
-  src: url("/assets/fonts/PatuaOne.ttf") format('truetype');
-  font-style: normal;
-  font-weight: normal;
+    font-family: "Patua One";
+    src: url("/assets/fonts/PatuaOne.ttf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: "Alegreya";
-  src: url("/assets/fonts/Alegreya.ttf") format('truetype');
-  font-style: normal;
-  font-weight: normal;
+    font-family: "Alegreya";
+    src: url("/assets/fonts/Alegreya.ttf") format('truetype');
+    font-style: normal;
+    font-weight: normal;
 }
 
 @font-face {
-  font-family: "Alegreya Italic";
-  src: url("/assets/fonts/Alegreya-Italic.ttf") format('truetype');
-  font-style: italic;
-  font-weight: normal;
+    font-family: "Alegreya Italic";
+    src: url("/assets/fonts/Alegreya-Italic.ttf") format('truetype');
+    font-style: italic;
+    font-weight: normal;
 }
 

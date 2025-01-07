@@ -1,0 +1,17 @@
+{
+    "arrowParens": "always",
+    "bracketSameLine": false,
+    "bracketSpacing": true,
+    "parser": "angular",
+    "printWidth": 120,
+    "quoteProps": "as-needed",
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "singleAttributePerLine": false,
+    "useTabs": false,
+    "plugins": [
+        "prettier-plugin-tailwindcss"
+    ]
+}

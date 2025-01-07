@@ -1,50 +1,31 @@
-<header>
+<header class="header">
     <nav
-        id="nav"
-        [ngClass]="{'drop': drop}"
+        id="header-navigation"
+        class="navigation"
+        [class.expanded]="expanded"
         (clickOutside)="closeMenu()"
     >
-        <div id="nav-logo">
+        <div class="navigation__logo">
             <a>SSE - programmer</a>
-            <div
-                id="menuButton"
+            <button
+                class="burger-menu-button"
                 (click)="switchNavbar()"
-            >
-            </div>
+            ></button>
         </div>
-        <ul
-            id="nav-links"
-            (click)="closeMenu()"
-        >
+        <ul id="navigation__links" (click)="closeMenu()">
             <li>
-                <a
-                    routerLink="/home"
-                    routerLinkActive="active"
-                >
-                    Home
-                </a>
+                <a routerLink="/home" routerLinkActive="active"> Home </a>
             </li>
             <li>
-                <a
-                    routerLink="/projects"
-                    routerLinkActive="active"
-                >
+                <a routerLink="/projects" routerLinkActive="active">
                     Projects
                 </a>
             </li>
             <li>
-                <a
-                    routerLink="/blog"
-                    routerLinkActive="active"
-                >
-                    Blog
-                </a>
+                <a routerLink="/blog" routerLinkActive="active"> Blog </a>
             </li>
             <li>
-                <a
-                    routerLink="/contacts"
-                    routerLinkActive="active"
-                >
+                <a routerLink="/contacts" routerLinkActive="active">
                     Contacts
                 </a>
             </li>

@@ -35,6 +35,6 @@ export const appConfig: ApplicationConfig = {
         {
             provide: LOCALE_ID,
             useValue: ELocale.RU
-        },
+        }
     ]
 };
