@@ -1,0 +1,53 @@
+<header>
+    <nav
+        id="nav"
+        [ngClass]="{'drop': drop}"
+        (clickOutside)="closeMenu()"
+    >
+        <div id="nav-logo">
+            <a>SSE - programmer</a>
+            <div
+                id="menuButton"
+                (click)="switchNavbar()"
+            >
+            </div>
+        </div>
+        <ul
+            id="nav-links"
+            (click)="closeMenu()"
+        >
+            <li>
+                <a
+                    routerLink="/home"
+                    routerLinkActive="active"
+                >
+                    Home
+                </a>
+            </li>
+            <li>
+                <a
+                    routerLink="/projects"
+                    routerLinkActive="active"
+                >
+                    Projects
+                </a>
+            </li>
+            <li>
+                <a
+                    routerLink="/blog"
+                    routerLinkActive="active"
+                >
+                    Blog
+                </a>
+            </li>
+            <li>
+                <a
+                    routerLink="/contacts"
+                    routerLinkActive="active"
+                >
+                    Contacts
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>

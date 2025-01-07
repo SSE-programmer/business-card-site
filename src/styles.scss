@@ -10,6 +10,7 @@ $cardBorderRadius: 20px;
 
 @function rem-calc($size) {
   $remSize: $size / $base-font-size;
+
   @return #{$remSize}rem;
 }
 
