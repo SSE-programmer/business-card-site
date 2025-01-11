@@ -1,53 +1,53 @@
 @import "src/styles.scss";
 
 .main {
-  .phrase {
-    margin-top: 5%;
-    color: #222231;
-    font-family: 'Titan One';
-    font-size: 8vw;
-    font-weight: 100;
-    text-align: center;
-  }
-
-  .description {
-    border-bottom: var(--bc-border-default-color) 2px dashed;
-
-    p {
-      font-size: 7vw;
-      color: #44445e;
-    }
-  }
-
-  .picture {
-    width: 100%;
-    margin-right: auto;
-    margin-left: auto;
-
-    img {
-      width: 100%;
-    }
-  }
-}
-
-@media screen and (min-width: 1000px) {
-  .main {
     .phrase {
-      font-size: rem-calc(100);
+        margin-top: 5%;
+        color: #222231;
+        font-family: 'Titan One';
+        font-size: 8vw;
+        font-weight: 100;
+        text-align: center;
     }
 
     .description {
-      p {
-        font-size: rem-calc(80);
-      }
+        border-bottom: var(--bc-border-default-color) 2px dashed;
+
+        p {
+            font-size: 7vw;
+            color: #44445e;
+        }
     }
 
     .picture {
-      width: 775px;
-
-      img {
         width: 100%;
-      }
+        margin-right: auto;
+        margin-left: auto;
+
+        img {
+            width: 100%;
+        }
     }
-  }
+}
+
+@media screen and (min-width: 1000px) {
+    .main {
+        .phrase {
+            font-size: rem-calc(100);
+        }
+
+        .description {
+            p {
+                font-size: rem-calc(80);
+            }
+        }
+
+        .picture {
+            width: 775px;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
 }
