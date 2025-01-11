@@ -1,6 +1,7 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { INavigationRoute } from '../../shared/models/INavigationRoute';
 
 @Component({
     selector: 'app-header',
@@ -14,20 +15,22 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     standalone: true
 })
 export class AppHeaderComponent {
-    expanded: boolean = false;
-
-    closeMenu(): void {
-        this.expanded = false;
-    }
-
-    switchNavbar(): void {
-        this.expanded = !this.expanded;
-    }
-
-    @HostListener('window:resize', ['$event'])
-    onResize() {
-        if (window.matchMedia('(min-width: 800px)').matches) {
-            this.expanded = false;
+    protected navigationRoutes: INavigationRoute[] = [
+        {
+            title: 'Home',
+            link: '/home'
+        },
+        {
+            title: 'Projects',
+            link: '/projects'
+        },
+        {
+            title: 'Blog',
+            link: '/blog'
+        },
+        {
+            title: 'Contacts',
+            link: '/contacts'
         }
-    }
+    ];
 }

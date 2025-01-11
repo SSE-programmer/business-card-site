@@ -15,17 +15,17 @@
     --bc-shadow-default-color: #272736;
 
     --bc-primary-color: #222231;
+    --bc-middle-primary-color: #272736;
 
-    --bc-accent-color: #17618F;
-    --bc-light-accent: #324CF1;
+    --bc-accent-color: #D1D193;
+    --bc-light-accent-color: #D5D4D4;
 
     --bc-gray-default-color: #9A9A9A;
     --bc-gray-middle-color: #D9D9D9;
     --bc-gray-light-color: #F5F5F5;
 
-    --bc-error-color: #ff3f3f;
-    --bc-bg-error-color: #ffd6de;
-
+    --bc-error-color: #FF3F3F;
+    --bc-bg-error-color: #FFD6DE;
 
     //paddings
     --bc-padding-2: 2px;
@@ -69,9 +69,17 @@
 
 * {
     box-sizing: border-box;
+    text-decoration: none;
+    margin: 0;
+}
+
+or, ul {
+    list-style-type: none;
+    padding-inline-start: 0;
 }
 
 body {
+    margin: 0;
     background-color: var(--bc-bg-middle-color);
     background-repeat: no-repeat;
 
@@ -82,6 +90,39 @@ body {
 
 .font-italic {
     font-family: "Alegreya Italic", serif;
+}
+
+h1.bc-h,
+h2.bc-h,
+h3.bc-h,
+h4.bc-h,
+h5.bc-h {
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    color: var(--bc-dark-default-color);
+}
+
+h1.bc-h {
+    font-size: 34px;
+}
+
+h2.bc-h {
+    font-size: 28px;
+}
+
+h3.bc-h {
+    font-size: 22px;
+}
+
+h4.bc-h {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+h5.bc-h {
+    font-size: 14px;
+    font-weight: 500;
 }
 
 @font-face {

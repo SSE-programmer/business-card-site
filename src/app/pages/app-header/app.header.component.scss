@@ -1,146 +1,60 @@
 @import "src/styles.scss";
 
-$navBackgroundColor: #222231;
-$navLinksBackgroundColor: #272736;
-$navLinksColor: #c0c0c0;
-$logoColor: #d5d4d4;
-
 .header {
-    .navigation {
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 100;
+    display: flex;
+    gap: var(--bc-gap-12);
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: var(--bc-primary-color);
+    padding: var(--bc-padding-8) var(--bc-padding-12);
 
+    @media (max-width: 720px) {
+        flex-direction: column;
+    }
+
+    &__logo {
         display: flex;
-        flex-grow: 1;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 100%;
-        height: auto;
-        max-height: 48px;
 
-        line-height: rem-calc(60);
+        font-family: "Titan One", cursive;
+        text-align: center;
+        color: white;
 
-        &__logo {
-            display: flex;
-            justify-content: space-between;
-            flex-grow: 1;
-            padding: 0 20px;
-            background-color: $navBackgroundColor;
-
-            font-family: "Titan One", cursive;
-            font-size: rem-calc(35);
-            text-align: center;
-            color: white;
-
-            a {
-                white-space: nowrap;
-                color: $logoColor;
-                text-decoration: none;
-            }
-
-            .burger-menu-button {
-                display: none;
-                height: rem-calc(60);
-                width: rem-calc(60);
-                background-image: url("/assets/icons/menu_icon.svg");
-                background-size: 60% 60%;
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: 0.5s;
-
-                &:hover {
-                    filter: opacity(0.5);
-                    background-size: 65% 65%;
-                    cursor: pointer;
-                }
-            }
-        }
-
-        &__links {
-            display: flex;
-            flex-wrap: nowrap;
-            justify-content: flex-end;
-            height: 100%;
-            list-style-type: none;
-            padding: 0 20px;
-            margin: 0;
-            overflow: hidden;
-            background-color: $navBackgroundColor;
-            z-index: -1;
-            opacity: 1;
-            position: static;
-
-            li {
-                text-transform: uppercase;
-                text-align: center;
-                margin: 0 5px;
-                padding: 0 10px;
-                transition: 0.3s;
-
-                a {
-                    display: block;
-                    width: 100%;
-                    height: 100%;
-                    text-decoration: none;
-                    color: $navLinksColor;
-                    font-family: "Patua One", sans-serif;
-                    font-size: rem-calc(25);
-                    line-height: inherit;
-                }
-            }
-
-            li:hover {
-                background-color: var(--bc-shadow-default-color);
-                border: 0 solid var(--bc-bg-middle-color);
-                transform: scale(1.1);
-                text-shadow: 0 0 30px #131322;
-
-                a {
-                    color: var(--bc-bg-middle-color);
-                }
-            }
+        .logo-name {
+            color: var(--bc-light-accent-color);
+            white-space: nowrap;
         }
     }
-}
 
-@media (max-width: 800px) {
-    .header {
-        .navigation {
-            flex-wrap: nowrap;
-            flex-direction: column;
+    &__navigation {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
 
-            &__logo {
-                flex-wrap: nowrap;
-                padding-right: 0;
+        .navigation__links {
+            display: flex;
+            gap: var(--bc-gap-16);
+            background-color: var(--bc-primary-color);
 
-                .burger-menu-button {
-                    display: flex;
-                    min-width: rem-calc(60);
+            .links__item {
+                text-transform: uppercase;
+                transition: .2s;
+
+                @media (hover: hover) {
+                    &:hover {
+                        transform: scale(1.1);
+
+                        .link {
+
+                        }
+                    }
                 }
-            }
 
-            &__links {
-                flex-direction: column;
-                background-color: $navLinksBackgroundColor;
-                transition: 0.5s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s;
-                position: relative;
-                top: -300px;
-                opacity: 0;
-            }
-
-            .no-transition {
-                transition: none !important;
-            }
-        }
-
-        .expanded {
-            max-height: none !important;
-
-            .navigation__links {
-                top: 0 !important;
-                opacity: 1 !important;
+                .link {
+                    font-family: "Patua One", sans-serif;
+                    font-size: 22px;
+                    color: var(--bc-light-accent-color);
+                }
             }
         }
     }

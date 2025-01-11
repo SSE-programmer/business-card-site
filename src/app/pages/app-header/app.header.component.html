@@ -1,34 +1,23 @@
 <header class="header">
-    <nav
-        id="header-navigation"
-        class="navigation"
-        [class.expanded]="expanded"
-        (clickOutside)="closeMenu()"
+    <a
+        class="header__logo"
+        routerLink="home"
     >
-        <div class="navigation__logo">
-            <a>SSE - programmer</a>
-            <button
-                class="burger-menu-button"
-                (click)="switchNavbar()"
-            ></button>
-        </div>
-        <ul class="navigation__links" (click)="closeMenu()">
-            <li>
-                <a routerLink="/home" routerLinkActive="active"> Home </a>
-            </li>
-            <li>
-                <a routerLink="/projects" routerLinkActive="active">
-                    Projects
-                </a>
-            </li>
-            <li>
-                <a routerLink="/blog" routerLinkActive="active"> Blog </a>
-            </li>
-            <li>
-                <a routerLink="/contacts" routerLinkActive="active">
-                    Contacts
-                </a>
-            </li>
+        <h1 class="logo-name bc-h">SSE-programmer</h1>
+    </a>
+    <nav class="header__navigation">
+        <ul class="navigation__links">
+            @for (route of navigationRoutes; track $index) {
+                <li class="links__item">
+                    <a
+                        class="link"
+                        [routerLink]="route.link"
+                        routerLinkActive="active"
+                    >
+                        {{ route.title }}
+                    </a>
+                </li>
+            }
         </ul>
     </nav>
 </header>
