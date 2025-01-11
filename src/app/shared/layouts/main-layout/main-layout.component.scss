@@ -5,14 +5,16 @@
     max-height: 100vh;
     overflow-y: hidden;
 
-    @media (max-width: 720px) {
-        padding-left: 0;
-        padding-right: 0;
-        padding-bottom: 0;
-    }
-
     .page-container {
+        display: flex;
+        flex-direction: column;
+        gap: var(--bc-gap-24);
         flex: 1;
+        padding: var(--bc-padding-24) var(--bc-padding-16);
         overflow: auto;
+
+        @media (max-width: 720px) {
+            padding: var(--bc-padding-8);
+        }
     }
 }

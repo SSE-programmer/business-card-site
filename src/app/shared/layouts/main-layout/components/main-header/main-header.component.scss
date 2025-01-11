@@ -38,11 +38,11 @@
 
             .links__item {
                 text-transform: uppercase;
-                transition: .2s;
+                transition: var(---bc-transition-duration-default);
 
                 @media (hover: hover) {
                     &:hover {
-                        transform: scale(1.1);
+                        transform: scale(var(---bc-transform-scale-default));
 
                         .link {
 
