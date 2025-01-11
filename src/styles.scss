@@ -1,21 +1,70 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+    ---bc-font-size-default: 20px;
 
-$base-font-size: 20;
-$backgroundColor: #e8efff;
-$cardBackgroundColor: #d9e2fc;
-$mainFontColor: #3f3f41;
-$h1Color: #39393A;
-$h2Color: #343434;
-$shadowColor: #272736;
-$borderColor: #272736;
-$cardBorderRadius: 20px;
+    //colors
+    --bc-white-color: #FFFFFF;
 
-@function rem-calc($size) {
-    $remSize: $size / $base-font-size;
+    --bc-bg-light-color: #e8efff;
+    --bc-bg-middle-color: #d9e2fc;
 
-    @return #{$remSize}rem;
+    --bc-dark-default-color: #343434;
+    --bc-dark-middle-color: #3f3f41;
+
+    --bc-border-default-color: #272736;
+
+    --bc-shadow-default-color: #272736;
+
+    --bc-primary-color: #222231;
+
+    --bc-accent-color: #17618F;
+    --bc-light-accent: #324CF1;
+
+    --bc-gray-default-color: #9A9A9A;
+    --bc-gray-middle-color: #D9D9D9;
+    --bc-gray-light-color: #F5F5F5;
+
+    --bc-error-color: #ff3f3f;
+    --bc-bg-error-color: #ffd6de;
+
+
+    //paddings
+    --bc-padding-2: 2px;
+    --bc-padding-4: 4px;
+    --bc-padding-6: 6px;
+    --bc-padding-8: 8px;
+    --bc-padding-12: 12px;
+    --bc-padding-16: 16px;
+    --bc-padding-24: 24px;
+
+    //margins
+    --bc-margin-2: 2px;
+    --bc-margin-4: 4px;
+    --bc-margin-6: 6px;
+    --bc-margin-8: 8px;
+    --bc-margin-12: 12px;
+    --bc-margin-16: 16px;
+    --bc-margin-24: 24px;
+
+    //gaps
+    --bc-gap-4: 4px;
+    --bc-gap-8: 8px;
+    --bc-gap-12: 12px;
+    --bc-gap-16: 16px;
+    --bc-gap-18: 18px;
+    --bc-gap-24: 24px;
+    --bc-gap-32: 32px;
+    --bc-gap-48: 48px;
+
+    //borders
+    --bc-border-radius-4: 4px;
+    --bc-border-radius-6: 6px;
+    --bc-border-radius-8: 8px;
+    --bc-border-radius-10: 10px;
+    --bc-border-radius-12: 12px;
+    --bc-border-radius-16: 16px;
+    --bc-border-radius-20: 20px;
+    --bc-border-radius-24: 24px;
+    --bc-border-radius-30: 30px;
 }
 
 * {
@@ -23,55 +72,16 @@ $cardBorderRadius: 20px;
 }
 
 body {
-    background-color: $backgroundColor;
+    background-color: var(--bc-bg-middle-color);
     background-repeat: no-repeat;
+
     font-family: "Alegreya", serif;
-    color: $mainFontColor;
+    color: var(--bc-dark-default-color);
+    font-size: var(---bc-font-size-default);
 }
 
-header, main, footer {
-    min-width: 270px;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 80%;
-    margin: rem-calc(80) auto rem-calc(140);
-    flex-wrap: wrap;
-    max-width: 1200px;
-
-    @media screen and (max-width: 768px) {
-        width: 100%;
-    }
-
-    .title {
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    .description {
-        text-indent: 20px;
-        margin: 0 auto;
-
-        p {
-            margin: 0 auto 20px;
-        }
-    }
-}
-
-h1 {
-    color: $h1Color;
-}
-
-h2 {
+.font-italic {
     font-family: "Alegreya Italic", serif;
-    color: $h2Color;
-}
-
-p, ul {
-    font-size: rem-calc(25);
 }
 
 @font-face {

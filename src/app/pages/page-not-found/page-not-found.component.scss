@@ -11,7 +11,7 @@
   }
 
   .description {
-    border-bottom: $borderColor 2px dashed;
+    border-bottom: var(--bc-border-default-color) 2px dashed;
 
     p {
       font-size: 7vw;

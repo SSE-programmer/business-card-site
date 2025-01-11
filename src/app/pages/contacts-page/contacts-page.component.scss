@@ -11,7 +11,7 @@
         position: relative;
         width: 45%;
         height: rem-calc(160);
-        border: $borderColor 2px dashed;
+        border: var(--bc-border-default-color) 2px dashed;
         margin: 10px 10px;
         padding: 10px 20px;
         flex: 1 1 auto;
@@ -19,10 +19,10 @@
         cursor: pointer;
 
         &:hover {
-          box-shadow: $shadowColor 0 0 10px inset;
+          box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
           padding-top: 31px;
           border-style: solid;
-          border-radius: $cardBorderRadius;
+          border-radius: var(--bc-border-radius-20);
 
           p {
             margin-bottom: 0;
@@ -56,7 +56,7 @@
 
       .email:hover::after, .instagram:hover::after, .vk:hover::after, .github:hover::after {
         opacity: 0.8;
-        background-color: $cardBackgroundColor;
+        background-color: var(--bc-bg-light-color);
         background-size: auto 30%;
         background-position: 50% 15%;
       }

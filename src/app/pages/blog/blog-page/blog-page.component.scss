@@ -11,8 +11,8 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      border: $borderColor 2px dashed;
-      border-radius: $cardBorderRadius;
+      border: var(--bc-border-default-color) 2px dashed;
+      border-radius: var(--bc-border-radius-20);
       padding: 10px 20px;
       width: 100%;
       margin: 10px auto;
@@ -39,7 +39,7 @@
           overflow: hidden;
           background-image: url("/assets/images/blog/release.jpg");
           background-size: 100% 100%;
-          border: $borderColor 2px solid;;
+          border: var(--bc-border-default-color) 2px solid;;
           border-radius: 10px;
           margin: 30px auto 15px;
           transition: 0.5s;
@@ -60,14 +60,14 @@
       }
 
       &:hover {
-        box-shadow: $shadowColor 0 0 10px inset;
-        background-color: $cardBackgroundColor;
+        box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
+        background-color: var(--bc-bg-light-color);
         border-style: solid;
         border-radius: 0;
 
         .infoRight {
           .image {
-            box-shadow: $shadowColor 0 0 10px inset;
+            box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
           }
         }
       }

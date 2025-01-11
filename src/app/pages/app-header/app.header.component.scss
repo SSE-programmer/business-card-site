@@ -92,13 +92,13 @@ $logoColor: #d5d4d4;
             }
 
             li:hover {
-                background-color: $shadowColor;
-                border: 0 solid $backgroundColor;
+                background-color: var(--bc-shadow-default-color);
+                border: 0 solid var(--bc-bg-middle-color);
                 transform: scale(1.1);
                 text-shadow: 0 0 30px #131322;
 
                 a {
-                    color: $backgroundColor;
+                    color: var(--bc-bg-middle-color);
                 }
             }
         }
