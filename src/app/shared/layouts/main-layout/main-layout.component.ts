@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AppFooterComponent } from '../../../pages/app-footer/app.footer.component';
-import { AppHeaderComponent } from '../../../pages/app-header/app.header.component';
+import { MainFooterComponent } from './components/main-footer/main-footer.component';
+import { MainHeaderComponent } from './components/main-header/main-header.component';
 
 
 @Component({
@@ -11,8 +11,8 @@ import { AppHeaderComponent } from '../../../pages/app-header/app.header.compone
     standalone: true,
     imports: [
         RouterOutlet,
-        AppFooterComponent,
-        AppHeaderComponent
+        MainFooterComponent,
+        MainHeaderComponent
     ]
 })
 export class MainLayoutComponent implements OnInit, AfterViewInit {

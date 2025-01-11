@@ -1,14 +1,9 @@
-.main-container {
+:host {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     min-height: 100vh;
     max-height: 100vh;
-    padding: var(--epl-padding-16);
-    background: var(--epl-bg-light-color);
     overflow-y: hidden;
-
-    container-type: size;
-    container-name: main-container;
 
     @media (max-width: 720px) {
         padding-left: 0;
@@ -16,18 +11,8 @@
         padding-bottom: 0;
     }
 
-    .center-container {
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-        flex-grow: 1;
-        max-width: 100%;
-        max-height: 100%;
-        overflow: hidden;
-
-        .page-container {
-            flex: 1;
-            overflow: auto;
-        }
+    .page-container {
+        flex: 1;
+        overflow: auto;
     }
 }

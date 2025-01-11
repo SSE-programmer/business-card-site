@@ -7,8 +7,9 @@
     --bc-bg-light-color: #e8efff;
     --bc-bg-middle-color: #d9e2fc;
 
-    --bc-dark-default-color: #343434;
-    --bc-dark-middle-color: #3f3f41;
+    --bc-text-default-color: #343434;
+    --bc-text-middle-color: #3f3f41;
+    --bc-text-light-color: #c0c0c0;
 
     --bc-border-default-color: #272736;
 
@@ -16,6 +17,7 @@
 
     --bc-primary-color: #222231;
     --bc-middle-primary-color: #272736;
+    --bc-light-primary-color: #44445e;
 
     --bc-accent-color: #D1D193;
     --bc-light-accent-color: #D5D4D4;
@@ -84,12 +86,12 @@ body {
     background-repeat: no-repeat;
 
     font-family: "Alegreya", serif;
-    color: var(--bc-dark-default-color);
+    color: var(--bc-text-default-color);
     font-size: var(---bc-font-size-default);
 }
 
 .font-italic {
-    font-family: "Alegreya Italic", serif;
+    font-style: italic;
 }
 
 h1.bc-h,
@@ -100,7 +102,7 @@ h5.bc-h {
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
-    color: var(--bc-dark-default-color);
+    color: var(--bc-text-default-color);
 }
 
 h1.bc-h {
@@ -147,7 +149,7 @@ h5.bc-h {
 }
 
 @font-face {
-    font-family: "Alegreya Italic";
+    font-family: "Alegreya";
     src: url("/assets/fonts/Alegreya-Italic.ttf") format('truetype');
     font-style: italic;
     font-weight: normal;

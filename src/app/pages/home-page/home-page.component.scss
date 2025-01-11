@@ -15,7 +15,7 @@
             border-radius: 100%;
             overflow: hidden;
             margin: 1rem auto 1rem auto;
-            background-image: url("/assets/images/home/photo.jpg");
+            background-image: url("/assets/images/home/photo1.png");
             background-size: 100% 100%;
             box-shadow: 0 0 20px var(--bc-shadow-default-color), 0 0 10px var(--bc-shadow-default-color) inset;
             transition: 0.5s;
@@ -63,7 +63,7 @@
                 }
 
                 img:active {
-                    filter: drop-shadow(0px 0px 1px var(--bc-dark-default-color));
+                    filter: drop-shadow(0px 0px 1px var(--bc-text-default-color));
                 }
             }
         }
