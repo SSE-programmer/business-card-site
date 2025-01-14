@@ -1,115 +1,112 @@
-@import "../../../../styles";
-
 .main {
-  .projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 10px auto;
+    .projects {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 10px auto;
 
-    .project {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      border: var(--bc-border-default-color) 2px dashed;
-      border-bottom-style: dotted;
-      border-top-style: dotted;
-      padding: 10px 20px;
-      width: 100%;
-      margin: 10px auto;
-      transition: var(---bc-transition-duration-default);
-      cursor: pointer;
+        .project {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            border: var(--bc-border-default-color) 2px dashed;
+            border-bottom-style: dotted;
+            border-top-style: dotted;
+            padding: 10px 20px;
+            width: 100%;
+            margin: 10px auto;
+            transition: var(---bc-transition-duration-default);
+            cursor: pointer;
 
-      .infoLeft, .infoRight {
-        margin: 10px 30px;
-      }
+            .infoLeft, .infoRight {
+                margin: 10px 30px;
+            }
 
-      .infoLeft {
-        .description {
-          text-indent: 20px;
+            .infoLeft {
+                .description {
+                    text-indent: 20px;
+                }
+            }
+
+            .infoRight {
+                border-radius: 5px;
+
+                .image {
+                    width: 220px;
+                    height: 220px;
+                    overflow: hidden;
+                    background-image: url("/assets/images/projects/sse-programmer.jpg");
+                    background-size: 100% 100%;
+                    border: var(--bc-border-default-color) 2px solid;
+                    border-radius: 10px;
+                    margin: 30px auto 15px;
+                    transition: var(---bc-transition-duration-default);
+                }
+
+                .createDate {
+                    text-align: center;
+
+                    .title {
+                        font-weight: bold;
+                        display: inline;
+                    }
+
+                    .value {
+                        display: inline;
+                    }
+                }
+            }
         }
-      }
 
-      .infoRight {
-        border-radius: 5px;
+        .project:hover {
+            box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
+            background-color: var(--bc-bg-light-color);
+            border-left-style: solid;
+            border-right-style: solid;
+            border-top-style: dashed;
+            border-bottom-style: dashed;
 
-
-        .image {
-          width: 220px;
-          height: 220px;
-          overflow: hidden;
-          background-image: url("/assets/images/projects/sse-programmer.jpg");
-          background-size: 100% 100%;
-          border: var(--bc-border-default-color) 2px solid;
-          border-radius: 10px;
-          margin: 30px auto 15px;
-          transition: var(---bc-transition-duration-default);
+            .infoRight {
+                .image {
+                    box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
+                }
+            }
         }
 
-        .createDate {
-          text-align: center;
+        .project:first-child {
+            border-top-style: dashed;
+            border-top-left-radius: var(--bc-border-radius-20);
+            border-top-right-radius: var(--bc-border-radius-20);
 
-          .title {
-            font-weight: bold;
-            display: inline;
-          }
-
-          .value {
-            display: inline;
-          }
+            &:hover {
+                border-top-style: solid;
+            }
         }
-      }
-    }
 
-    .project:hover {
-      box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
-      background-color: var(--bc-bg-light-color);
-      border-left-style: solid;
-      border-right-style: solid;
-      border-top-style: dashed;
-      border-bottom-style: dashed;
+        .project:last-child {
+            border-bottom-style: dashed;
+            border-bottom-left-radius: var(--bc-border-radius-20);
+            border-bottom-right-radius: var(--bc-border-radius-20);
 
-      .infoRight {
-        .image {
-          box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
+            &:hover {
+                border-bottom-style: solid;
+            }
         }
-      }
     }
-
-    .project:first-child {
-      border-top-style: dashed;
-      border-top-left-radius: var(--bc-border-radius-20);
-      border-top-right-radius: var(--bc-border-radius-20);
-
-      &:hover {
-        border-top-style: solid;
-      }
-    }
-
-    .project:last-child {
-      border-bottom-style: dashed;
-      border-bottom-left-radius: var(--bc-border-radius-20);
-      border-bottom-right-radius: var(--bc-border-radius-20);
-
-      &:hover {
-        border-bottom-style: solid;
-      }
-    }
-  }
 }
 
 @media (max-width: 1040px) {
-  .main {
-    .projects {
-      .project {
-        flex-direction: column;
+    .main {
+        .projects {
+            .project {
+                flex-direction: column;
 
-        .infoLeft {
-          .title {
-            text-align: center;
-          }
+                .infoLeft {
+                    .title {
+                        text-align: center;
+                    }
+                }
+            }
         }
-      }
     }
-  }
 }
