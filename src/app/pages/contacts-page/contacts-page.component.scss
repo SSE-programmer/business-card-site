@@ -1,93 +1,89 @@
-.main {
-    .contacts {
-        .links {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
+.contacts {
+    .links {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
 
-            .email, .instagram, .vk, .github {
-                position: relative;
-                width: 45%;
-                height: rem-calc(160);
-                border: var(--bc-border-default-color) 2px dashed;
-                margin: 10px 10px;
-                padding: 10px 20px;
-                flex: 1 1 auto;
-                transition: var(---bc-transition-duration-default);
-                cursor: pointer;
+        .email, .instagram, .vk, .github {
+            position: relative;
+            width: 45%;
+            height: rem-calc(160);
+            border: var(--bc-border-default-color) 2px dashed;
+            margin: 10px 10px;
+            padding: 10px 20px;
+            flex: 1 1 auto;
+            transition: var(---bc-transition-duration-default);
+            cursor: pointer;
 
-                &:hover {
-                    box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
-                    padding-top: 31px;
-                    border-style: solid;
-                    border-radius: var(--bc-border-radius-20);
-
-                    p {
-                        margin-bottom: 0;
-                    }
-                }
-
-                h2 {
-                    text-align: center;
-                    margin-bottom: 0;
-                }
+            &:hover {
+                box-shadow: var(--bc-shadow-default-color) 0 0 10px inset;
+                padding-top: 31px;
+                border-style: solid;
+                border-radius: var(--bc-border-radius-20);
 
                 p {
-                    text-align: center;
-                    word-break: break-word;
-                    margin-top: 0;
-                    transition: var(---bc-transition-duration-default);
+                    margin-bottom: 0;
                 }
             }
 
-            .email::after, .instagram::after, .vk::after, .github::after {
-                content: "";
-                opacity: 0.05;
-                top: 0;
-                left: 0;
-                bottom: 0;
-                right: 0;
-                position: absolute;
-                z-index: -1;
+            h2 {
+                text-align: center;
+                margin-bottom: 0;
+            }
+
+            p {
+                text-align: center;
+                word-break: break-word;
+                margin-top: 0;
                 transition: var(---bc-transition-duration-default);
             }
+        }
 
-            .email:hover::after, .instagram:hover::after, .vk:hover::after, .github:hover::after {
-                opacity: 0.8;
-                background-color: var(--bc-bg-light-color);
-                background-size: auto 30%;
-                background-position: 50% 15%;
-            }
+        .email::after, .instagram::after, .vk::after, .github::after {
+            content: "";
+            opacity: 0.05;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            z-index: -1;
+            transition: var(---bc-transition-duration-default);
+        }
 
-            .email::after {
-                background: url("/assets/images/contacts/email.png") center/auto 90% no-repeat;
-            }
+        .email:hover::after, .instagram:hover::after, .vk:hover::after, .github:hover::after {
+            opacity: 0.8;
+            background-color: var(--bc-bg-light-color);
+            background-size: auto 30%;
+            background-position: 50% 15%;
+        }
 
-            .instagram::after {
-                background: url("/assets/images/contacts/instagram.png") center/auto 90% no-repeat;
-            }
+        .email::after {
+            background: url("/assets/images/contacts/email.png") center/auto 90% no-repeat;
+        }
 
-            .vk::after {
-                background: url("/assets/images/contacts/vk.png") center/auto 90% no-repeat;
-            }
+        .instagram::after {
+            background: url("/assets/images/contacts/instagram.png") center/auto 90% no-repeat;
+        }
 
-            .github::after {
-                background: url("/assets/images/contacts/github.png") center/auto 90% no-repeat;
-            }
+        .vk::after {
+            background: url("/assets/images/contacts/vk.png") center/auto 90% no-repeat;
+        }
+
+        .github::after {
+            background: url("/assets/images/contacts/github.png") center/auto 90% no-repeat;
         }
     }
 }
 
 @media (max-width: 768px) {
-    .main {
-        .contacts {
-            .links {
-                flex-direction: column;
+    .contacts {
+        .links {
+            flex-direction: column;
 
-                .email, .instagram, .vk, .github {
-                    width: 100%;
-                    margin: 10px 0;
-                }
+            .email, .instagram, .vk, .github {
+                width: 100%;
+                margin: 10px 0;
             }
         }
     }
