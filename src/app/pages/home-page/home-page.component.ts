@@ -8,8 +8,7 @@ import { INavigationRoute } from '../../shared/models/INavigationRoute';
     styleUrls: ['./home-page.component.scss'],
     imports: [
         NgOptimizedImage
-    ],
-    standalone: true
+    ]
 })
 export class HomePageComponent {
     protected contactLinks: INavigationRoute[] = [

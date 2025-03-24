@@ -8,7 +8,6 @@ import { MainHeaderComponent } from './components/main-header/main-header.compon
     selector: 'ec-main-layout',
     templateUrl: './main-layout.component.html',
     styleUrl: './main-layout.component.scss',
-    standalone: true,
     imports: [
         RouterOutlet,
         MainFooterComponent,

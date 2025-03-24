@@ -11,8 +11,7 @@ import { INavigationRoute } from '../../../../models/INavigationRoute';
         ClickOutsideModule,
         RouterLink,
         RouterLinkActive
-    ],
-    standalone: true
+    ]
 })
 export class MainHeaderComponent {
     protected navigationRoutes: INavigationRoute[] = [
