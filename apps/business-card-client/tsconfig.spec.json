@@ -8,10 +8,10 @@
         ]
     },
     "files": [
-        "src/test.ts"
+        "apps/business-card-client/src/test.ts"
     ],
     "include": [
-        "src/**/*.spec.ts",
-        "src/**/*.d.ts"
+        "apps/business-card-client/src/**/*.spec.ts",
+        "apps/business-card-client/src/**/*.d.ts"
     ]
 }

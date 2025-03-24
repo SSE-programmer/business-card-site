@@ -1,12 +1,12 @@
 {
-    "name": "business-card-client",
+    "name": "business-card-site",
     "version": "1.0.0",
     "scripts": {
         "ng": "ng",
-        "start": "ng serve --port 4230",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
-        "test": "ng test"
+        "start-bcc": "nx serve business-card-client --port 4230",
+        "build-bcc": "nx build business-card-client",
+        "watch-bcc": "nx build business-card-client --watch --configuration development",
+        "test-bcc": "nx test business-card-client"
     },
     "private": true,
     "dependencies": {
@@ -26,9 +26,13 @@
         "zone.js": "~0.15.0"
     },
     "devDependencies": {
-        "@angular-devkit/build-angular": "^19.2.4",
-        "@angular/cli": "^19.2.4",
+        "@angular-devkit/core": "^19.2.4",
+        "@angular-devkit/schematics": "^19.2.4",
         "@angular/compiler-cli": "^19.2.3",
+        "@nrwl/devkit": "^19.8.4",
+        "@nx/angular": "^20.6.2",
+        "@nx/workspace": "^20.6.2",
+        "@schematics/angular": "^19.2.4",
         "@types/jasmine": "~3.10.0",
         "@types/node": "^12.11.1",
         "autoprefixer": "^10.4.20",
@@ -38,9 +42,11 @@
         "karma-coverage": "~2.1.0",
         "karma-jasmine": "~4.0.0",
         "karma-jasmine-html-reporter": "~1.7.0",
+        "nx": "20.6.2",
         "postcss": "^8.4.49",
         "prettier": "^3.4.2",
         "tslint": "^5.20.1",
         "typescript": "^5.8.2"
-    }
+    },
+    "nx": {}
 }

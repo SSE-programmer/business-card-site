@@ -59,19 +59,19 @@
         }
 
         .email::after {
-            background: url("/assets/images/contacts/email.png") center/auto 90% no-repeat;
+            background: urrl("assets/images/contacts/email.png") center/auto 90% no-repeat;
         }
 
         .instagram::after {
-            background: url("/assets/images/contacts/instagram.png") center/auto 90% no-repeat;
+            background: urrl("assets/images/contacts/instagram.png") center/auto 90% no-repeat;
         }
 
         .vk::after {
-            background: url("/assets/images/contacts/vk.png") center/auto 90% no-repeat;
+            background: urrl("assets/images/contacts/vk.png") center/auto 90% no-repeat;
         }
 
         .github::after {
-            background: url("/assets/images/contacts/github.png") center/auto 90% no-repeat;
+            background: urrl("assets/images/contacts/github.png") center/auto 90% no-repeat;
         }
     }
 }
