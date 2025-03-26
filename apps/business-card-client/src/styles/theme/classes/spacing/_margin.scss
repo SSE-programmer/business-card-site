@@ -1,0 +1,29 @@
+$margins: 2, 4, 6, 8, 12, 16, 24;
+
+:root {
+    @each $margin in $margins {
+        --bc-margin-#{$margin}: #{$margins}px;
+    }
+}
+
+@each $margin in $margins {
+    .bc-m-#{$margin} {
+        margin: var(--bc-margin-#{$margin});
+    }
+
+    .bc-mt-#{$margin} {
+        margin-top: var(--bc-margin-#{$margin});
+    }
+
+    .bc-mr-#{$margin} {
+        margin-right: var(--bc-margin-#{$margin});
+    }
+
+    .bc-mb-#{$margin} {
+        margin-bottom: var(--bc-margin-#{$margin});
+    }
+
+    .bc-ml-#{$margin} {
+        margin-left: var(--bc-margin-#{$margin});
+    }
+}

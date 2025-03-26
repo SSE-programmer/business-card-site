@@ -1,0 +1,13 @@
+$text-sizes: 20, 22, 34, 40;
+
+:root {
+    @each $text-size in $text-sizes {
+        --bc-font-size-#{$text-size}: #{$text-size}px;
+    }
+}
+
+@each $text-size in $text-sizes {
+    .bc-text-#{$text-size} {
+        font-size: var(--bc-font-size-#{$text-size});
+    }
+}
