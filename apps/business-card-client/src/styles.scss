@@ -1,75 +1,10 @@
+@use 'styles/theme/index' as *;
+
 :root {
     ---bc-font-size-default: 20px;
 
     ---bc-transform-scale-default: 1.1;
     ---bc-transition-duration-default: .2s;
-
-    //colors
-    --bc-white-color: #FFFFFF;
-
-    --bc-bg-light-color: #e8efff;
-    --bc-bg-middle-color: #d9e2fc;
-
-    --bc-text-default-color: #343434;
-    --bc-text-middle-color: #3f3f41;
-    --bc-text-light-color: #c0c0c0;
-
-    --bc-border-default-color: #272736;
-
-    --bc-shadow-default-color: #272736;
-
-    --bc-primary-color: #222231;
-    --bc-middle-primary-color: #272736;
-    --bc-light-primary-color: #44445e;
-
-    --bc-accent-color: #D1D193;
-    --bc-light-accent-color: #D5D4D4;
-
-    --bc-gray-default-color: #9A9A9A;
-    --bc-gray-middle-color: #D9D9D9;
-    --bc-gray-light-color: #F5F5F5;
-
-    --bc-error-color: #FF3F3F;
-    --bc-bg-error-color: #FFD6DE;
-
-    //paddings
-    --bc-padding-2: 2px;
-    --bc-padding-4: 4px;
-    --bc-padding-6: 6px;
-    --bc-padding-8: 8px;
-    --bc-padding-12: 12px;
-    --bc-padding-16: 16px;
-    --bc-padding-24: 24px;
-
-    //margins
-    --bc-margin-2: 2px;
-    --bc-margin-4: 4px;
-    --bc-margin-6: 6px;
-    --bc-margin-8: 8px;
-    --bc-margin-12: 12px;
-    --bc-margin-16: 16px;
-    --bc-margin-24: 24px;
-
-    //gaps
-    --bc-gap-4: 4px;
-    --bc-gap-8: 8px;
-    --bc-gap-12: 12px;
-    --bc-gap-16: 16px;
-    --bc-gap-18: 18px;
-    --bc-gap-24: 24px;
-    --bc-gap-32: 32px;
-    --bc-gap-48: 48px;
-
-    //borders
-    --bc-border-radius-4: 4px;
-    --bc-border-radius-6: 6px;
-    --bc-border-radius-8: 8px;
-    --bc-border-radius-10: 10px;
-    --bc-border-radius-12: 12px;
-    --bc-border-radius-16: 16px;
-    --bc-border-radius-20: 20px;
-    --bc-border-radius-24: 24px;
-    --bc-border-radius-30: 30px;
 }
 
 * {
@@ -93,9 +28,6 @@ body {
     font-size: var(---bc-font-size-default);
 }
 
-.bc-font-italic {
-    font-style: italic;
-}
 
 h1.bc-h,
 h2.bc-h,
@@ -127,50 +59,6 @@ h4.bc-h {
 h5.bc-h {
     font-size: 18px;
     font-weight: 500;
-}
-
-*.bc-text-default-color {
-    color: var(--bc-text-default-color);
-}
-
-*.bc-text-middle-color {
-    color: var(--bc-text-middle-color);
-}
-
-*.bc-text-light-color {
-    color: var(--bc-text-light-color);
-}
-
-.bc-text-align-center {
-    text-align: center;
-}
-
-@font-face {
-    font-family: "Titan One";
-    src: url("assets/fonts/TitanOne.ttf") format('truetype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Patua One";
-    src: url("assets/fonts/PatuaOne.ttf") format('truetype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Alegreya";
-    src: url("assets/fonts/Alegreya.ttf") format('truetype');
-    font-style: normal;
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: "Alegreya";
-    src: url("assets/fonts/Alegreya-Italic.ttf") format('truetype');
-    font-style: italic;
-    font-weight: normal;
 }
 
 router-outlet {

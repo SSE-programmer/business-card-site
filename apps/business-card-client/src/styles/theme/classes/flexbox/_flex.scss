@@ -1,0 +1,45 @@
+$gaps: 4, 8, 12, 16, 18, 24, 32, 36, 48;
+
+:root {
+    @each $gap in $gaps {
+        --bc-gap-#{$gap}: #{$gap}px;
+    }
+}
+
+.bc-flex {
+    display: flex;
+}
+
+.bc-flex-row {
+    flex-direction: row;
+}
+
+.bc-flex-row-reverse {
+    flex-direction: row-reverse;
+}
+
+.bc-flex-col {
+    flex-direction: column;
+}
+
+.bc-flex-col-reverse {
+    flex-direction: column-reverse;
+}
+
+.bc-flex-1 {
+    flex: 1;
+}
+
+.bc-flex-auto {
+    flex: 1 1 auto;
+}
+
+.bc-shrink-0 {
+    flex-shrink: 0;
+}
+
+@each $gap in $gaps {
+    .bc-gap-#{$gap} {
+        gap: var(--bc-gap-#{$gap});
+    }
+}

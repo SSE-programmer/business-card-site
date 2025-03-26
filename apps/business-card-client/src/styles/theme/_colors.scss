@@ -1,0 +1,106 @@
+:root {
+    --bc-white-color: #FFFFFF;
+
+    --bc-text-default-color: #343434;
+    --bc-text-middle-color: #3f3f41;
+    --bc-text-light-color: #c0c0c0;
+
+    --bc-border-default-color: #272736;
+
+    --bc-shadow-default-color: #272736;
+
+    --bc-primary-color: #222231;
+    --bc-middle-primary-color: #272736;
+    --bc-light-primary-color: #44445e;
+
+    --bc-accent-color: #D1D193;
+    --bc-light-accent-color: #D5D4D4;
+
+    --bc-gray-default-color: #9A9A9A;
+    --bc-gray-middle-color: #D9D9D9;
+    --bc-gray-light-color: #F5F5F5;
+
+    --bc-error-color: #FF3F3F;
+
+    --bc-bg-light-color: #e8efff;
+    --bc-bg-middle-color: #d9e2fc;
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-error-color: #FFD6DE;
+}
+
+.bc-bg-light-color {
+    background-color: var(--bc-bg-light-color);
+}
+
+.bc-bg-middle-color {
+    background-color: var(--bc-bg-middle-color);
+}
+
+.bc-bg-primary-color {
+    background-color: var(--bc-bg-primary-color);
+}
+
+.bc-bg-error-color {
+    background-color: var(--bc-bg-error-color);
+}
+
+.bc-white-color {
+    color: var(--bc-white-color);
+}
+
+.bc-text-default-color {
+    color: var(--bc-text-default-color);
+}
+
+.bc-text-middle-color {
+    color: var(--bc-text-middle-color);
+}
+
+.bc-text-light-color {
+    color: var(--bc-text-light-color);
+}
+
+.bc-border-default-color {
+    color: var(--bc-border-default-color);
+}
+
+
+.bc-shadow-default-color {
+    color: var(--bc-shadow-default-color);
+}
+
+.bc-primary-color {
+    color: var(--bc-primary-color);
+}
+
+.bc-middle-primary-color {
+    color: var(--bc-middle-primary-color);
+}
+
+.bc-light-primary-color {
+    color: var(--bc-light-primary-color);
+}
+
+.bc-accent-color {
+    color: var(--bc-accent-color);
+}
+
+.bc-light-accent-color {
+    color: var(--bc-light-accent-color);
+}
+
+.bc-gray-default-color {
+    color: var(--bc-gray-default-color);
+}
+
+.bc-gray-middle-color {
+    color: var(--bc-gray-middle-color);
+}
+
+.bc-gray-light-color {
+    color: var(--bc-gray-light-color);
+}
+
+.bc-error-color {
+    color: var(--bc-error-color);
+}

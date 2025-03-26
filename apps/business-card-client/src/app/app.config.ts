@@ -1,5 +1,5 @@
-import { ApplicationConfig, LOCALE_ID } from '@angular/core';
-import { provideRouter, withEnabledBlockingInitialNavigation, withHashLocation } from '@angular/router';
+import { ApplicationConfig, LOCALE_ID, provideEnvironmentInitializer, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { provideRouter, withComponentInputBinding, withEnabledBlockingInitialNavigation, withHashLocation } from '@angular/router';
 import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
@@ -13,28 +13,31 @@ registerLocaleData(localeRu);
 
 export const appConfig: ApplicationConfig = {
     providers: [
+        provideExperimentalZonelessChangeDetection(),
+        provideEnvironmentInitializer(() => console.log('Zoneless mode active')),
         provideAnimations(),
         provideRouter(
             routes,
             withEnabledBlockingInitialNavigation(),
-            withHashLocation()
+            withHashLocation(),
+            withComponentInputBinding(),
         ),
         provideHttpClient(withInterceptorsFromDi()),
         {
             provide: DateAdapter,
-            useClass: AppDateAdapter
+            useClass: AppDateAdapter,
         },
         {
             provide: MAT_DATE_FORMATS,
-            useValue: APP_DATE_FORMATS
+            useValue: APP_DATE_FORMATS,
         },
         {
             provide: MAT_DATE_LOCALE,
-            useValue: 'ru-RU'
+            useValue: 'ru-RU',
         },
         {
             provide: LOCALE_ID,
-            useValue: ELocale.RU
-        }
-    ]
+            useValue: ELocale.RU,
+        },
+    ],
 };
