@@ -17,6 +17,7 @@
         "build": {
             "executor": "@angular-devkit/build-angular:application",
             "options": {
+                "allowedCommonJsDependencies": [],
                 "baseHref": "/",
                 "outputPath": {
                     "base": "dist/business-card-client"

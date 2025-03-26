@@ -22,8 +22,7 @@
         "angular2-click-outside": "^0.1.0",
         "ng-click-outside": "^9.0.1",
         "rxjs": "~7.5.0",
-        "tslib": "^2.3.0",
-        "zone.js": "~0.15.0"
+        "tslib": "^2.3.0"
     },
     "devDependencies": {
         "@angular-devkit/core": "^19.2.4",
