@@ -25,6 +25,7 @@
     --bc-bg-light-color: #e8efff;
     --bc-bg-middle-color: #d9e2fc;
     --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-light-primary-color: var(--bc-light-primary-color);
     --bc-bg-error-color: #FFD6DE;
 }
 
@@ -38,6 +39,10 @@
 
 .bc-bg-primary-color {
     background-color: var(--bc-bg-primary-color);
+}
+
+.bc-bg-light-primary-color {
+    background-color: var(--bc-bg-light-primary-color);
 }
 
 .bc-bg-error-color {
