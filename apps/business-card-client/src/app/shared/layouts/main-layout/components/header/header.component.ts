@@ -2,18 +2,20 @@ import { Component } from '@angular/core';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { INavigationRoute } from '../../../../models/INavigationRoute';
+import { LogoComponent } from '../../../../components/logo/logo.component';
 
 @Component({
-    selector: 'main-header',
-    templateUrl: './main-header.component.html',
-    styleUrls: ['./main-header.component.scss'],
+    selector: 'bc-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
     imports: [
         ClickOutsideModule,
         RouterLink,
-        RouterLinkActive
-    ]
+        RouterLinkActive,
+        LogoComponent,
+    ],
 })
-export class MainHeaderComponent {
+export class HeaderComponent {
     protected navigationRoutes: INavigationRoute[] = [
         {
             title: 'Home',

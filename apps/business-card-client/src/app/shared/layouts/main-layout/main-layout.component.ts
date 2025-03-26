@@ -1,23 +1,19 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MainFooterComponent } from './components/main-footer/main-footer.component';
-import { MainHeaderComponent } from './components/main-header/main-header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 
 @Component({
-    selector: 'ec-main-layout',
+    selector: 'bcc-main-layout',
     templateUrl: './main-layout.component.html',
     styleUrl: './main-layout.component.scss',
     imports: [
         RouterOutlet,
-        MainFooterComponent,
-        MainHeaderComponent
-    ]
+        FooterComponent,
+        HeaderComponent,
+    ],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class MainLayoutComponent implements OnInit, AfterViewInit {
-    public ngOnInit() {
-    }
-
-    public ngAfterViewInit(): void {
-    }
+export class MainLayoutComponent {
 }

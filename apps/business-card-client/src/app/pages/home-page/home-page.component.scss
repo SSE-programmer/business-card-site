@@ -70,10 +70,10 @@
 
     .info {
         display: flex;
+        gap: var(--bc-gap-12);
         flex-wrap: wrap;
 
         .interests, .education, .workExperience {
-            margin: 10px 10px;
             width: 30%;
             min-width: 500px;
             padding-left: 30px;
@@ -101,7 +101,7 @@
                     display: inline-block;
                     height: 20px;
                     width: 20px;
-                    background-image: urrl("assets/icons/idea.svg");
+                    background-image: url("/assets/icons/idea.svg");
                     background-size: contain;
                     background-position: center;
                     margin-right: 10px;
@@ -112,7 +112,7 @@
         .interests {
             ul {
                 li::before {
-                    background-image: urrl("assets/icons/idea.svg");
+                    background-image: url("/assets/icons/idea.svg");
                 }
             }
         }
@@ -120,7 +120,7 @@
         .education {
             ul {
                 li::before {
-                    background-image: urrl("assets/icons/education.svg");
+                    background-image: url("/assets/icons/education.svg");
                 }
             }
         }
@@ -128,7 +128,7 @@
         .workExperience {
             ul {
                 li::before {
-                    background-image: urrl("assets/icons/work.svg");
+                    background-image: url("/assets/icons/work.svg");
                 }
             }
 

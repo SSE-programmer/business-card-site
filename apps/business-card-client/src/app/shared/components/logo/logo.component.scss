@@ -1,0 +1,12 @@
+:host {
+    width: 100%;
+    height: auto;
+    font-size: 28px;
+
+    .logo-name {
+        font-family: "Titan One", cursive;
+        font-size: inherit;
+        color: var(--bc-light-accent-color);
+        white-space: nowrap;
+    }
+}

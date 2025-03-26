@@ -1,0 +1,32 @@
+.header {
+    @media (max-width: 720px) {
+        flex-direction: column;
+    }
+
+    .links {
+        @media (max-width: 720px) {
+            gap: var(--bc-gap-4);
+        }
+
+        .links__item {
+            text-transform: uppercase;
+            transition: var(---bc-transition-duration-default);
+
+            @media (hover: hover) {
+                &:hover {
+                    transform: scale(var(---bc-transform-scale-default));
+                }
+            }
+
+            .link {
+                @media (max-width: 720px) {
+                    font-size: 18px;
+                }
+
+                &.active {
+                    border-bottom: 1px dashed var(--bc-light-accent-color);
+                }
+            }
+        }
+    }
+}

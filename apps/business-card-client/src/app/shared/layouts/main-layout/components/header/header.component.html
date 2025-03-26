@@ -1,16 +1,14 @@
-<header class="header">
-    <a
-        class="header__logo"
-        routerLink="home"
-    >
-        <h1 class="logo-name bc-h">SSE-programmer</h1>
+<header class="header bc-flex bc-gap-12 bc-flex-wrap bc-justify-between bc-items-center bc-bg-primary-color bc-pv-8 bc-ph-12">
+    <a routerLink="home">
+        <bcc-logo></bcc-logo>
     </a>
-    <nav class="header__navigation">
-        <ul class="navigation__links">
+
+    <nav class="bc-flex bc-flex-wrap bc-justify-between">
+        <ul class="links bc-flex bc-gap-16">
             @for (route of navigationRoutes; track $index) {
                 <li class="links__item">
                     <a
-                        class="link"
+                        class="link bc-pv-2 bc-ph-4 bc-font-patua bc-text-22 bc-light-accent-color"
                         [routerLink]="route.link"
                         routerLinkActive="active"
                     >
