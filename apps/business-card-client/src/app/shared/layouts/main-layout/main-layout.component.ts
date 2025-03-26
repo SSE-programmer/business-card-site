@@ -5,7 +5,7 @@ import { HeaderComponent } from './components/header/header.component';
 
 
 @Component({
-    selector: 'bcc-main-layout',
+    selector: 'bc-main-layout',
     templateUrl: './main-layout.component.html',
     styleUrl: './main-layout.component.scss',
     imports: [

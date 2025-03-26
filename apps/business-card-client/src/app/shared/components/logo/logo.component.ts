@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-    selector: 'bcc-logo',
+    selector: 'bc-logo',
     templateUrl: './logo.component.html',
     styleUrl: './logo.component.scss',
     imports: [],

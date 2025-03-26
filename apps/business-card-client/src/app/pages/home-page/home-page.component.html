@@ -1,79 +1,115 @@
-<div class="header">
+<div class="bc-flex bc-flex-col bc-gap-12 bc-flex-1 bc-justify-center bc-items-center">
     <img
-        class="header__photo"
+        class="avatar"
         ngSrc="assets/images/home/photo1.png"
         width="200"
         height="200"
     >
-    <div class="header__info-container">
-        <div class="title-container">
+    <div class="info-container bc-flex bc-flex-col bc-gap-24 bc-items-center bc-pb-16">
+        <div class="bc-flex bc-flex-col bc-items-center">
             <h1 class="bc-h">Stanislav Stolbennikov</h1>
-            <h2 class="bc-text-middle-color bc-h">Software Engineer</h2>
+            <h2 class="bc-h bc-text-middle-color">Software Engineer</h2>
         </div>
+
         <!-- Контакты -->
         <!-- https://icons8.ru/icon/set/%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B/ios-glyphs -->
-        <ul class="links">
-            @for (link of contactLinks; track $index) {
-                <li class="link-item">
+        <ul class="bc-flex bc-gap-12">
+            @for (item of contactsList; track item.link) {
+                <li>
                     <a
-                        class="link"
-                        [href]="link.link"
                         target="_blank"
+                        [href]="item.link"
                     >
                         <img
-                            class="link__icon"
-                            [ngSrc]="link.icon || ''"
-                            [alt]="link.title"
+                            class="link-icon"
+                            [ngSrc]="item.icon || ''"
+                            [alt]="item.title"
                             width="50"
                             height="50"
                         ></a>
                 </li>
             }
         </ul>
-        <div class="welcome">
-            <p>
-                <b>
-                    Hi, I am very glad to see you! <br />
-                    Here you can find out a little about me and contact me if necessary =)
-                </b>
-            </p>
+
+        <div class="bc-flex bc-flex-col bc-gap-8">
+            <h3 class="bc-h bc-text-center">🚀 Welcome to My Digital Space!<br /></h3>
+
+            <div class="bc-flex bc-flex-col">
+                <p class="bc-text-center">Hi there! I'm a Frontend Developer passionate about crafting clean,
+                    responsive,
+                    and user-friendly web experiences.</p>
+
+                <p class="bc-text-center">With a strong focus on Angular, I turn ideas into dynamic, scalable
+                    applications.</p>
+
+                <p class="bc-text-center">Explore my projects, skills, and let’s build something amazing together!</p>
+            </div>
+
+            <h3 class="bc-h bc-text-center">Code. Create. Collaborate.</h3>
+
         </div>
     </div>
 </div>
 
-<div class="body">
-    <div class="info">
-        <div class="interests">
-            <h1>Interests</h1>
-            <ul>
-                <li>Web application development</li>
-                <li>Application software development</li>
+<div class="bc-flex bc-flex-col bc-gap-12 bc-flex-wrap bc-items-center">
+    <bc-card
+        header="🌱 My Interests & Learning Path"
+    >
+        <ng-template #contentTemplate>
+            <b>I’m passionate about technology beyond Frontend—currently exploring:</b>
+
+            <ul class="bc-flex bc-flex-col bc-gap-4">
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">👨‍💻 Backend Development:</h4>Experimenting with Bun and Elysia.js for lightweight server-side
+                    solutions.
+                </li>
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">🦀 Rust:</h4> Learning the basics to write performant, safe code (future Web3 ambitions).
+                </li>
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">📦 Web3:</h4> Diving into blockchain concepts to eventually transition into decentralized apps.
+                </li>
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">🎮 Game Dev:</h4> Dreaming of building my own MMORPG—starting with small prototypes.
+                </li>
             </ul>
-        </div>
-        <div class="education">
-            <h1>Education</h1>
-            <ul>
-                <li>High school diploma, 2014
+
+            <b>Curiosity-driven, always expanding the stack!</b>
+        </ng-template>
+    </bc-card>
+
+    <bc-card
+        header="🎓 Education"
+    >
+        <ng-template #contentTemplate>
+            <ul class="bc-flex bc-flex-col bc-gap-8">
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">📜  High school diploma, 2014</h4>
                     <p>Novosibirsk State University Higher College of Informatics</p>
                 </li>
-                <li>Diploma in System Software, 2021
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">📜  Diploma in System Software, 2021</h4>
                     <p>Siberian State University of Telecommunications and Information Sciences</p>
                 </li>
-
             </ul>
-        </div>
-        <div class="workExperience">
-            <h1>Work experience</h1>
-            <ul>
-                <li>OOO "Smart Consulting", Russia
+        </ng-template>
+    </bc-card>
+
+    <bc-card
+        header="💼 Work experience"
+    >
+        <ng-template #contentTemplate>
+            <ul class="bc-flex bc-flex-col bc-gap-8">
+                <li class="bc-flex bc-flex-col">
+                    <h4 class="bc-h">OOO "Smart Consulting", Russia</h4>
                     <div class="position">
                         <p>[-- Junior Software Engineer --]</p>
                     </div>
                     <div class="employmentsDates">
-                        <p><strong>Dates of employment:</strong> July 2021 - Until today</p>
+                        <p><b>Dates of employment:</b> July 2021 - Until today</p>
                     </div>
                 </li>
             </ul>
-        </div>
-    </div>
+        </ng-template>
+    </bc-card>
 </div>

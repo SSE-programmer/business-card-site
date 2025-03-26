@@ -1,17 +1,19 @@
 import { Component } from '@angular/core';
 import { NgOptimizedImage } from '@angular/common';
 import { INavigationRoute } from '../../shared/models/INavigationRoute';
+import { CardComponent } from '../../shared/components/card/card.component';
 
 @Component({
     selector: 'app-body',
     templateUrl: './home-page.component.html',
     styleUrls: ['./home-page.component.scss'],
     imports: [
-        NgOptimizedImage
-    ]
+        NgOptimizedImage,
+        CardComponent,
+    ],
 })
 export class HomePageComponent {
-    protected contactLinks: INavigationRoute[] = [
+    protected contactsList: INavigationRoute[] = [
         {
             title: 'Email',
             link: 'mailto:sstolbennikov@gmail.com',

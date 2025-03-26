@@ -28,39 +28,6 @@ body {
     font-size: var(---bc-font-size-default);
 }
 
-
-h1.bc-h,
-h2.bc-h,
-h3.bc-h,
-h4.bc-h,
-h5.bc-h {
-    font-style: normal;
-    font-weight: 700;
-    line-height: 120%;
-}
-
-h1.bc-h {
-    font-size: 40px;
-}
-
-h2.bc-h {
-    font-size: 34px;
-}
-
-h3.bc-h {
-    font-size: 28px;
-}
-
-h4.bc-h {
-    font-size: 22px;
-    font-weight: 500;
-}
-
-h5.bc-h {
-    font-size: 18px;
-    font-weight: 500;
-}
-
 router-outlet {
     display: none;
 }

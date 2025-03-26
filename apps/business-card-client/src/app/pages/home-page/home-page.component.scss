@@ -4,163 +4,29 @@
     gap: var(--bc-gap-24);
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    gap: var(--bc-gap-12);
-    flex-grow: 1;
-    justify-content: center;
-    align-items: center;
+.avatar {
+    border-radius: 100%;
+    box-shadow: 0 0 20px var(--bc-shadow-default-color), 0 0 10px var(--bc-shadow-default-color) inset;
+    overflow: hidden;
+    transition: .5s;
+    cursor: pointer;
 
-    &__photo {
-        border-radius: 100%;
-        box-shadow: 0 0 20px var(--bc-shadow-default-color), 0 0 10px var(--bc-shadow-default-color) inset;
-        overflow: hidden;
-        transition: .5s;
-        cursor: pointer;
+    @media (hover: hover) {
+        &:hover {
+            box-shadow: 0 0 10px var(--bc-shadow-default-color), 0 0 20px var(--bc-shadow-default-color) inset;
+            transform: scale(var(---bc-transform-scale-default));
+        }
+    }
+}
+
+.info-container {
+    .link-icon {
+        transition: var(---bc-transition-duration-default);
 
         @media (hover: hover) {
             &:hover {
-                box-shadow: 0 0 30px var(--bc-shadow-default-color), 0 0 15px var(--bc-shadow-default-color) inset;
+                filter: brightness(0.8);
                 transform: scale(var(---bc-transform-scale-default));
-            }
-        }
-    }
-
-    &__info-container {
-        display: flex;
-        flex-direction: column;
-        gap: var(--bc-gap-24);
-        align-items: center;
-        padding-bottom: var(--bc-padding-16);
-        border-bottom: 2px solid var(--bc-border-default-color);
-
-        .title-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .links {
-            list-style-type: none;
-            padding: 0;
-
-            .link-item {
-                display: inline;
-                margin: 0 10px;
-
-                .link__icon {
-                    transition: var(---bc-transition-duration-default);
-
-                    @media (hover: hover) {
-                        &:hover {
-                            filter: brightness(1.5);
-                            transform: scale(var(---bc-transform-scale-default));
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-.body {
-    display: flex;
-    flex-direction: column;
-
-    .info {
-        display: flex;
-        gap: var(--bc-gap-12);
-        flex-wrap: wrap;
-
-        .interests, .education, .workExperience {
-            width: 30%;
-            min-width: 500px;
-            padding-left: 30px;
-            border: var(--bc-border-default-color) 2px dashed;
-            flex-grow: 1;
-
-            ul {
-                padding-left: 0;
-
-                li {
-                    margin-left: 0;
-                    padding-left: 0;
-                    list-style: none;
-                    margin-bottom: 20px;
-
-                    p {
-                        font-weight: normal;
-                        margin-top: 0;
-                        margin-bottom: 0;
-                    }
-                }
-
-                li::before {
-                    content: '';
-                    display: inline-block;
-                    height: 20px;
-                    width: 20px;
-                    background-image: url("/assets/icons/idea.svg");
-                    background-size: contain;
-                    background-position: center;
-                    margin-right: 10px;
-                }
-            }
-        }
-
-        .interests {
-            ul {
-                li::before {
-                    background-image: url("/assets/icons/idea.svg");
-                }
-            }
-        }
-
-        .education {
-            ul {
-                li::before {
-                    background-image: url("/assets/icons/education.svg");
-                }
-            }
-        }
-
-        .workExperience {
-            ul {
-                li::before {
-                    background-image: url("/assets/icons/work.svg");
-                }
-            }
-
-            .employmentsDates {
-                color: #4f4f50;
-
-                p {
-                    font-weight: normal;
-                    margin-top: 0;
-
-                    strong {
-                        margin-right: 5px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (max-width: 600px) {
-    .rightSide {
-        display: flex;
-        flex-grow: 2;
-        flex-direction: column;
-
-        .info {
-            flex-direction: column;
-
-            .interests, .education, .workExperience {
-                min-width: 300px;
-                margin-left: auto;
-                margin-right: auto;
             }
         }
     }
