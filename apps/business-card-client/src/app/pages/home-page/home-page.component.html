@@ -17,16 +17,12 @@
             @for (item of contactsList; track item.link) {
                 <li>
                     <a
+                        class="bc-block bc-animation-zoom"
                         target="_blank"
                         [href]="item.link"
                     >
-                        <img
-                            class="link-icon"
-                            [ngSrc]="item.icon || ''"
-                            [alt]="item.title"
-                            width="50"
-                            height="50"
-                        ></a>
+                        <ng-container *ngComponentOutlet="item.icon"></ng-container>
+                    </a>
                 </li>
             }
         </ul>

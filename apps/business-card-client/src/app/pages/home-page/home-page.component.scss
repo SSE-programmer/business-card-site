@@ -18,16 +18,3 @@
         }
     }
 }
-
-.info-container {
-    .link-icon {
-        transition: var(---bc-transition-duration-default);
-
-        @media (hover: hover) {
-            &:hover {
-                filter: brightness(0.8);
-                transform: scale(var(---bc-transform-scale-default));
-            }
-        }
-    }
-}

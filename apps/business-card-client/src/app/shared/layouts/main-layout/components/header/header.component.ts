@@ -3,6 +3,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { INavigationRoute } from '../../../../models/INavigationRoute';
 import { LogoComponent } from '../../../../components/logo/logo.component';
+import { IconSettingsComponent } from '../../../../components/icons/icon-settings/icon-settings.component';
 
 @Component({
     selector: 'bc-header',
@@ -13,6 +14,7 @@ import { LogoComponent } from '../../../../components/logo/logo.component';
         RouterLink,
         RouterLinkActive,
         LogoComponent,
+        IconSettingsComponent,
     ],
 })
 export class HeaderComponent {

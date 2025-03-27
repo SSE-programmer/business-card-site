@@ -1,7 +1,11 @@
 import { Component } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
-import { INavigationRoute } from '../../shared/models/INavigationRoute';
+import { NgComponentOutlet, NgOptimizedImage } from '@angular/common';
 import { CardComponent } from '../../shared/components/card/card.component';
+import { IconGithubComponent } from '../../shared/components/icons/icon-github/icon-github.component';
+import { IconTelegramComponent } from '../../shared/components/icons/icon-telegram/icon-telegram.component';
+import { IconInstagramComponent } from '../../shared/components/icons/icon-instagram/icon-instagram.component';
+import { IIconsLinks } from './models/IIconsLinks';
+import { IconMailComponent } from '../../shared/components/icons/icon-mail/icon-mail.component';
 
 @Component({
     selector: 'app-body',
@@ -10,29 +14,30 @@ import { CardComponent } from '../../shared/components/card/card.component';
     imports: [
         NgOptimizedImage,
         CardComponent,
+        NgComponentOutlet,
     ],
 })
 export class HomePageComponent {
-    protected contactsList: INavigationRoute[] = [
+    protected contactsList: IIconsLinks[] = [
         {
-            title: 'Email',
+            alt: 'Email',
             link: 'mailto:sstolbennikov@gmail.com',
-            icon: 'assets/icons/mail-icon.svg',
+            icon: IconMailComponent,
         },
         {
-            title: 'Telegram',
+            alt: 'Telegram',
             link: 'https://t.me/sse_programmer',
-            icon: 'assets/icons/telegram-icon.svg',
+            icon: IconTelegramComponent,
         },
         {
-            title: 'Github',
+            alt: 'Github',
             link: 'https://github.com/SSE-programmer',
-            icon: 'assets/icons/github-icon.svg',
+            icon: IconGithubComponent,
         },
         {
-            title: 'Instagram',
+            alt: 'Instagram',
             link: 'https://www.instagram.com/sse.public/',
-            icon: 'assets/icons/instagram-icon.svg',
-        }
+            icon: IconInstagramComponent,
+        },
     ];
 }

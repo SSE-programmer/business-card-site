@@ -10,13 +10,6 @@
 
         .links__item {
             text-transform: uppercase;
-            transition: var(---bc-transition-duration-default);
-
-            @media (hover: hover) {
-                &:hover {
-                    transform: scale(var(---bc-transform-scale-default));
-                }
-            }
 
             .link {
                 @media (max-width: 720px) {
