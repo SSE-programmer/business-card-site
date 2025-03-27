@@ -30,10 +30,6 @@ export class HeaderComponent {
         {
             title: 'Blog',
             link: '/blog'
-        },
-        {
-            title: 'Contacts',
-            link: '/contacts'
         }
     ];
 }

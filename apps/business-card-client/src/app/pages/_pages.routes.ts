@@ -41,11 +41,5 @@ export const _pagesRoutes: Routes = [
         loadComponent: () =>
             import('./blog/article-detail-page/article-detail-page.component')
                 .then(m => m.ArticleDetailPageComponent)
-    },
-    {
-        path: 'contacts',
-        loadComponent: () =>
-            import('./contacts-page/contacts-page.component')
-                .then(m => m.ContactsPageComponent)
-    },
-]
+    }
+];
