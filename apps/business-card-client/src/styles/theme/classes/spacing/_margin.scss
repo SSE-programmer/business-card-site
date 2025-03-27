@@ -26,4 +26,14 @@ $margins: 0, 2, 4, 6, 8, 12, 16, 24;
     .bc-ml-#{$margin} {
         margin-left: var(--bc-margin-#{$margin});
     }
+
+    .bc-mv-#{$margin} {
+        margin-top: var(--bc-margin-#{$margin});
+        margin-bottom: var(--bc-margin-#{$margin});
+    }
+
+    .bc-mh-#{$margin} {
+        margin-left: var(--bc-margin-#{$margin});
+        margin-right: var(--bc-margin-#{$margin});
+    }
 }
