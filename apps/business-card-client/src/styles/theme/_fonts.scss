@@ -26,14 +26,11 @@
     font-weight: normal;
 }
 
-h1.bc-h,
-h2.bc-h,
-h3.bc-h,
-h4.bc-h,
-h5.bc-h {
+.bc-h {
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
+    color: var(--bc-text-default-color);
 }
 
 h1.bc-h {

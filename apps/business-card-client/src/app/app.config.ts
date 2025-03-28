@@ -1,4 +1,10 @@
-import { ApplicationConfig, LOCALE_ID, provideEnvironmentInitializer, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import {
+    APP_INITIALIZER,
+    ApplicationConfig, inject,
+    LOCALE_ID, provideAppInitializer,
+    provideEnvironmentInitializer,
+    provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import { provideRouter, withComponentInputBinding, withEnabledBlockingInitialNavigation, withHashLocation } from '@angular/router';
 import { routes } from './app.routes';
 import { registerLocaleData } from '@angular/common';
@@ -8,6 +14,7 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { ELocale } from './shared/enums/locale.enum';
 import { APP_DATE_FORMATS, AppDateAdapter } from './shared/adapters/date.adapter';
+import { ThemeService } from './shared/services/theme.service';
 
 registerLocaleData(localeRu);
 
@@ -39,5 +46,6 @@ export const appConfig: ApplicationConfig = {
             provide: LOCALE_ID,
             useValue: ELocale.RU,
         },
+        provideAppInitializer(() => void inject(ThemeService))
     ],
 };

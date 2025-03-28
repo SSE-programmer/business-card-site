@@ -1,10 +1,6 @@
 :root {
     --bc-white-color: #FFFFFF;
 
-    --bc-text-default-color: #343434;
-    --bc-text-middle-color: #3f3f41;
-    --bc-text-light-color: #c0c0c0;
-
     --bc-border-default-color: #272736;
 
     --bc-shadow-default-color: #272736;
@@ -25,8 +21,11 @@
     --bc-bg-light-color: #f8ffff;
     --bc-bg-middle-color: #dfe8ff;
     --bc-bg-primary-color: var(--bc-primary-color);
-    --bc-bg-light-primary-color: var(--bc-light-primary-color);
     --bc-bg-error-color: #FFD6DE;
+
+    --bc-text-default-color: var(--bc-primary-color);
+    --bc-text-middle-color: var(--bc-middle-primary-color);
+    --bc-text-light-color: var(--bc-light-primary-color);
 }
 
 .bc-theme-blue {
@@ -41,10 +40,13 @@
     --bc-accent-color: #4d4dc8;
     --bc-light-accent-color: #e7e7e8;
 
-    --bc-bg-light-color: #f8ffff;
-    --bc-bg-middle-color: #dfe8ff;
     --bc-bg-primary-color: var(--bc-primary-color);
-    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+    --bc-bg-middle-color: #34344e;
+    --bc-bg-light-color: #f8ffff;
+
+    --bc-text-default-color: var(--bc-primary-color);
+    --bc-text-middle-color: var(--bc-middle-primary-color);
+    --bc-text-light-color: var(--bc-light-primary-color);
 }
 
 .bc-theme-red {
@@ -59,10 +61,13 @@
     --bc-accent-color: #c84d4d;
     --bc-light-accent-color: #edecec;
 
-    --bc-bg-light-color: #fff8f8;
-    --bc-bg-middle-color: #fff6f6;
     --bc-bg-primary-color: var(--bc-primary-color);
-    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+    --bc-bg-middle-color: #502c2c;
+    --bc-bg-light-color: #fff8f8;
+
+    --bc-text-default-color: var(--bc-primary-color);
+    --bc-text-middle-color: var(--bc-middle-primary-color);
+    --bc-text-light-color: var(--bc-light-primary-color);
 }
 
 .bc-theme-yellow {
@@ -77,10 +82,13 @@
     --bc-accent-color: #c8c64d;
     --bc-light-accent-color: #efefee;
 
-    --bc-bg-light-color: #fffffa;
-    --bc-bg-middle-color: #ffffee;
     --bc-bg-primary-color: var(--bc-primary-color);
-    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+    --bc-bg-middle-color: #404205;
+    --bc-bg-light-color: #fffffa;
+
+    --bc-text-default-color: var(--bc-primary-color);
+    --bc-text-middle-color: var(--bc-middle-primary-color);
+    --bc-text-light-color: var(--bc-light-primary-color);
 }
 
 .bc-theme-green {
@@ -95,10 +103,38 @@
     --bc-accent-color: #64c84d;
     --bc-light-accent-color: #f0f1f0;
 
-    --bc-bg-light-color: #fbfff8;
-    --bc-bg-middle-color: #f0fdec;
     --bc-bg-primary-color: var(--bc-primary-color);
-    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+    --bc-bg-middle-color: #1a4504;
+    --bc-bg-light-color: #fbfff8;
+
+    --bc-text-default-color: var(--bc-primary-color);
+    --bc-text-middle-color: var(--bc-middle-primary-color);
+    --bc-text-light-color: var(--bc-light-primary-color);
+}
+
+.bc-theme-black {
+    --bc-border-default-color: #c6c6c6;
+
+    --bc-shadow-default-color: #9e9e9e;
+
+    --bc-primary-color: #000000;
+    --bc-middle-primary-color: #2c2c2c;
+    --bc-light-primary-color: #494949;
+
+    --bc-accent-color: #fafafa;
+    --bc-light-accent-color: #ececec;
+
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-middle-color: #222222;
+    --bc-bg-light-color: #121212;
+
+    --bc-text-default-color: #fafafa;
+    --bc-text-middle-color: #bfbfbf;
+    --bc-text-light-color: var(--bc-light-primary-color);
+
+    * {
+        box-shadow: none !important;
+    }
 }
 
 .bc-bg-light-color {
@@ -111,10 +147,6 @@
 
 .bc-bg-primary-color {
     background-color: var(--bc-bg-primary-color);
-}
-
-.bc-bg-light-primary-color {
-    background-color: var(--bc-bg-light-primary-color);
 }
 
 .bc-bg-error-color {
