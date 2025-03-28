@@ -1,5 +1,4 @@
-import { BehaviorSubject } from 'rxjs';
-import { Injectable } from '@angular/core';
+import { effect, Injectable, signal } from '@angular/core';
 
 export enum EThemeType {
     Blue = 'blue',
@@ -8,19 +7,30 @@ export enum EThemeType {
     Green = 'green',
 }
 
+export const DEFAULT_THEME = EThemeType.Blue;
+
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-    private _darkTheme = new BehaviorSubject<boolean>(false);
-    public isDarkTheme$ = this._darkTheme.asObservable();
+    private readonly _colorTheme = signal<EThemeType>(this.loadInitialThemeState());
+    public readonly colorTheme = this._colorTheme.asReadonly();
 
-    private _colorTheme = new BehaviorSubject<EThemeType>(EThemeType.Blue);
-    public colorTheme$ = this._colorTheme.asObservable();
-
-    public toggleDarkTheme(): void {
-        this._darkTheme.next(!this._darkTheme.value);
+    constructor() {
+        effect(() => {
+            localStorage.setItem('theme:color', JSON.stringify(this._colorTheme()));
+        });
     }
 
     public toggleColorTheme(theme: EThemeType): void {
-        this._colorTheme.next(theme);
+        this._colorTheme.update(() => theme);
+    }
+
+    private loadInitialThemeState() {
+        const saved = localStorage.getItem('theme:color');
+
+        if (saved !== null) {
+            return JSON.parse(saved);
+        }
+
+        return DEFAULT_THEME;
     }
 }
