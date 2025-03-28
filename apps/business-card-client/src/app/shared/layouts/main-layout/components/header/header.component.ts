@@ -4,6 +4,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 import { INavigationRoute } from '../../../../models/INavigationRoute';
 import { LogoComponent } from '../../../../components/logo/logo.component';
 import { IconSettingsComponent } from '../../../../components/icons/icon-settings/icon-settings.component';
+import { SettingsMenuComponent } from './components/settings-menu/settings-menu.component';
 
 @Component({
     selector: 'bc-header',
@@ -15,10 +16,11 @@ import { IconSettingsComponent } from '../../../../components/icons/icon-setting
         RouterLinkActive,
         LogoComponent,
         IconSettingsComponent,
+        SettingsMenuComponent,
     ],
 })
 export class HeaderComponent {
-    protected navigationRoutes: INavigationRoute[] = [
+    public navigationRoutes: INavigationRoute[] = [
         {
             title: 'Home',
             link: '/home'
@@ -32,4 +34,10 @@ export class HeaderComponent {
             link: '/blog'
         }
     ];
+
+    public showSettingsMenu = false;
+
+    public toggleSettingsMenu() {
+        this.showSettingsMenu = !this.showSettingsMenu;
+    }
 }

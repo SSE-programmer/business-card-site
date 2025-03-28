@@ -1,0 +1,14 @@
+<div class="settings-menu bc-flex bc-gap-12 bc-items-center bc-justify-end bc-bg-light-primary-color bc-p-6">
+    <h5 class="bc-h bc-font-patua-one bc-light-accent-color">Color scheme:</h5>
+
+    <div class="bc-flex bc-gap-4 bc-items-center">
+        @for (theme of themes; track theme) {
+            <div class="bc-theme-{{theme}}">
+                <bc-color-selector
+                    class="bc-accent-color bc-animation-zoom"
+                    (click)="toggleColorTheme(theme)"
+                ></bc-color-selector>
+            </div>
+        }
+    </div>
+</div>

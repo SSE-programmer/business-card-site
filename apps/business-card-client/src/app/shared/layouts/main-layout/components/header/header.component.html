@@ -18,8 +18,14 @@
             }
         </ul>
 
-        <bc-icon-settings
-            role="button"
-        ></bc-icon-settings>
+        <div class="bc-flex bc-items-center">
+            <bc-icon-settings
+                role="button"
+                (click)="toggleSettingsMenu()"
+            ></bc-icon-settings>
+        </div>
     </nav>
 </header>
+@if (showSettingsMenu) {
+    <bc-settings-menu></bc-settings-menu>
+}
