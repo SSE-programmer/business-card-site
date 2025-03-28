@@ -34,9 +34,19 @@ export class ThemeService {
     private _loadInitialThemeState() {
         const saved = localStorage.getItem(STORAGE_FIELD_NAME);
 
-        return Object
+        const foundedTheme = Object
             .values(EThemeType)
-            .find((theme: EThemeType) => theme === saved) || DEFAULT_THEME;
+            .find((theme: EThemeType) => theme === saved);
+
+        if (foundedTheme) {
+            return foundedTheme;
+        }
+
+        if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+            return confirm('🌙 We noticed your dark theme. Use it here?') ? EThemeType.Black : DEFAULT_THEME;
+        }
+
+        return DEFAULT_THEME;
     }
 
     private _applyThemeToBody(theme: EThemeType): void {
