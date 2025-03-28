@@ -1,0 +1,9 @@
+:host {
+    display: block;
+    width: 25px;
+    aspect-ratio: 1 / 1;
+    background-color: currentColor;
+    border: 2px solid var(--bc-light-accent-color);
+    border-radius: 100%;
+    cursor: pointer;
+}

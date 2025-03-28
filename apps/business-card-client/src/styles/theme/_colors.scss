@@ -13,7 +13,7 @@
     --bc-middle-primary-color: #272736;
     --bc-light-primary-color: #44445e;
 
-    --bc-accent-color: #7c7ccc;
+    --bc-accent-color: #4d4dc8;
     --bc-light-accent-color: #d4d4d5;
 
     --bc-gray-default-color: #9A9A9A;
@@ -22,11 +22,83 @@
 
     --bc-error-color: #FF3F3F;
 
-    --bc-bg-light-color: #e8efff;
+    --bc-bg-light-color: #f8ffff;
     --bc-bg-middle-color: #dfe8ff;
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-light-primary-color: var(--bc-light-primary-color);
     --bc-bg-error-color: #FFD6DE;
+}
+
+.bc-theme-blue {
+    --bc-border-default-color: #272736;
+
+    --bc-shadow-default-color: #272736;
+
+    --bc-primary-color: #222231;
+    --bc-middle-primary-color: #272736;
+    --bc-light-primary-color: #44445e;
+
+    --bc-accent-color: #4d4dc8;
+    --bc-light-accent-color: #e7e7e8;
+
+    --bc-bg-light-color: #f8ffff;
+    --bc-bg-middle-color: #dfe8ff;
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+}
+
+.bc-theme-red {
+    --bc-border-default-color: #362727;
+
+    --bc-shadow-default-color: #362727;
+
+    --bc-primary-color: #371e1e;
+    --bc-middle-primary-color: #362727;
+    --bc-light-primary-color: #6a4242;
+
+    --bc-accent-color: #c84d4d;
+    --bc-light-accent-color: #edecec;
+
+    --bc-bg-light-color: #fff8f8;
+    --bc-bg-middle-color: #fff6f6;
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+}
+
+.bc-theme-yellow {
+    --bc-border-default-color: #363627;
+
+    --bc-shadow-default-color: #363627;
+
+    --bc-primary-color: #282900;
+    --bc-middle-primary-color: #353627;
+    --bc-light-primary-color: #5d5e44;
+
+    --bc-accent-color: #c8c64d;
+    --bc-light-accent-color: #efefee;
+
+    --bc-bg-light-color: #fffffa;
+    --bc-bg-middle-color: #ffffee;
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-light-primary-color: var(--bc-light-primary-color);
+}
+
+.bc-theme-green {
+    --bc-border-default-color: #2a3627;
+
+    --bc-shadow-default-color: #293627;
+
+    --bc-primary-color: #0e2500;
+    --bc-middle-primary-color: #2a3627;
+    --bc-light-primary-color: #495e44;
+
+    --bc-accent-color: #64c84d;
+    --bc-light-accent-color: #f0f1f0;
+
+    --bc-bg-light-color: #fbfff8;
+    --bc-bg-middle-color: #f0fdec;
+    --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-light-primary-color: var(--bc-light-primary-color);
 }
 
 .bc-bg-light-color {
@@ -68,7 +140,6 @@
 .bc-border-default-color {
     color: var(--bc-border-default-color);
 }
-
 
 .bc-shadow-default-color {
     color: var(--bc-shadow-default-color);

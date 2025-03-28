@@ -1,3 +1,29 @@
 .bc-default-border {
     border: var(--bc-border-default-color) 2px dashed;
 }
+
+.bc-default-border-t {
+    border-top: var(--bc-border-default-color) 2px dashed;
+}
+
+.bc-default-border-r {
+    border-right: var(--bc-border-default-color) 2px dashed;
+}
+
+.bc-default-border-b {
+    border-bottom: var(--bc-border-default-color) 2px dashed;
+}
+
+.bc-default-border-l {
+    border-left: var(--bc-border-default-color) 2px dashed;
+}
+
+.bc-default-border-v {
+    border-top: var(--bc-border-default-color) 2px dashed;
+    border-bottom: var(--bc-border-default-color) 2px dashed;
+}
+
+.bc-default-border-h {
+    border-left: var(--bc-border-default-color) 2px dashed;
+    border-right: var(--bc-border-default-color) 2px dashed;
+}
