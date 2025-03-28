@@ -15,11 +15,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
         trigger('hostHeightAnimation', [
             transition(':enter', [
                 style({ maxHeight: '0', opacity: 0, overflow: 'hidden' }),
-                animate('300ms ease-out', style({ maxHeight: '33px', opacity: 1 })),
+                animate('200ms ease-out', style({ maxHeight: '33px', opacity: 1 })),
             ]),
             transition(':leave', [
                 style({ maxHeight: '33px', opacity: 1, overflow: 'hidden' }),
-                animate('300ms ease-in', style({ maxHeight: '0', opacity: 0 })),
+                animate('200ms ease-in', style({ maxHeight: '0', opacity: 0 })),
             ]),
         ]),
     ],
