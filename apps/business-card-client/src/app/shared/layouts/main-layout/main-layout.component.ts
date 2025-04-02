@@ -2,7 +2,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SnakeLinesEffectComponent } from '../../components/snake-lines-effect/snake-lines-effect.component';
 
 
 @Component({
@@ -12,8 +11,7 @@ import { SnakeLinesEffectComponent } from '../../components/snake-lines-effect/s
     imports: [
         RouterOutlet,
         FooterComponent,
-        HeaderComponent,
-        SnakeLinesEffectComponent,
+        HeaderComponent
     ],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
