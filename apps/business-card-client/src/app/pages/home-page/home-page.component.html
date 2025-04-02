@@ -4,6 +4,7 @@
         ngSrc="assets/images/home/photo1.png"
         width="200"
         height="200"
+        priority
     >
     <div class="info-container bc-flex bc-flex-col bc-gap-24 bc-items-center bc-pb-16">
         <div class="bc-flex bc-flex-col bc-items-center">
@@ -111,6 +112,8 @@
             </ul>
         </ng-template>
     </bc-card>
+
+    <bc-career-timeline [workData]="workExperience"></bc-career-timeline>
 
     <bc-card
         header="💼 Work experience"
