@@ -6,7 +6,7 @@ import { IconTelegramComponent } from '../../shared/components/icons/icon-telegr
 import { IconInstagramComponent } from '../../shared/components/icons/icon-instagram/icon-instagram.component';
 import { IIconsLinks } from './models/IIconsLinks';
 import { IconMailComponent } from '../../shared/components/icons/icon-mail/icon-mail.component';
-import { CareerTimelineComponent, WorkExperience } from '../../shared/components/career-timeline/career-timeline.component';
+import { CareerTimelineComponent, IWorkExperience } from '../../shared/components/career-timeline/career-timeline.component';
 
 @Component({
     selector: 'app-body',
@@ -43,7 +43,7 @@ export class HomePageComponent {
         },
     ];
 
-    workExperience: WorkExperience[] = [
+    workExperience: IWorkExperience[] = [
         {
             company: 'Google',
             positions: [

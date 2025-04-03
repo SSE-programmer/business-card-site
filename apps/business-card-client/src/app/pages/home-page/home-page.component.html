@@ -50,6 +50,37 @@
 
 <div class="bc-flex bc-flex-col bc-gap-12 bc-flex-wrap bc-items-center">
     <bc-card
+        header="💼 Work experience"
+    >
+        <ng-template #contentTemplate>
+            <bc-career-timeline [workData]="workExperience"></bc-career-timeline>
+        </ng-template>
+    </bc-card>
+
+    <bc-card
+        header="🎓 Education"
+    >
+        <ng-template #contentTemplate>
+            <ul class="bc-flex bc-flex-col bc-gap-8">
+                <li class="bc-flex bc-gap-8">
+                    📜
+                    <div class="bc-flex bc-flex-col">
+                        <h4 class="bc-h">High school diploma, 2014</h4>
+                        <p>Novosibirsk State University Higher College of Informatics</p>
+                    </div>
+                </li>
+                <li class="bc-flex bc-gap-8">
+                    📜
+                    <div class="bc-flex bc-flex-col">
+                        <h4 class="bc-h">Diploma in System Software, 2021</h4>
+                        <p>Siberian State University of Telecommunications and Information Sciences</p>
+                    </div>
+                </li>
+            </ul>
+        </ng-template>
+    </bc-card>
+
+    <bc-card
         header="🌱 My Interests & Learning Path"
     >
         <ng-template #contentTemplate>
@@ -87,49 +118,6 @@
             </ul>
 
             <b>Curiosity-driven, always expanding the stack!</b>
-        </ng-template>
-    </bc-card>
-
-    <bc-card
-        header="🎓 Education"
-    >
-        <ng-template #contentTemplate>
-            <ul class="bc-flex bc-flex-col bc-gap-8">
-                <li class="bc-flex bc-gap-8">
-                    📜
-                    <div class="bc-flex bc-flex-col">
-                        <h4 class="bc-h">High school diploma, 2014</h4>
-                        <p>Novosibirsk State University Higher College of Informatics</p>
-                    </div>
-                </li>
-                <li class="bc-flex bc-gap-8">
-                    📜
-                    <div class="bc-flex bc-flex-col">
-                        <h4 class="bc-h">Diploma in System Software, 2021</h4>
-                        <p>Siberian State University of Telecommunications and Information Sciences</p>
-                    </div>
-                </li>
-            </ul>
-        </ng-template>
-    </bc-card>
-
-    <bc-career-timeline [workData]="workExperience"></bc-career-timeline>
-
-    <bc-card
-        header="💼 Work experience"
-    >
-        <ng-template #contentTemplate>
-            <ul class="bc-flex bc-flex-col bc-gap-8">
-                <li class="bc-flex bc-flex-col">
-                    <h4 class="bc-h">OOO "Smart Consulting", Russia</h4>
-                    <div class="position">
-                        <p>[-- Junior Software Engineer --]</p>
-                    </div>
-                    <div class="employmentsDates">
-                        <p><b>Dates of employment:</b> July 2021 - Until today</p>
-                    </div>
-                </li>
-            </ul>
         </ng-template>
     </bc-card>
 </div>
