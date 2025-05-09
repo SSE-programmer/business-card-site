@@ -33,7 +33,7 @@
             right: 0;
             top: 50%;
             width: calc(100% + 10px);
-            height: 1px;
+            min-height: 1px;
             background: linear-gradient(to right, var(--bc-border-default-color) 50%, transparent 50%);
             background-size: 4px 1px;
             background-repeat: repeat-x;
