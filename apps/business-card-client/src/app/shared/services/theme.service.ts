@@ -9,30 +9,31 @@ export enum EThemeType {
 }
 
 export const DEFAULT_THEME = EThemeType.Blue;
-export const STORAGE_FIELD_NAME = 'theme:color';
+export const STORAGE_THEME_FIELD_NAME = 'theme:color';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-    private readonly themePrefix = 'bc-theme-';
-    private readonly _colorTheme = signal<EThemeType>(this._loadInitialThemeState());
+    public readonly colorTheme = signal<EThemeType>(this._loadInitialThemeState());
+
+    private readonly _themePrefix = 'bc-theme-';
 
     constructor() {
-        this._applyThemeToBody(this._colorTheme());
+        this._applyThemeToBody(this.colorTheme());
 
         effect(() => {
-            const theme = this._colorTheme();
+            const theme = this.colorTheme();
 
-            localStorage.setItem(STORAGE_FIELD_NAME, theme);
+            localStorage.setItem(STORAGE_THEME_FIELD_NAME, theme);
             this._applyThemeToBody(theme);
         });
     }
 
     public toggleColorTheme(theme: EThemeType): void {
-        this._colorTheme.update(() => theme);
+        this.colorTheme.update(() => theme);
     }
 
     private _loadInitialThemeState() {
-        const saved = localStorage.getItem(STORAGE_FIELD_NAME);
+        const saved = localStorage.getItem(STORAGE_THEME_FIELD_NAME);
 
         const foundedTheme = Object
             .values(EThemeType)
@@ -52,10 +53,10 @@ export class ThemeService {
     private _applyThemeToBody(theme: EThemeType): void {
         const classList = document.body.classList;
         Array.from(classList)
-            .filter(className => className.startsWith(this.themePrefix))
+            .filter(className => className.startsWith(this._themePrefix))
             .forEach(className => classList.remove(className));
 
-        classList.add(`${this.themePrefix}${theme}`);
-        localStorage.setItem(STORAGE_FIELD_NAME, theme.toString());
+        classList.add(`${this._themePrefix}${theme}`);
+        localStorage.setItem(STORAGE_THEME_FIELD_NAME, theme.toString());
     }
 }

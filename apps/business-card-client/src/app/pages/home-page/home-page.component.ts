@@ -45,7 +45,7 @@ export class HomePageComponent {
 
     workExperience: IWorkExperience[] = [
         {
-            company: 'Google',
+            company: 'Smart Consulting',
             positions: [
                 {
                     title: 'Senior Frontend Developer',
