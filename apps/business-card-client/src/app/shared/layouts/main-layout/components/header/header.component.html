@@ -23,6 +23,8 @@
                 class="bc-light-accent-color"
                 role="button"
                 (click)="toggleSettingsMenu()"
+                (keyup.enter)="toggleSettingsMenu()"
+                tabindex="0"
             ></bc-icon-settings>
         </div>
     </nav>

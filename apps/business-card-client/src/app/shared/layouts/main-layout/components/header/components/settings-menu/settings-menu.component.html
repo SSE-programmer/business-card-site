@@ -7,6 +7,8 @@
                 <bc-color-selector
                     class="bc-accent-color bc-animation-zoom"
                     (click)="toggleColorTheme(theme)"
+                    (keyup.enter)="toggleColorTheme(theme)"
+                    tabindex="0"
                 ></bc-color-selector>
             </div>
         }
