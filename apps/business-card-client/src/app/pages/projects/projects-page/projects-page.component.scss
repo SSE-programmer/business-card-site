@@ -14,7 +14,7 @@
         padding: 10px 20px;
         width: 100%;
         margin: 10px auto;
-        transition: var(---bc-transition-duration-default);
+        transition: var(--bc-transition-duration-default);
         cursor: pointer;
 
         .infoLeft, .infoRight {
@@ -39,7 +39,7 @@
                 border: var(--bc-border-default-color) 2px solid;
                 border-radius: 10px;
                 margin: 30px auto 15px;
-                transition: var(---bc-transition-duration-default);
+                transition: var(--bc-transition-duration-default);
             }
 
             .createDate {

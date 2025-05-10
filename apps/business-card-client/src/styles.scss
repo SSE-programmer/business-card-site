@@ -1,10 +1,10 @@
 @use 'styles/theme/index' as *;
 
 :root {
-    ---bc-font-size-default: 20px;
+    --bc-font-size-default: 20px;
 
-    ---bc-transform-scale-default: 1.1;
-    ---bc-transition-duration-default: .2s;
+    --bc-transform-scale-default: 1.1;
+    --bc-transition-duration-default: .2s;
 }
 
 * {
@@ -24,7 +24,7 @@ body {
 
     font-family: "Alegreya", serif;
     color: var(--bc-text-default-color);
-    font-size: var(---bc-font-size-default);
+    font-size: var(--bc-font-size-default);
 }
 
 router-outlet {

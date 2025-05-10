@@ -14,7 +14,7 @@
     @media (hover: hover) {
         &:hover {
             box-shadow: 0 0 10px var(--bc-shadow-default-color), 0 0 20px var(--bc-shadow-default-color) inset;
-            transform: scale(var(---bc-transform-scale-default));
+            transform: scale(var(--bc-transform-scale-default));
         }
     }
 }

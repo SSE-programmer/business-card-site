@@ -1,9 +1,9 @@
 .bc-animation-zoom {
-    transition: transform var(---bc-transition-duration-default);
+    transition: transform var(--bc-transition-duration-default);
 
     @media (hover: hover) {
         &:hover {
-            transform: scale(var(---bc-transform-scale-default));
+            transform: scale(var(--bc-transform-scale-default));
         }
     }
 }
