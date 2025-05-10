@@ -22,8 +22,9 @@
         transition: all var(---bc-transition-duration-default);
     }
 
-    &:hover {
+    &:hover, &:focus-visible {
         background-color: var(--bc-border-hover-color);
+        outline: none;
         cursor: pointer;
 
         &:before, &:after {
@@ -36,7 +37,7 @@
         background: linear-gradient(to right, var(--bc-border-default-color) 80%, transparent 20%) repeat-x;
         background-size: 4px 4px;
 
-        &:hover {
+        &:hover, &:focus-visible {
             background: linear-gradient(to right, var(--bc-border-hover-color) 80%, transparent 20%) repeat-x;
             background-size: 4px 4px;
 
@@ -61,12 +62,12 @@
             background-color: var(--bc-border-default-color);
         }
 
-        &:hover:not(.not-full-time) {
+        &:hover:not(.not-full-time), &:focus-visible:not(.not-full-time) {
             background: var(--bc-border-hover-color);
             background-size: 4px 4px;
         }
 
-        &:hover {
+        &:hover, &:focus-visible {
             &:after {
                 background-color: var(--bc-border-hover-color);
             }
@@ -90,12 +91,12 @@
             transition: all var(---bc-transition-duration-default);
         }
 
-        &:hover:not(.not-full-time) {
+        &:hover:not(.not-full-time), &:focus-visible:not(.not-full-time) {
             background: var(--bc-border-hover-color);
             background-size: 4px 4px;
         }
 
-        &:hover {
+        &:hover, &:focus-visible {
             &:after {
                 border-left-color: var(--bc-border-hover-color);
                 background-color: transparent;
