@@ -1,20 +1,29 @@
 <div class="bc-flex bc-flex-col bc-gap-12 bc-flex-1 bc-justify-center bc-items-center">
     <img
         class="avatar"
+        data-aos="zoom-in"
         ngSrc="assets/images/home/photo1.png"
         width="200"
         height="200"
         priority
     >
     <div class="info-container bc-flex bc-flex-col bc-gap-24 bc-items-center bc-pb-16">
-        <div class="bc-flex bc-flex-col bc-items-center">
+        <div
+            class="bc-flex bc-flex-col bc-items-center"
+            data-aos="zoom-in"
+            data-aos-delay="50"
+        >
             <h1 class="bc-h bc-text-center">Stanislav Stolbennikov</h1>
             <h2 class="bc-h bc-text-center bc-text-middle-color">Software Engineer</h2>
         </div>
 
         <!-- Контакты -->
         <!-- https://icons8.ru/icon/set/%D0%BB%D0%BE%D0%B3%D0%BE%D1%82%D0%B8%D0%BF%D1%8B/ios-glyphs -->
-        <ul class="bc-flex bc-gap-12">
+        <ul
+            class="bc-flex bc-gap-12"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+        >
             @for (item of contactsList; track item.link) {
                 <li>
                     <a
@@ -28,7 +37,11 @@
             }
         </ul>
 
-        <div class="bc-flex bc-flex-col bc-gap-8">
+        <div
+            class="bc-flex bc-flex-col bc-gap-8"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+        >
             <h3 class="bc-h bc-text-center">🚀 Welcome to My Digital Space!<br /></h3>
 
             <div class="bc-flex bc-flex-col">
@@ -51,6 +64,7 @@
 <div class="bc-flex bc-flex-col bc-gap-12 bc-flex-wrap bc-items-center">
     <bc-card
         header="💼 Work experience"
+        data-aos="fade-left"
     >
         <ng-template #contentTemplate>
             <bc-career-timeline [jobExperience]="jobExperience"></bc-career-timeline>
@@ -59,6 +73,7 @@
 
     <bc-card
         header="🎓 Education"
+        data-aos="fade-right"
     >
         <ng-template #contentTemplate>
             <ul class="bc-flex bc-flex-col bc-gap-8">
@@ -82,6 +97,7 @@
 
     <bc-card
         header="🌱 My Interests & Learning Path"
+        data-aos="fade-left"
     >
         <ng-template #contentTemplate>
             <b>I’m passionate about technology beyond Frontend—currently exploring:</b>

@@ -31,6 +31,7 @@
                     "apps/business-card-client/src/assets"
                 ],
                 "styles": [
+                    "node_modules/aos/dist/aos.css",
                     "apps/business-card-client/src/styles.scss"
                 ],
                 "scripts": [],
@@ -99,6 +100,7 @@
                     "apps/business-card-client/src/assets"
                 ],
                 "styles": [
+                    "node_modules/aos/dist/aos.css",
                     "apps/business-card-client/src/styles.scss"
                 ],
                 "scripts": []
