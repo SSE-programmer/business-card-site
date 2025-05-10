@@ -1,3 +1,7 @@
-<div class="position-item">
-
-</div>
+<div
+    class="position-item"
+    [class.not-full-time]="!position().isFullTime"
+    [class.finished]="!!position().endDate"
+    [class.current]="!position().endDate"
+    [style]="styles()"
+></div>

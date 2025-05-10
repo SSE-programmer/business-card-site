@@ -1,4 +1,5 @@
 import {
+    AfterViewInit,
     ChangeDetectionStrategy,
     Component,
     DestroyRef,
@@ -9,13 +10,12 @@ import {
     OnInit,
     signal,
     untracked,
-    viewChildren,
 } from '@angular/core';
 import { IJobExperience } from './models/IJobExperience';
 import { PositionItemComponent } from './components/position-item/position-item.component';
 import { ViewportService } from '../../services/viewport.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { debounceTime, tap } from 'rxjs';
+import { tap, throttleTime } from 'rxjs';
 
 @Component({
     selector: 'bc-career-timeline',
@@ -26,37 +26,46 @@ import { debounceTime, tap } from 'rxjs';
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CareerTimelineComponent implements OnInit {
+export class CareerTimelineComponent implements OnInit, AfterViewInit {
     private viewportService = inject(ViewportService);
+    private elementRef = inject(ElementRef<HTMLElement>);
     private destroyRef = inject(DestroyRef);
 
-    public jobExperience = input<IJobExperience[]>([]);
+    public jobExperience = input<IJobExperience[], IJobExperience[]>([], {
+        transform(value: IJobExperience[]): IJobExperience[] {
+            return value.map(job => {
+                return ({
+                    ...job,
+                    positions: job.positions.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+                });
+            });
+        }
+    });
     public minYear = signal<number>(new Date().getFullYear());
     public maxYear = signal<number>(new Date().getFullYear());
     public yearsList = signal<number[]>([]);
-    public yearCellWidth = signal<number>(0);
-    public yearCellAnchorList = viewChildren<ElementRef<HTMLDivElement>>('.year-cell-anchor');
+    public yearCellAnchorWidth = signal<number>(0);
+    public yearCellLeftMarginWidth = signal<number>(0);
 
-    protected YEAR_CELL_MIN_WIDTH = '100px';
-    protected YEAR_CELL_VERTICAL_PADDING = '8px';
-    protected FIRST_YEAR_LEFT_MARGIN_PADDING = '40px';
+    protected YEAR_CELL_MIN_WIDTH = 100;
+    protected YEAR_CELL_VERTICAL_PADDING = 8;
+    protected FIRST_YEAR_LEFT_MARGIN_PADDING = 40;
 
     public ngOnInit(): void {
         this.viewportService.dimensions$.pipe(
             takeUntilDestroyed(this.destroyRef),
-            debounceTime(200),
+            throttleTime(25),
             tap(() => {
-                if (!this.yearCellAnchorList().length) {
-                    this.yearCellWidth.set(0);
-
-                    return;
-                }
-
-                const yearCellAnchor = this.yearCellAnchorList()[0].nativeElement;
-                this.yearCellWidth.set(yearCellAnchor.offsetWidth);
+                this._calculateYearCellLeftMarginWidth();
+                this._calculateYearCellAnchorWidth();
             }),
         )
             .subscribe();
+    }
+
+    public ngAfterViewInit() {
+        this._calculateYearCellLeftMarginWidth();
+        this._calculateYearCellAnchorWidth();
     }
 
     private _jobExperienceEffect = effect(() => {
@@ -87,4 +96,28 @@ export class CareerTimelineComponent implements OnInit {
             this.yearsList.set(yearsList);
         });
     });
+
+    private _calculateYearCellAnchorWidth() {
+        const yearCellAnchorElement = this.elementRef.nativeElement.querySelector('.year-cell-anchor');
+
+        if (!yearCellAnchorElement) {
+            this.yearCellAnchorWidth.set(0);
+
+            return;
+        }
+
+        this.yearCellAnchorWidth.set(yearCellAnchorElement.offsetWidth);
+    }
+
+    private _calculateYearCellLeftMarginWidth() {
+        const yearCellLeftMarginElement = this.elementRef.nativeElement.querySelector('.year-cell-left-margin');
+
+        if (!yearCellLeftMarginElement) {
+            this.yearCellLeftMarginWidth.set(0);
+
+            return;
+        }
+
+        this.yearCellLeftMarginWidth.set(yearCellLeftMarginElement.offsetWidth);
+    }
 }

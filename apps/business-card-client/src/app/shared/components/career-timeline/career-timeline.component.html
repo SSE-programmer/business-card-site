@@ -3,48 +3,51 @@
         @for (job of jobExperience(); track job.company) {
             <h4
                 class="company-name bc-h bc-flex bc-items-center"
-                [style.padding-top]="YEAR_CELL_VERTICAL_PADDING"
-                [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING"
+                [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
+                [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             >
                 {{ job.company }}
             </h4>
         }
         <h4
             class="company-name bc-h bc-flex bc-items-center"
-            [style.padding-top]="YEAR_CELL_VERTICAL_PADDING"
-            [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING"
+            [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
+            [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             [style.visibility]="'hidden'"
         > &nbsp;</h4>
     </div>
     @if (yearsList()) {
-        <div class="years-column bc-flex bc-flex-col bc-flex-1">
-            @for (job of jobExperience(); track job.company; let lastCompany = $last) {
-                <div class="year-row bc-flex bc-items-center">
-                    @for (position of job.positions; track $index) {
-                        <bc-position-item
-                            [position]="position"
-                            [leftMargin]="FIRST_YEAR_LEFT_MARGIN_PADDING"
-                            [yearCellWidth]="yearCellWidth()"
-                            [firstYear]="yearsList()[0]"
-                            [lastYear]="yearsList()[yearsList().length - 1]"
-                        ></bc-position-item>
-                    }
+        <div class="years-column-container">
+            <div class="years-column bc-flex bc-flex-col bc-flex-1">
+                @for (job of jobExperience(); track job.company; let lastCompany = $last) {
+                    <div class="year-row bc-flex bc-items-center">
+                        @for (position of job.positions; track $index) {
+                            <bc-position-item
+                                [position]="position"
+                                [yearCellWidth]="yearCellAnchorWidth()"
+                                [leftMargin]="yearCellLeftMarginWidth()"
+                                [firstYear]="yearsList()[0]"
+                                [lastYear]="yearsList()[yearsList().length - 1]"
+                            ></bc-position-item>
+                        }
 
-                    @for (year of yearsList(); track year; let yearIndex = $index) {
-                        <div
-                            class="year-cell"
-                            [class.year-cell-anchor]="!!yearIndex"
-                            [style.min-width]="yearIndex ? YEAR_CELL_MIN_WIDTH : FIRST_YEAR_LEFT_MARGIN_PADDING"
-                            [style.padding-top]="YEAR_CELL_VERTICAL_PADDING"
-                            [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING"
-                        >
-                            @if (lastCompany && yearIndex) {
-                                <span class="year-label">{{ year }}</span>
-                            }
-                        </div>
-                    }
-                </div>
-            }
+                        @for (year of yearsList(); track year; let yearIndex = $index; let firstYear = $first) {
+                            <div
+                                class="year-cell"
+                                [class.year-cell-left-margin]="firstYear"
+                                [class.year-cell-anchor]="!firstYear"
+                                [style.min-width]="firstYear ? (FIRST_YEAR_LEFT_MARGIN_PADDING + 'px') : (YEAR_CELL_MIN_WIDTH + 'px')"
+                                [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
+                                [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
+                            >
+                                @if (lastCompany && yearIndex) {
+                                    <span class="year-label">{{ year }}</span>
+                                }
+                            </div>
+                        }
+                    </div>
+                }
+            </div>
         </div>
     } @else {
         Positions not found
