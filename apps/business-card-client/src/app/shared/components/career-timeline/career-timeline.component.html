@@ -21,13 +21,14 @@
             <div class="years-column bc-flex bc-flex-col bc-flex-1">
                 @for (job of jobExperience(); track job.company; let lastCompany = $last) {
                     <div class="year-row bc-flex bc-items-center">
-                        @for (position of job.positions; track $index) {
+                        @for (position of job.positions; track $index; let positionIndex = $index;) {
                             <bc-position-item
                                 [position]="position"
                                 [yearCellWidth]="yearCellAnchorWidth()"
                                 [leftMargin]="yearCellLeftMarginWidth()"
                                 [firstYear]="yearsList()[0]"
                                 [lastYear]="yearsList()[yearsList().length - 1]"
+                                [index]="positionIndex"
                             ></bc-position-item>
                         }
 

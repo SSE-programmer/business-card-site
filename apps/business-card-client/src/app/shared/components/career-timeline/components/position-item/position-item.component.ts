@@ -14,12 +14,7 @@ export class PositionItemComponent {
     public yearCellWidth = input.required<number>();
     public firstYear = input.required<number>();
     public lastYear = input.required<number>();
-    public yearsList = computed(() => {
-        return Array.from(
-            { length: this.lastYear() - this.firstYear() + 1 },
-            (_, i) => this.firstYear() + i,
-        );
-    });
+    public index = input<number>(0);
     public styles = computed(() => {
         const positionStartYear = this.position().startDate.getFullYear();
         const positionEndYear = this.position().endDate?.getFullYear();
@@ -38,6 +33,7 @@ export class PositionItemComponent {
         return ({
             left: `${leftX}px`,
             width: `${rightX - leftX}px`,
+            zIndex: 20 + this.index(),
         });
     });
 }
