@@ -36,10 +36,10 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
             return value.map(job => {
                 return ({
                     ...job,
-                    positions: job.positions.sort((a, b) => a.startDate.getTime() - b.startDate.getTime())
+                    positions: job.positions.sort((a, b) => a.startDate.getTime() - b.startDate.getTime()),
                 });
             });
-        }
+        },
     });
     public minYear = signal<number>(new Date().getFullYear());
     public maxYear = signal<number>(new Date().getFullYear());

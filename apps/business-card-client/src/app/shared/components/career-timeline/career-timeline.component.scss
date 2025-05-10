@@ -19,12 +19,6 @@
     flex: 1;
     overflow-x: auto;
 
-    &::-webkit-scrollbar {
-        display: none;
-        width: max-content;
-        height: 0;
-    }
-
     .years-column {
         .year-row {
             position: relative;

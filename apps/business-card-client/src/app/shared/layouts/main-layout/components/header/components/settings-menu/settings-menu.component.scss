@@ -1,3 +1,14 @@
 :host {
-    display: block;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--bc-bg-middle-color);
+
+    .settings-menu {
+        max-width: var(--bc-page-container-max-width);
+
+        @media (max-width: 720px) {
+            justify-content: center;
+        }
+    }
 }
