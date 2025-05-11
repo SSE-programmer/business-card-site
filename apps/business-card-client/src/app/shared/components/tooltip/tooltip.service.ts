@@ -140,7 +140,7 @@ export class TooltipService {
         return from(tooltipRefPromise);
     }
 
-    public close(tooltipRef: ComponentRef<TooltipComponent> | undefined) {
+    public close(tooltipRef: ComponentRef<TooltipComponent> | null | undefined) {
         this._removeTooltipComponentFromBody(tooltipRef);
 
         const onCloseCallback = tooltipRef?.instance.tooltipConfig.onCloseCallback;
@@ -150,7 +150,7 @@ export class TooltipService {
         }
     }
 
-    private _removeTooltipComponentFromBody(tooltipRef: ComponentRef<TooltipComponent> | undefined) {
+    private _removeTooltipComponentFromBody(tooltipRef: ComponentRef<TooltipComponent> | null | undefined) {
         if (!tooltipRef) {
             return;
         }

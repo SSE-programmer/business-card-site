@@ -1,11 +1,16 @@
 <div class="bc-flex bc-flex-col bc-gap-4">
-    <h5 class="bc-font-titan-one">{{ position().title }}</h5>
+    <h4 class="bc-font-patua-one">{{ position().title }}</h4>
 
-    <div class="bc-flex bc-gap-4 bc-flex-nowrap">
-        <span>{{ position().startDate | date: 'MMMM yyyy' }}</span>
+    <div class="bc-flex bc-gap-4 bc-flex-nowrap bc-font-patua-one bc-text-16">
+        <time [attr.datetime]="position().startDate | date: 'yyyy-MM-dd'">
+            {{ position().startDate | date: 'MMMM yyyy' }}
+        </time>
 
         @if (position().endDate) {
-            - <span>{{ position().endDate | date: 'MMMM yyyy' }}</span>
+            -
+            <time [attr.datetime]="position().endDate | date: 'yyyy-MM-dd'">
+                {{ position().endDate | date: 'MMMM yyyy' }}
+            </time>
         }
     </div>
 </div>

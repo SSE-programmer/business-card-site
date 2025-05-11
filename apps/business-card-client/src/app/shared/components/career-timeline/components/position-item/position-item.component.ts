@@ -38,4 +38,6 @@ export class PositionItemComponent {
     });
 
     public onClick = output<Event>();
+    public onMouseenter = output<Event>();
+    public onMouseleave = output<Event>();
 }

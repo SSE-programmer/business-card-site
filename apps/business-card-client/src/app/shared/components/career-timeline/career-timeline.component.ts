@@ -18,6 +18,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap, throttleTime } from 'rxjs';
 import { TooltipService } from '../tooltip/tooltip.service';
 import { IPositionTooltipData, PositionTooltipComponent } from './components/position-tooltip/position-tooltip.component';
+import { TooltipRef } from '../tooltip/tooltip.ref';
 
 @Component({
     selector: 'bc-career-timeline',
@@ -33,6 +34,8 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     private elementRef = inject(ElementRef<HTMLElement>);
     private tooltipService = inject(TooltipService);
     private destroyRef = inject(DestroyRef);
+
+    private _tooltipRef: TooltipRef | undefined;
 
     public jobExperience = input<IJobExperience[], IJobExperience[]>([], {
         transform(value: IJobExperience[]): IJobExperience[] {
@@ -77,9 +80,20 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
             isStatic: true,
             offset: [0, 8],
             data: {
-                position
+                position,
             },
-        });
+        })
+            .subscribe(tooltipRef => {
+                this._tooltipRef = tooltipRef;
+            });
+    }
+
+    public hidePositionTooltip() {
+        if (this._tooltipRef) {
+            setTimeout(() => {
+                this.tooltipService.close(this._tooltipRef?.reference);
+            });
+        }
     }
 
     private _jobExperienceEffect = effect(() => {
