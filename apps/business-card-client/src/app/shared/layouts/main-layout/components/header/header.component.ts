@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ClickOutsideModule } from 'ng-click-outside';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { INavigationRoute } from '../../../../models/INavigationRoute';
 import { LogoComponent } from '../../../../components/logo/logo.component';
@@ -11,7 +10,6 @@ import { SettingsMenuComponent } from './components/settings-menu/settings-menu.
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
     imports: [
-        ClickOutsideModule,
         RouterLink,
         RouterLinkActive,
         LogoComponent,

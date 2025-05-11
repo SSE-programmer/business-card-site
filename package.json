@@ -19,9 +19,8 @@
         "@angular/platform-browser": "^19.2.3",
         "@angular/platform-browser-dynamic": "^19.2.3",
         "@angular/router": "^19.2.3",
-        "angular2-click-outside": "^0.1.0",
+        "@popperjs/core": "^2.11.8",
         "aos": "^2.3.4",
-        "ng-click-outside": "^9.0.1",
         "rxjs": "~7.5.0",
         "tslib": "^2.3.0"
     },
