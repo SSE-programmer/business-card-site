@@ -9,7 +9,7 @@ import {
     OnDestroy,
     OnInit,
     Type,
-    ViewChild
+    viewChild,
 } from '@angular/core';
 import { TooltipService } from './tooltip.service';
 import { TooltipConfig } from './tooltip.config';
@@ -26,7 +26,7 @@ import { ClickOutsideDirective } from '../../directives/click-outside/click-outs
         InsertionDirective,
     ],
     templateUrl: './tooltip.component.html',
-    styleUrl: './tooltip.component.scss'
+    styleUrl: './tooltip.component.scss',
 })
 export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
     public readonly tooltipConfig = inject(TooltipConfig);
@@ -34,13 +34,12 @@ export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
     private readonly cd = inject(ChangeDetectorRef);
     private readonly destroyRef = inject(DestroyRef);
 
-    public componentRef: ComponentRef<TooltipComponent>;
-    public childComponentRef: ComponentRef<any>;
-    public childComponentType: Type<any>;
+    public componentRef: ComponentRef<TooltipComponent> | null = null;
+    public childComponentRef: ComponentRef<any> | null = null;
+    public childComponentType: Type<any> | null = null;
     public width: string | undefined;
 
-    @ViewChild(InsertionDirective)
-    insertionPoint: InsertionDirective;
+    public insertionPoint = viewChild.required(InsertionDirective);
 
     @HostListener('document:keydown.escape')
     public onKeydownHandler() {
@@ -51,7 +50,7 @@ export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
         fromEvent(window, 'resize')
             .pipe(
                 debounceTime(500),
-                takeUntilDestroyed(this.destroyRef)
+                takeUntilDestroyed(this.destroyRef),
             )
             .subscribe(() => {
                 this._calculateWidth();
@@ -60,7 +59,10 @@ export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public ngAfterViewInit() {
-        this._loadChildComponent(this.childComponentType);
+        if (this.childComponentType) {
+            this._loadChildComponent(this.childComponentType);
+        }
+
         this.cd.detectChanges();
     }
 
@@ -71,11 +73,13 @@ export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     public close() {
-        this.tooltipService.close(this.componentRef);
+        if (this.componentRef) {
+            this.tooltipService.close(this.componentRef);
+        }
     }
 
     private _loadChildComponent(componentType: Type<any>) {
-        const viewContainerRef = this.insertionPoint.viewContainerRef;
+        const viewContainerRef = this.insertionPoint().viewContainerRef;
 
         viewContainerRef.clear();
         this.childComponentRef = viewContainerRef.createComponent(componentType);

@@ -44,7 +44,7 @@ export const appConfig: ApplicationConfig = {
         },
         {
             provide: LOCALE_ID,
-            useValue: ELocale.RU,
+            useValue: ELocale.EN,
         },
         provideAppInitializer(() => void inject(ThemeService))
     ],

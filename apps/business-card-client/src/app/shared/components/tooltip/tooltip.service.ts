@@ -18,18 +18,22 @@ export class TooltipService {
     private readonly applicationRef = inject(ApplicationRef);
     private readonly injector = inject(Injector);
 
-    private _viewContainerRef: ViewContainerRef;
+    private _viewContainerRef: ViewContainerRef | null = null;
 
     public setViewContainerRef(vcr: ViewContainerRef) {
         this._viewContainerRef = vcr;
     }
 
-    public appendTooltipComponentToBody(event, componentType: Type<any>, config: TooltipConfig) {
+    public appendTooltipComponentToBody(event: Event | MouseEvent, componentType: Type<any>, config: TooltipConfig) {
         const map = new WeakMap();
         map.set(TooltipConfig, config);
 
         const tooltipRef = new TooltipRef();
         map.set(TooltipRef, tooltipRef);
+
+        if (!this._viewContainerRef) {
+            return;
+        }
 
         const componentRef = this._viewContainerRef.createComponent<TooltipComponent>(
             TooltipComponent,
@@ -49,7 +53,7 @@ export class TooltipService {
 
         const boundariesElement = config.boundariesElement;
 
-        stickingElement.appendChild(tooltipDOMElement);
+        document.body.appendChild(tooltipDOMElement);
         componentRef.instance.childComponentType = componentType;
 
         function generateGetBoundingClientRect(x1 = 0, y1 = 0, x2?: number, y2?: number): () => ClientRect | DOMRect {
@@ -82,6 +86,12 @@ export class TooltipService {
                         rootBoundary: 'document',
                     },
                 },
+                config.offset && {
+                    name: 'offset',
+                    options: {
+                        offset: config.offset
+                    }
+                },
                 {
                     name: 'preventOverflow',
                     options: {
@@ -99,7 +109,7 @@ export class TooltipService {
             config.popperOptions || popperDefaultOptions,
         );
 
-        if (!config.isStatic) {
+        if (!config.isStatic && event instanceof MouseEvent) {
             virtualElement.getBoundingClientRect = generateGetBoundingClientRect(event.clientX, event.clientY);
         }
 
@@ -116,7 +126,7 @@ export class TooltipService {
         return tooltipRef;
     }
 
-    public open(event, componentType: Type<any>, config: TooltipConfig): Observable<TooltipRef | undefined> {
+    public open<D>(event: Event, componentType: Type<any>, config: TooltipConfig<D>): Observable<TooltipRef | undefined> {
         this._checkConfigRequiredParameters(config);
 
         const tooltipRefPromise = new Promise<TooltipRef | undefined>(resolve => {

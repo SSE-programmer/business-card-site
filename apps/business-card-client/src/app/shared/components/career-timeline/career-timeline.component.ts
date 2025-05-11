@@ -11,11 +11,13 @@ import {
     signal,
     untracked,
 } from '@angular/core';
-import { IJobExperience } from './models/IJobExperience';
+import { IJobExperience, IPosition } from './models/IJobExperience';
 import { PositionItemComponent } from './components/position-item/position-item.component';
 import { ViewportService } from '../../services/viewport.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { tap, throttleTime } from 'rxjs';
+import { TooltipService } from '../tooltip/tooltip.service';
+import { IPositionTooltipData, PositionTooltipComponent } from './components/position-tooltip/position-tooltip.component';
 
 @Component({
     selector: 'bc-career-timeline',
@@ -29,6 +31,7 @@ import { tap, throttleTime } from 'rxjs';
 export class CareerTimelineComponent implements OnInit, AfterViewInit {
     private viewportService = inject(ViewportService);
     private elementRef = inject(ElementRef<HTMLElement>);
+    private tooltipService = inject(TooltipService);
     private destroyRef = inject(DestroyRef);
 
     public jobExperience = input<IJobExperience[], IJobExperience[]>([], {
@@ -66,6 +69,17 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     public ngAfterViewInit() {
         this._calculateYearCellLeftMarginWidth();
         this._calculateYearCellAnchorWidth();
+    }
+
+    public showPositionTooltip(event: Event, position: IPosition): void {
+        this.tooltipService.open<IPositionTooltipData>(event, PositionTooltipComponent, {
+            stickingElement: event.target as HTMLElement,
+            isStatic: true,
+            offset: [0, 8],
+            data: {
+                position
+            },
+        });
     }
 
     private _jobExperienceEffect = effect(() => {

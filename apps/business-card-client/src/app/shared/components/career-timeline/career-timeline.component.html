@@ -29,6 +29,7 @@
                                 [firstYear]="yearsList()[0]"
                                 [lastYear]="yearsList()[yearsList().length - 1]"
                                 [index]="positionIndex"
+                                (onClick)="showPositionTooltip($event, position)"
                             ></bc-position-item>
                         }
 

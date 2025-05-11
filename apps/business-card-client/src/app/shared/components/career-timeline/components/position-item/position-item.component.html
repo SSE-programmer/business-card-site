@@ -5,4 +5,6 @@
     [class.current]="!position().endDate"
     [style]="styles()"
     tabindex="0"
+    (click)="onClick.emit($event)"
+    (keydown.enter)="onClick.emit($event)"
 ></div>

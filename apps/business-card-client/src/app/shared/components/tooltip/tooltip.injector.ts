@@ -1,16 +1,19 @@
-import { inject, InjectFlags, InjectionToken, Injector, Type } from '@angular/core';
+import { InjectFlags, InjectionToken, Injector, Type } from '@angular/core';
 
 export class TooltipInjector implements Injector {
-    private _parentInjector = inject(Injector);
-    private _additionalTokens = new WeakMap<any, any>;
+    constructor(
+        private _parentInjector: Injector,
+        private _additionalTokens: WeakMap<any, any>,
+    ) {
+    }
 
     public get<T>(
         token: Type<T> | InjectionToken<T>,
         notFoundValue?: T,
-        flags?: InjectFlags
+        flags?: InjectFlags,
     ): T;
 
-    public get(token: any, notFoundValue?: any);
+    public get(token: any, notFoundValue?: any): any;
 
     public get(token: any, notFoundValue?: any) {
         const value = this._additionalTokens.get(token);

@@ -2,9 +2,9 @@ import { ComponentRef } from '@angular/core';
 import { TooltipComponent } from './tooltip.component';
 
 export class TooltipRef {
-    private _reference: ComponentRef<TooltipComponent>;
+    private _reference: ComponentRef<TooltipComponent> | null = null;
 
-    get reference(): ComponentRef<TooltipComponent> {
+    get reference(): ComponentRef<TooltipComponent> | null {
         return this._reference;
     }
 
@@ -14,7 +14,7 @@ export class TooltipRef {
         }
     }
 
-    public getInstance(): TooltipComponent {
-        return this._reference.instance;
+    public getInstance(): TooltipComponent | null {
+        return this._reference?.instance || null;
     }
 }

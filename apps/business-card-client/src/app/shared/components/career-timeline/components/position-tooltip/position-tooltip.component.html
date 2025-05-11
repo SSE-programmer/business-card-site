@@ -1,0 +1,11 @@
+<div class="bc-flex bc-flex-col bc-gap-4">
+    <h5 class="bc-font-titan-one">{{ position().title }}</h5>
+
+    <div class="bc-flex bc-gap-4 bc-flex-nowrap">
+        <span>{{ position().startDate | date: 'MMMM yyyy' }}</span>
+
+        @if (position().endDate) {
+            - <span>{{ position().endDate | date: 'MMMM yyyy' }}</span>
+        }
+    </div>
+</div>

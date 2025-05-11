@@ -1,0 +1,6 @@
+.bc-tooltip-container {
+    border: 3px solid var(--bc-border-default-color);
+    border-radius: var(--bc-border-radius-8);
+    background-color: color-mix(in srgb, var(--bc-bg-light-color) 50%, transparent);;
+    backdrop-filter: blur(8px);
+}

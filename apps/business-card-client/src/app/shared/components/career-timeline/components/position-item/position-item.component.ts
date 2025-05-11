@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { IPosition } from '../../models/IJobExperience';
 
 @Component({
@@ -36,4 +36,6 @@ export class PositionItemComponent {
             zIndex: 20 + this.index(),
         });
     });
+
+    public onClick = output<Event>();
 }
