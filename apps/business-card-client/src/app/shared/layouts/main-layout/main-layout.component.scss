@@ -9,7 +9,7 @@
     .page-container {
         position: relative;
         max-width: var(--bc-page-container-max-width);
-        overflow: auto;
+        overflow-x: hidden;
         z-index: 0;
 
         @media (max-width: 720px) {

@@ -1,4 +1,8 @@
 <div class="bc-flex bc-flex-col bc-gap-4">
+    @if (!position().isFullTime) {
+        <bc-tag>Part-Time</bc-tag>
+    }
+
     <h4 class="bc-font-patua-one">{{ position().title }}</h4>
 
     <div class="bc-flex bc-gap-4 bc-flex-nowrap bc-font-patua-one bc-text-16">
@@ -6,11 +10,14 @@
             {{ position().startDate | date: 'MMMM yyyy' }}
         </time>
 
+        -
+
         @if (position().endDate) {
-            -
             <time [attr.datetime]="position().endDate | date: 'yyyy-MM-dd'">
                 {{ position().endDate | date: 'MMMM yyyy' }}
             </time>
+        } @else {
+            <span>Now</span>
         }
     </div>
 </div>

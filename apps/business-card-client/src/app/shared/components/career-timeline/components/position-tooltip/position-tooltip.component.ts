@@ -2,6 +2,7 @@ import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/cor
 import { IPosition } from '../../models/IJobExperience';
 import { TooltipConfig } from '../../../tooltip/tooltip.config';
 import { DatePipe } from '@angular/common';
+import { TagComponent } from '../../../tag/tag.component';
 
 export interface IPositionTooltipData {
     position: IPosition;
@@ -13,6 +14,7 @@ export interface IPositionTooltipData {
     styleUrl: './position-tooltip.component.scss',
     imports: [
         DatePipe,
+        TagComponent,
     ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
