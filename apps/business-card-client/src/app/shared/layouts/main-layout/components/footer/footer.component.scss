@@ -7,5 +7,11 @@
     .footer {
         flex: 1;
         max-width: var(--bc-page-container-max-width);
+
+        .quote {
+            @media (max-width: 720px) {
+                font-size: var(--bc-font-size-16);
+            }
+        }
     }
 }
