@@ -5,7 +5,7 @@
     min-height: 4px;
     transform: translateY(-50%);
     z-index: 20;
-    transition: all var(--bc-transition-duration-default);
+    transition: all .05s;
 
     &:before {
         content: '';
