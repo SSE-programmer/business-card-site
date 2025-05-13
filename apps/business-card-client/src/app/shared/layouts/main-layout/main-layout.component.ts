@@ -2,8 +2,7 @@ import { ChangeDetectionStrategy, Component, DestroyRef, ElementRef, inject, OnI
 import { RouterOutlet } from '@angular/router';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
-import { fromEvent, tap, throttleTime } from 'rxjs';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { delay, fromEvent, tap, throttleTime } from 'rxjs';
 import { AosService } from '../../services/aos.service';
 
 
@@ -27,13 +26,14 @@ export class MainLayoutComponent implements OnInit {
     public ngOnInit(): void {
         this.aosService.init();
 
-        fromEvent(this.pageContainer().nativeElement, 'scroll').pipe(
-            takeUntilDestroyed(this.destroyRef),
-            throttleTime(50),
-            tap(() => {
-                this.aosService.refresh();
-            }),
-        )
+        fromEvent(this.pageContainer().nativeElement, 'scroll')
+            .pipe(
+                throttleTime(50),
+                delay(100),
+                tap(() => {
+                    this.aosService.refresh();
+                }),
+            )
             .subscribe();
     }
 }
