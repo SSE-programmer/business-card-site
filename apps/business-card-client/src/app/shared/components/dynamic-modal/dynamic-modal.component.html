@@ -1,0 +1,17 @@
+<div class="dynamic-modal-wrapper">
+    <div
+        class="dynamic-modal"
+        [style.width]="width"
+        [style.height]="height"
+        #dynamicModal
+    >
+        <div
+            class="dynamic-modal__body"
+            #body
+        >
+            @if (!config.removeModalBody) {
+                <ng-template bcInsertion></ng-template>
+            }
+        </div>
+    </div>
+</div>

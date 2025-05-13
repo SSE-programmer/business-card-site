@@ -1,0 +1,73 @@
+.dynamic-modal-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .dynamic-modal {
+        display: flex;
+        flex-direction: column;
+        gap: var(--bc-gap-24);
+        width: 50%;
+        max-width: 100%;
+        height: auto;
+        max-height: min(95%, 700px);
+        background: var(--bc-white-color);
+        border-radius: var(--bc-border-radius-16);
+        box-shadow: 0 4px 26px 0 rgba(0, 0, 0, .07);
+        overflow: auto;
+
+        transition: width var(--bc-transition-duration-default), opacity var(--bc-transition-duration-default);
+        animation: fade-in .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+        &__body {
+            display: flex;
+            flex-direction: column;
+            padding: var(--bc-padding-24) var(--bc-padding-24);
+            height: auto;
+
+            @media (max-width: 1040px) {
+                padding: var(--bc-padding-24) var(--bc-padding-16);
+            }
+        }
+
+        ng-template {
+            overflow: auto;
+        }
+
+        &::-webkit-scrollbar {
+            display: none;
+            width: 0;
+        }
+    }
+
+    .dynamic-modal.closed {
+        animation: fade-out var(--bc-transition-duration-default) cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    }
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
