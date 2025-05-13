@@ -35,7 +35,7 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     private tooltipService = inject(TooltipService);
     private destroyRef = inject(DestroyRef);
 
-    private _tooltipRef: TooltipRef | undefined;
+    private _tooltipRef: TooltipRef | null | undefined;
 
     public jobExperience = input<IJobExperience[], IJobExperience[]>([], {
         transform(value: IJobExperience[]): IJobExperience[] {
@@ -75,10 +75,17 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     }
 
     public showPositionTooltip(event: Event, position: IPosition): void {
+        if (position === this._tooltipRef?.getInstance()?.tooltipConfig.data.position) {
+            return;
+        }
+
+        this.hidePositionTooltip();
+
         this.tooltipService.open<IPositionTooltipData>(event, PositionTooltipComponent, {
             stickingElement: event.target as HTMLElement,
             isStatic: true,
             offset: [0, 8],
+            preventOutsideClick: true,
             data: {
                 position,
             },
@@ -92,6 +99,7 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
         if (this._tooltipRef) {
             setTimeout(() => {
                 this.tooltipService.close(this._tooltipRef?.reference);
+                this._tooltipRef = null;
             });
         }
     }

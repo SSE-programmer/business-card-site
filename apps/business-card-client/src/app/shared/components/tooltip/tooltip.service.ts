@@ -100,6 +100,9 @@ export class TooltipService {
                         rootBoundary: 'document',
                     },
                 },
+                {
+                    name: 'arrow'
+                },
             ],
         };
 
@@ -162,7 +165,7 @@ export class TooltipService {
             tooltipRef.destroy();
         }, { once: true });
 
-        tooltipDomElement.querySelector('.tooltip').classList.add('closed');
+        tooltipDomElement.classList.add('closed');
     }
 
     private _checkConfigRequiredParameters(config: TooltipConfig) {

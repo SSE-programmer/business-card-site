@@ -5,6 +5,7 @@ export class TooltipConfig<D = any> {
     stickingElement: HTMLElement | null = null;
     offset?: [number, number] = [0, 0];
     data?: D;
+    preventOutsideClick?: boolean = false;
     width?: string;
     mediaQueries?: IMediaQuery[];
     onCloseCallback?: () => any;

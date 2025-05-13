@@ -30,7 +30,9 @@
                                 [lastYear]="yearsList()[yearsList().length - 1]"
                                 [index]="positionIndex"
                                 (onMouseenter)="showPositionTooltip($event, position)"
+                                (onFocus)="showPositionTooltip($event, position)"
                                 (onMouseleave)="hidePositionTooltip()"
+                                (onBlur)="hidePositionTooltip()"
                             ></bc-position-item>
                         }
 

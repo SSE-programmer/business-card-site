@@ -1,7 +1,12 @@
 <div
     class="tooltip bc-tooltip-container bc-flex bc-flex-col bc-w-fit bc-p-12"
     [style.width]="width"
-    (bcClickOutside)="close()"
+    (bcClickOutside)="!tooltipConfig.preventOutsideClick && close()"
 >
     <ng-template bcInsertion></ng-template>
 </div>
+
+<div
+    class="arrow"
+    data-popper-arrow
+></div>

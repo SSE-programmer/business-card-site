@@ -40,4 +40,6 @@ export class PositionItemComponent {
     public onClick = output<Event>();
     public onMouseenter = output<Event>();
     public onMouseleave = output<Event>();
+    public onFocus = output<Event>();
+    public onBlur = output<Event>();
 }
