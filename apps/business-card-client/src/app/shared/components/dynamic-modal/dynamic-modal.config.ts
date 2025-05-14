@@ -4,7 +4,6 @@ export class DynamicModalConfig<D = any> {
     autoHeight?: boolean;
     width?: string;
     height?: string;
-    hideScrollbar?: boolean;
     mediaQueries?: IMediaQuery[];
     onCloseCallback?: ((closeModal: (value: boolean) => any) => any) | null | undefined;
     removeModalBody?: boolean = false;

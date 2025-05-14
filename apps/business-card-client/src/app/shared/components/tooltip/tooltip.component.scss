@@ -2,7 +2,9 @@
     position: absolute;
     z-index: 400;
     animation: fade-in var(--bc-transition-duration-default) cubic-bezier(0.250, 0.460, 0.450, 0.940);
-    backdrop-filter: blur(8px);
+    background-color: var(--bc-bg-modals-color);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--bc-modals-box-shadow);
     opacity: 1;
     pointer-events: none;
 
@@ -28,7 +30,7 @@
 
 :host([data-popper-placement^='top']) {
     .arrow {
-        bottom: -17px;
+        bottom: -20px;
 
         &::before {
             transform: rotate(180deg);
@@ -38,7 +40,7 @@
 
 :host([data-popper-placement^='bottom']) {
     .arrow {
-        top: -17px;
+        top: -20px;
     }
 }
 

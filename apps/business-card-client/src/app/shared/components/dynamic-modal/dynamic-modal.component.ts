@@ -17,14 +17,12 @@ import { debounceTime, fromEvent } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { DynamicModalService } from './dynamic-modal.service';
 import { DynamicModalConfig } from './dynamic-modal.config';
-import { NgClass } from '@angular/common';
 
 @Component({
     selector: 'bc-dynamic-modal',
     standalone: true,
     imports: [
         InsertionDirective,
-        NgClass,
     ],
     templateUrl: './dynamic-modal.component.html',
     styleUrl: './dynamic-modal.component.scss',

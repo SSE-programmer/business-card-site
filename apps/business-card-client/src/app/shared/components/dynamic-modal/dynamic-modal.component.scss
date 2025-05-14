@@ -15,12 +15,14 @@
         flex-direction: column;
         gap: var(--bc-gap-24);
         width: 50%;
-        max-width: 100%;
+        max-width: min(calc(100% - 20px), var(--bc-page-container-max-width));
         height: auto;
         max-height: min(95%, 700px);
-        background: var(--bc-white-color);
+        background-color: var(--bc-bg-modals-color);
+        backdrop-filter: blur(10px);
+        border: 3px solid var(--bc-border-default-color);
         border-radius: var(--bc-border-radius-16);
-        box-shadow: 0 4px 26px 0 rgba(0, 0, 0, .07);
+        box-shadow: var(--bc-modals-box-shadow);
         overflow: auto;
 
         transition: width var(--bc-transition-duration-default), opacity var(--bc-transition-duration-default);

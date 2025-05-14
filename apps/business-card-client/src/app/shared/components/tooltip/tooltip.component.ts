@@ -3,7 +3,7 @@ import {
     ChangeDetectorRef,
     Component,
     ComponentRef,
-    DestroyRef,
+    DestroyRef, HostBinding,
     HostListener,
     inject,
     OnDestroy,
@@ -40,6 +40,10 @@ export class TooltipComponent implements OnInit, AfterViewInit, OnDestroy {
     public width: string | undefined;
 
     public insertionPoint = viewChild.required(InsertionDirective);
+
+    @HostBinding('class.bc-tooltip-container') get tooltipContainerClass() {
+        return true;
+    }
 
     @HostListener('document:keydown.escape')
     public onKeydownHandler() {

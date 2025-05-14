@@ -1,13 +1,13 @@
 <div class="bc-flex bc-gap-4">
     <div class="company-column bc-flex bc-flex-col">
         @for (job of jobExperience(); track job.company) {
-            <h5
-                class="company-name bc-h bc-font-patua-one bc-flex bc-items-center"
+            <span
+                class="company-name bc-flex bc-items-center bc-font-patua-one bc-text-20"
                 [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
                 [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             >
                 {{ job.company }}
-            </h5>
+            </span>
         }
         <h4
             class="company-name bc-h bc-flex bc-items-center"
@@ -29,6 +29,7 @@
                                 [firstYear]="yearsList()[0]"
                                 [lastYear]="yearsList()[yearsList().length - 1]"
                                 [index]="positionIndex"
+                                (onClick)="openPositionModal(job.company, position)"
                                 (onMouseenter)="showPositionTooltip($event, position)"
                                 (onFocus)="showPositionTooltip($event, position)"
                                 (onMouseleave)="hidePositionTooltip()"

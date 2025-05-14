@@ -19,6 +19,10 @@ import { tap, throttleTime } from 'rxjs';
 import { TooltipService } from '../tooltip/tooltip.service';
 import { IPositionTooltipData, PositionTooltipComponent } from './components/position-tooltip/position-tooltip.component';
 import { TooltipRef } from '../tooltip/tooltip.ref';
+import { DynamicModalService } from '../dynamic-modal/dynamic-modal.service';
+import { IMediaQuery } from '../dynamic-modal/dynamic-modal.config';
+import { TagComponent } from '../tag/tag.component';
+import { PositionModalComponent } from './components/position-modal/position-modal.component';
 
 @Component({
     selector: 'bc-career-timeline',
@@ -33,6 +37,7 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     private viewportService = inject(ViewportService);
     private elementRef = inject(ElementRef<HTMLElement>);
     private tooltipService = inject(TooltipService);
+    private dynamicModalService = inject(DynamicModalService);
     private destroyRef = inject(DestroyRef);
 
     private _tooltipRef: TooltipRef | null | undefined;
@@ -102,6 +107,17 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
                 this._tooltipRef = null;
             });
         }
+    }
+
+    public openPositionModal(company: string, position: IPosition): void {
+        this.dynamicModalService.open(PositionModalComponent, {
+            modalName: 'Job Position',
+            data: {
+                company,
+                position
+            },
+            width: '100%'
+        });
     }
 
     private _jobExperienceEffect = effect(() => {
