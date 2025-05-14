@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular/core';
 
 @Component({
     selector: 'bc-tag',
@@ -8,4 +8,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TagComponent {
+    @HostBinding('style.background')
+    get getBackground(): string | null {
+        return this.background();
+    }
+
+    public background = input<string | null>(null);
 }

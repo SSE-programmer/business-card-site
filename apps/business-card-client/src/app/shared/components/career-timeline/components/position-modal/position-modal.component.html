@@ -1,11 +1,21 @@
-<div class="bc-flex bc-flex-col bc-gap-24">
+<div class="position-modal bc-flex bc-flex-col bc-gap-24 bc-flex-1">
     <header class="bc-flex bc-flex-col">
-        <div class="bc-flex bc-gap-12 bc-items-center">
-            <h2 class="bc-h">{{ position().title }}</h2>
+        <div class="bc-flex bc-gap-12 bc-justify-between">
+            <div class="bc-flex bc-gap-12 bc-items-center">
+                <h2 class="bc-h">{{ position().title }}</h2>
 
-            @if (!position().isFullTime) {
-                <bc-tag>Part-Time</bc-tag>
-            }
+                @if (!position().isFullTime) {
+                    <bc-tag>Part-Time</bc-tag>
+                }
+            </div>
+            <div
+                class="bc-flex bc-items-center bc-justify-center bc-h-fit bc-text-34"
+                role="button"
+                (click)="closeModal()"
+                (keydown.enter)="closeModal()"
+                tabindex="0"
+            >✖
+            </div>
         </div>
 
         <div class="bc-flex bc-gap-4 bc-items-center">
@@ -30,19 +40,60 @@
         </div>
     </header>
 
-    <div>
-        {{ position().description }}
-    </div>
+    <main class="body bc-flex bc-flex-col bc-gap-24 bc-scroll">
+        <div>
+            {{ position().description }}
+        </div>
 
-    @let achievements = position().achievements;
+        @let projects = position().projects;
 
-    @if (achievements?.length) {
-        <section>
-            <h3 class="bc-h">Achievements</h3>
+        @if (projects.length) {
+            <section class="bc-flex bc-flex-col bc-gap-8">
+                <h3 class="bc-h">Projects</h3>
 
-            @for (achievement of achievements; track $index) {
+                <ul>
+                    @for (project of projects; track $index) {
+                        <li>
+                            • {{ project }}
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
 
-            }
-        </section>
-    }
+        @let achievements = position().achievements;
+
+        @if (achievements?.length) {
+            <section class="bc-flex bc-flex-col bc-gap-8">
+                <h3 class="bc-h">Achievements</h3>
+
+                <ul>
+                    @for (achievement of achievements; track $index) {
+                        <li>
+                            • {{ achievement }}
+                        </li>
+                    }
+                </ul>
+            </section>
+        }
+
+        @let techStack = position().techStack;
+
+        @if (techStack.length) {
+            <section class="bc-flex bc-flex-col bc-gap-8">
+                <h3 class="bc-h">Tech Stack</h3>
+
+                <ul class="bc-flex bc-gap-4 bc-items-center bc-flex-wrap">
+                    @for (item of techStack; track $index) {
+                        <bc-tag
+                            class="bc-font-patua-one"
+                            background="var(--bc-bg-skill-tags-color)"
+                        >
+                            {{ item }}
+                        </bc-tag>
+                    }
+                </ul>
+            </section>
+        }
+    </main>
 </div>

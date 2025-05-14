@@ -9,17 +9,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    backdrop-filter: blur(5px);
+    background-color: var(--bc-bg-modals-wrapper-color);
 
     .dynamic-modal {
         display: flex;
         flex-direction: column;
         gap: var(--bc-gap-24);
-        width: 50%;
+        width: 100%;
         max-width: min(calc(100% - 20px), var(--bc-page-container-max-width));
         height: auto;
         max-height: min(95%, 700px);
         background-color: var(--bc-bg-modals-color);
-        backdrop-filter: blur(10px);
         border: 3px solid var(--bc-border-default-color);
         border-radius: var(--bc-border-radius-16);
         box-shadow: var(--bc-modals-box-shadow);
@@ -28,11 +29,17 @@
         transition: width var(--bc-transition-duration-default), opacity var(--bc-transition-duration-default);
         animation: fade-in .3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 
+        @media (max-width: 720px) {
+            max-width: calc(100% - 4px);
+        }
+
         &__body {
             display: flex;
             flex-direction: column;
             padding: var(--bc-padding-24) var(--bc-padding-24);
             height: auto;
+            max-height: 100%;
+            overflow: hidden;
 
             @media (max-width: 1040px) {
                 padding: var(--bc-padding-24) var(--bc-padding-16);

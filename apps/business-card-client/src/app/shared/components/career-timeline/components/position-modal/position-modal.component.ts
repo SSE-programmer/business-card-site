@@ -4,6 +4,7 @@ import { TooltipConfig } from '../../../tooltip/tooltip.config';
 import { DatePipe } from '@angular/common';
 import { TagComponent } from '../../../tag/tag.component';
 import { DynamicModalConfig } from '../../../dynamic-modal/dynamic-modal.config';
+import { DynamicModalService } from '../../../dynamic-modal/dynamic-modal.service';
 
 export interface IPositionModalData {
     company: string;
@@ -21,8 +22,13 @@ export interface IPositionModalData {
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PositionModalComponent {
+    private readonly dynamicModalService = inject(DynamicModalService);
     private readonly dynamicModalConfig = inject(DynamicModalConfig<IPositionModalData>);
 
     public company = signal<string>(this.dynamicModalConfig.data.company);
     public position = signal<IPosition>(this.dynamicModalConfig.data.position);
+
+    public closeModal(): void {
+        this.dynamicModalService.closeModal(this.dynamicModalConfig.modalName);
+    }
 }

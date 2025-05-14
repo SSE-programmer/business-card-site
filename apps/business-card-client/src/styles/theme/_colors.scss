@@ -20,9 +20,11 @@
     --bc-error-color: #FF3F3F;
 
     --bc-bg-light-color: #f8ffff;
-    --bc-bg-modals-color: #f8ffff88;
     --bc-bg-middle-color: #34344e;
     --bc-bg-primary-color: var(--bc-primary-color);
+    --bc-bg-modals-color: #f8ffffdd;
+    --bc-bg-modals-wrapper-color: #34344e22;
+    --bc-bg-skill-tags-color: #732031;
     --bc-bg-error-color: #FFD6DE;
 
     --bc-text-default-color: var(--bc-primary-color);
@@ -48,7 +50,7 @@
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-middle-color: #34344e;
     --bc-bg-light-color: #f8ffff;
-    --bc-bg-modals-color: #f8ffff88;
+    --bc-bg-modals-color: #f8ffffdd;
 
     --bc-text-default-color: var(--bc-primary-color);
     --bc-text-middle-color: var(--bc-middle-primary-color);
@@ -71,6 +73,8 @@
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-middle-color: #502c2c;
     --bc-bg-light-color: #fff8f8;
+    --bc-bg-modals-color: #fff8f8dd;
+    --bc-bg-skill-tags-color: #202e73;
 
     --bc-text-default-color: var(--bc-primary-color);
     --bc-text-middle-color: var(--bc-middle-primary-color);
@@ -93,6 +97,7 @@
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-middle-color: #404205;
     --bc-bg-light-color: #fffffa;
+    --bc-bg-modals-color: #fffffadd;
 
     --bc-text-default-color: var(--bc-primary-color);
     --bc-text-middle-color: var(--bc-middle-primary-color);
@@ -115,6 +120,7 @@
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-middle-color: #1a4504;
     --bc-bg-light-color: #fbfff8;
+    --bc-bg-modals-color: #fbfff8dd;
 
     --bc-text-default-color: var(--bc-primary-color);
     --bc-text-middle-color: var(--bc-middle-primary-color);
@@ -137,6 +143,8 @@
     --bc-bg-primary-color: var(--bc-primary-color);
     --bc-bg-middle-color: #222222;
     --bc-bg-light-color: #121212;
+    --bc-bg-modals-color: #121212dd;
+    --bc-bg-skill-tags-color: #454545;
 
     --bc-text-default-color: #fafafa;
     --bc-text-middle-color: #bfbfbf;

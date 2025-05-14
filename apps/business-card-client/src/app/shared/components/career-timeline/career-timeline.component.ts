@@ -20,8 +20,6 @@ import { TooltipService } from '../tooltip/tooltip.service';
 import { IPositionTooltipData, PositionTooltipComponent } from './components/position-tooltip/position-tooltip.component';
 import { TooltipRef } from '../tooltip/tooltip.ref';
 import { DynamicModalService } from '../dynamic-modal/dynamic-modal.service';
-import { IMediaQuery } from '../dynamic-modal/dynamic-modal.config';
-import { TagComponent } from '../tag/tag.component';
 import { PositionModalComponent } from './components/position-modal/position-modal.component';
 
 @Component({
@@ -114,9 +112,9 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
             modalName: 'Job Position',
             data: {
                 company,
-                position
+                position,
             },
-            width: '100%'
+            width: '100%',
         });
     }
 

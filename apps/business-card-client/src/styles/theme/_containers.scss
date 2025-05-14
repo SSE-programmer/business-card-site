@@ -3,3 +3,28 @@
     border-radius: var(--bc-border-radius-8);
     background-color: color-mix(in srgb, var(--bc-bg-light-color) 50%, transparent);;
 }
+
+.bc-scroll {
+    &::-webkit-scrollbar {
+        display: block;
+        width: 6px;
+        opacity: .2;
+    }
+
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        background: var(--bc-light-primary-color);
+        border-radius: var(--bc-border-radius-8);
+        cursor: pointer;
+    }
+
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: var(--bc-light-primary-color);
+    }
+}
