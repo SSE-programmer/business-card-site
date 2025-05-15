@@ -18,7 +18,7 @@ jobs:
 
       - name: Clean up old Docker artifacts
         run: |
-          ssh ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} "
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USERNAME }}@${{ secrets.SERVER_IP }} "
             docker system prune -f
           "
 
