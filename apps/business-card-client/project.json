@@ -19,9 +19,7 @@
             "options": {
                 "allowedCommonJsDependencies": [],
                 "baseHref": "/",
-                "outputPath": {
-                    "base": "dist/business-card-client"
-                },
+                "outputPath": "dist/business-card-client",
                 "index": "apps/business-card-client/src/index.html",
                 "polyfills": [],
                 "tsConfig": "apps/business-card-client/tsconfig.app.json",
