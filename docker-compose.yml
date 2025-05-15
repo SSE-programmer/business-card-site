@@ -1,6 +1,13 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: business-card
+    restart: unless-stopped
     ports:
       - "8096:80"
-    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./data:/app/data
