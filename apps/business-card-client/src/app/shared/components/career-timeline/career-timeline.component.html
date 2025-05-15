@@ -30,9 +30,9 @@
                                 [lastYear]="yearsList()[yearsList().length - 1]"
                                 [index]="positionIndex"
                                 (onClick)="openPositionModal(job.company, position)"
-                                (onMouseenter)="showPositionTooltip($event, position)"
+                                (onPointerenter)="showPositionTooltip($event, position)"
                                 (onFocus)="showPositionTooltip($event, position)"
-                                (onMouseleave)="hidePositionTooltip()"
+                                (onPointerleave)="hidePositionTooltip()"
                                 (onBlur)="hidePositionTooltip()"
                             ></bc-position-item>
                         }

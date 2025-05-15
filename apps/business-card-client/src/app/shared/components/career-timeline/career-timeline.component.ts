@@ -78,6 +78,10 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     }
 
     public showPositionTooltip(event: Event, position: IPosition): void {
+        if (event instanceof PointerEvent &&  event.pointerType === 'touch') {
+            return;
+        }
+
         if (position === this._tooltipRef?.getInstance()?.tooltipConfig.data.position) {
             return;
         }
