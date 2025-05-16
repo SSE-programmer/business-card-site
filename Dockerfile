@@ -10,6 +10,7 @@ RUN npx nx build business-card-client --prod
 FROM nginx:alpine
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 COPY --from=business-card-client /app/dist/business-card-client/browser /usr/share/nginx/html
+RUN chmod -R 755 /usr/share/nginx/html
 
 EXPOSE 80
 
