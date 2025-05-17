@@ -2,15 +2,18 @@ name: Nx CI/CD Pipeline
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main]
   pull_request:
-    branches: [main, develop]
+    branches: [main]
 
 jobs:
   test-build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
 
       # Проверяем наличие lock-файла
       - name: Check for lock file
@@ -43,7 +46,7 @@ jobs:
           key: ${{ runner.os }}-nx-${{ hashFiles('yarn.lock') }}
 
       - name: Run tests
-        run: nx affected:test
+        run: nx affected:test --base=main --head=HEAD
 
       - name: Build affected projects
-        run: nx affected:build --prod --parallel
+        run: nx affected:build --prod --parallel --base=main --head=HEAD
