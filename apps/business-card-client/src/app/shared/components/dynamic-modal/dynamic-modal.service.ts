@@ -133,7 +133,7 @@ export class DynamicModalService {
             dynamicModalRef.destroy();
         }, { once: true });
 
-        modalDomElement.querySelector('.dynamic-modal').classList.add('closed');
+        modalDomElement.querySelector('.dynamic-modal-wrapper').classList.add('closed');
     }
 
     private _checkConfigRequiredParameters(config: DynamicModalConfig): void {
