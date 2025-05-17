@@ -2,9 +2,9 @@ name: Nx CI/CD Pipeline
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main]
   pull_request:
-    branches: [main, develop]
+    branches: [main]
 
 jobs:
   test-build:
@@ -43,7 +43,7 @@ jobs:
           key: ${{ runner.os }}-nx-${{ hashFiles('yarn.lock') }}
 
       - name: Run tests
-        run: nx affected:test
+        run: nx affected:test --base=main --head=HEAD
 
       - name: Build affected projects
-        run: nx affected:build --prod --parallel
+        run: nx affected:build --prod --parallel --base=main --head=HEAD
