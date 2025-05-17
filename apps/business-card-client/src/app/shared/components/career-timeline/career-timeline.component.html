@@ -31,8 +31,8 @@
                                 [index]="positionIndex"
                                 (onClick)="openPositionModal(job.company, position)"
                                 (onPointerenter)="showPositionTooltip($event, position)"
-                                (onFocus)="showPositionTooltip($event, position)"
                                 (onPointerleave)="hidePositionTooltip()"
+                                (onFocusVisible)="showPositionTooltip($event, position)"
                                 (onBlur)="hidePositionTooltip()"
                             ></bc-position-item>
                         }

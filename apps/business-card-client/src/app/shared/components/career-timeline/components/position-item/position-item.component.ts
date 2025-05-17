@@ -1,11 +1,14 @@
 import { ChangeDetectionStrategy, Component, computed, input, output } from '@angular/core';
 import { IPosition } from '../../models/IJobExperience';
+import { FocusVisibleDirective } from '../../../../directives/focus-visible/focus-visible.directive';
 
 @Component({
     selector: 'bc-position-item',
     templateUrl: './position-item.component.html',
     styleUrl: './position-item.component.scss',
-    imports: [],
+    imports: [
+        FocusVisibleDirective,
+    ],
     changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class PositionItemComponent {
@@ -41,5 +44,6 @@ export class PositionItemComponent {
     public onPointerenter = output<Event>();
     public onPointerleave = output<Event>();
     public onFocus = output<Event>();
+    public onFocusVisible = output<Event>();
     public onBlur = output<Event>();
 }
