@@ -1,7 +1,0 @@
-$border-radii: 4, 6, 8, 10, 12, 16, 20, 24, 30;
-
-:root {
-    @each $border-radius in $border-radii {
-        --bc-border-radius-#{$border-radius}: #{$border-radius}px;
-    }
-}

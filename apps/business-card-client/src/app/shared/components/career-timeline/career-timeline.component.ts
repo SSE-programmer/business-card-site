@@ -56,9 +56,9 @@ export class CareerTimelineComponent implements OnInit, AfterViewInit {
     public yearCellAnchorWidth = signal<number>(0);
     public yearCellLeftMarginWidth = signal<number>(0);
 
-    protected YEAR_CELL_MIN_WIDTH = 100;
+    protected YEAR_CELL_MIN_WIDTH = 50;
     protected YEAR_CELL_VERTICAL_PADDING = 8;
-    protected FIRST_YEAR_LEFT_MARGIN_PADDING = 40;
+    protected FIRST_YEAR_LEFT_MARGIN_PADDING = 20;
 
     public ngOnInit(): void {
         this.viewportService.dimensions$.pipe(
