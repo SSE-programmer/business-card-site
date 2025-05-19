@@ -4,6 +4,7 @@ import { CardComponent } from '../../shared/components/card/card.component';
 import { CareerTimelineComponent } from '../../shared/components/career-timeline/career-timeline.component';
 import { CONTACTS_LIST } from './constants/contacts-list.constant';
 import { JOB_EXPERIENCE } from './constants/job-experience.constant';
+import { OnloadFadeInDirective } from '../../shared/directives/onload-fade-in/onload-fade-in.directive';
 
 @Component({
     selector: 'app-body',
@@ -14,6 +15,7 @@ import { JOB_EXPERIENCE } from './constants/job-experience.constant';
         CardComponent,
         NgComponentOutlet,
         CareerTimelineComponent,
+        OnloadFadeInDirective,
     ],
 })
 export class HomePageComponent {
