@@ -20,6 +20,11 @@
         background-color: var(--bc-border-default-color);
         transform: translate(-50%, -50%);
         transition: all var(--bc-transition-duration-default);
+
+        @media (max-width: 720px) {
+            width: 10px;
+            min-width: 10px;
+        }
     }
 
     &:hover, &:focus-visible {
@@ -60,6 +65,10 @@
             transform: translate(50%, -50%);
             transition: all var(--bc-transition-duration-default);
             background-color: var(--bc-border-default-color);
+
+            @media (max-width: 720px) {
+                height: 10px;
+            }
         }
 
         &:hover:not(.not-full-time), &:focus-visible:not(.not-full-time) {

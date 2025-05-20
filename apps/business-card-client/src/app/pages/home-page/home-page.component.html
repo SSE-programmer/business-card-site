@@ -67,7 +67,7 @@
 
 <div class="bc-flex bc-flex-col bc-gap-12 bc-flex-wrap bc-items-center">
     <bc-card
-        header="💼 Work experience"
+        header="💼 Career timeline"
         data-aos="fade-right"
     >
         <ng-template #contentTemplate>
@@ -77,16 +77,37 @@
     </bc-card>
 
     <bc-card
+        header="🛠️ Skills and expirience"
+        data-aos="fade-left"
+    >
+        <ng-template #contentTemplate>
+            <div class="bc-flex bc-gap-8-4 bc-items-center bc-justify-center bc-flex-wrap">
+                @for (skill of skillsList; track skill.name) {
+                    <bc-tag class="bc-self-stretch">
+                        <div class="bc-flex bc-flex-col bc-gap-4 bc-items-center bc-justify-center bc-font-patua-one">
+                            {{ skill.name }}
+
+                            @if (skill.level) {
+                                <bc-level-indicator [level]="skill.level"></bc-level-indicator>
+                            }
+                        </div>
+                    </bc-tag>
+                }
+            </div>
+        </ng-template>
+    </bc-card>
+
+    <bc-card
         id="Education"
         header="🎓 Education"
-        data-aos="fade-left"
+        data-aos="fade-right"
     >
         <ng-template #contentTemplate>
             <ul class="bc-flex bc-flex-col bc-gap-8">
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Education"
-                    data-aos="fade-left"
+                    data-aos="fade-right"
                     data-aos-duration="1000"
                     data-aos-delay="200"
                 >
@@ -99,7 +120,7 @@
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Education"
-                    data-aos="fade-left"
+                    data-aos="fade-right"
                     data-aos-duration="1000"
                     data-aos-delay="400"
                 >
@@ -116,7 +137,7 @@
     <bc-card
         id="Interests"
         header="🌱 My Interests & Learning Path"
-        data-aos="fade-right"
+        data-aos="fade-left"
     >
         <ng-template #contentTemplate>
             <b>I’m passionate about technology beyond Frontend—currently exploring:</b>
@@ -125,7 +146,7 @@
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Interests"
-                    data-aos="fade-right"
+                    data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="200"
                 >
@@ -138,7 +159,7 @@
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Interests"
-                    data-aos="fade-right"
+                    data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="400"
                 >
@@ -151,7 +172,7 @@
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Interests"
-                    data-aos="fade-right"
+                    data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="600"
                 >
@@ -164,7 +185,7 @@
                 <li
                     class="bc-flex bc-gap-8"
                     data-aos-anchor="#Interests"
-                    data-aos="fade-right"
+                    data-aos="fade-left"
                     data-aos-duration="1000"
                     data-aos-delay="800"
                 >
@@ -177,7 +198,7 @@
             </ul>
 
             <b
-                data-aos="fade-right"
+                data-aos="fade-left"
                 data-aos-anchor="#Interests"
                 data-aos-duration="1000"
                 data-aos-delay="1000"

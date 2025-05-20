@@ -1,0 +1,18 @@
+:host {
+    display: inline-flex;
+    gap: var(--bc-gap-4);
+    align-items: center;
+
+    color: var(--bc-light-accent-color);
+
+    .level {
+        min-width: 15px;
+        flex-shrink: 0;
+        height: 6px;
+        background-color: var(--bc-ultra-light-primary-color);
+
+        &.active {
+            background-color: var(--bc-light-accent-color);
+        }
+    }
+}

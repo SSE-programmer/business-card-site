@@ -1,8 +1,12 @@
 $gaps: 4, 8, 12, 16, 18, 24, 32, 36, 48;
 
 :root {
-    @each $gap in $gaps {
-        --bc-gap-#{$gap}: #{$gap}px;
+    @each $firstGap in $gaps {
+        --bc-gap-#{$firstGap}: #{$firstGap}px;
+
+        @each $secondGap in $gaps {
+            --bc-gap-#{$firstGap}-#{$secondGap}: #{$firstGap}px #{$secondGap}px;
+        }
     }
 }
 
@@ -34,8 +38,14 @@ $gaps: 4, 8, 12, 16, 18, 24, 32, 36, 48;
     flex-shrink: 0;
 }
 
-@each $gap in $gaps {
-    .bc-gap-#{$gap} {
-        gap: var(--bc-gap-#{$gap});
+@each $firstGap in $gaps {
+    .bc-gap-#{$firstGap} {
+        gap: var(--bc-gap-#{$firstGap});
+    }
+
+    @each $secondGap in $gaps {
+        .bc-gap-#{$firstGap}-#{$secondGap} {
+            gap: var(--bc-gap-#{$firstGap}-#{$secondGap});
+        }
     }
 }
