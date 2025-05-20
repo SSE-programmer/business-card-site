@@ -7,11 +7,4 @@ import { ChangeDetectionStrategy, Component, HostBinding, input } from '@angular
     imports: [],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class TagComponent {
-    @HostBinding('style.background')
-    get getBackground(): string | null {
-        return this.background();
-    }
-
-    public background = input<string | null>(null);
-}
+export class TagComponent {}

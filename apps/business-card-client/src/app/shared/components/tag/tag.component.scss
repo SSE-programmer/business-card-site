@@ -1,7 +1,7 @@
 :host {
-    display: inline;
+    display: inline-flex;
     background-color: var(--bc-bg-middle-color);
-    padding: var(--bc-padding-4) var(--bc-padding-8);
+    padding: var(--bc-padding-6) var(--bc-padding-8);
     width: fit-content;
     border-radius: var(--bc-border-radius-8);
     white-space: nowrap;
