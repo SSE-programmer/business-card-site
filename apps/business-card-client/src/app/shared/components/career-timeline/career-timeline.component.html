@@ -2,7 +2,7 @@
     <div class="company-column bc-flex bc-flex-col">
         @for (job of jobExperience(); track job.company) {
             <span
-                class="company-name bc-flex bc-items-center bc-font-patua-one bc-text-18"
+                class="company-name bc-flex bc-items-center bc-font-patua-one"
                 [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
                 [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             >
@@ -14,7 +14,7 @@
             [style.padding-top]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             [style.padding-bottom]="YEAR_CELL_VERTICAL_PADDING + 'px'"
             [style.visibility]="'hidden'"
-        > &nbsp;</h4>
+        >&nbsp;</h4>
     </div>
     @if (yearsList()) {
         <div class="years-column-container">

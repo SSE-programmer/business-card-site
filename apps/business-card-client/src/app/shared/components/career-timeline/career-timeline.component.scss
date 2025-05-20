@@ -1,19 +1,34 @@
 :host {
+    --cell-height: 46px;
+
     width: 100%;
 }
 
 .company-column {
-    min-width: 140px;
-    max-width: 140px;
+    min-width: 165px;
+    max-width: 165px;
     overflow: hidden;
 
     .company-name {
         display: block;
+        height: var(--cell-height);
         white-space: nowrap;
         text-overflow: ellipsis;
         overflow: hidden;
+
+        font-size: var(--bc-font-size-20);
+    }
+
+    @media (max-width: 720px) {
+        min-width: 140px;
+        max-width: 140px;
+
+        .company-name {
+            font-size: var(--bc-font-size-18);
+        }
     }
 }
+
 .years-column-container {
     display: flex;
     flex: 1;
@@ -39,11 +54,7 @@
             .year-cell {
                 position: relative;
                 width: 100%;
-
-                &::after {
-                    content: "A";
-                    visibility: hidden;
-                }
+                height: var(--cell-height);
 
                 &:not(:last-child) {
                     border-right: 1px dashed var(--bc-border-default-color);
