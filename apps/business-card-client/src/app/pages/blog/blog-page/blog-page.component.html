@@ -1,27 +1,59 @@
-<div class="title">
-    <h1>Blog</h1>
-</div>
-<div class="description">
-    <p>How about keeping up with the latest developments with me? <strong>^^</strong></p>
-</div>
-<div class="posts">
-    <div class="post">
-        <div class="infoLeft">
-            <div class="title">
-                <h1>Release</h1>
-            </div>
-            <div class="description">
-                <p>It's time to publish my personal site. Please do not judge strictly - the site is published in a raw
-                    form. Send me your comments please.</p>
-            </div>
+<h1 class="bc-h">Blog</h1>
+<p>How about keeping up with the latest developments with me?</p>
+
+@let posts = posts$ | async;
+
+@if (posts?.length) {
+    @for (post of posts; track postsTrackBy(post)) {
+        <div class="bc-flex bc-flex-col bc-gap-12 bc-default-border bc-p-24">
+            @if (post.media?.length) {
+                <div class="bc-flex bc-flex-col bc-gap-8">
+                    <img
+                        class="media main"
+                        [src]="post.mainMedia?.photoUrl"
+                        alt="Post`s media"
+                    >
+
+                    <div class="additional-media-container bc-flex bc-gap-8 bc-items-center">
+                        @for (media of post.additionalMedia; track $index) {
+                            <img
+                                class="media additional"
+                                [src]="media.photoUrl"
+                                alt="Post`s media"
+                            >
+                        }
+                    </div>
+                </div>
+            }
+
+            <span>{{ post.text }}</span>
+            <span class="bc-font-patua-one bc-text-16 bc-self-end">{{ post.date | date: 'dd MMM yyyy' }}</span>
         </div>
-        <div class="infoRight">
-            <div class="image"></div>
-            <div class="createDate">
-                <p class="title">Publication date: </p>
-                <br>
-                <p class="value"> May 13, 2022</p>
-            </div>
-        </div>
+    }
+} @else {
+    <div class="bc-flex bc-flex-col bc-justify-center bc-items-center bc-flex-1">
+        <span class="bc-font-patua-one bc-text-center">It's empty here for now</span>
     </div>
-</div>
+}
+
+<!--<div class="posts">-->
+<!--    <div class="post">-->
+<!--        <div class="infoLeft">-->
+<!--            <div class="title">-->
+<!--                <h1>Release</h1>-->
+<!--            </div>-->
+<!--            <div class="description">-->
+<!--                <p>It's time to publish my personal site. Please do not judge strictly - the site is published in a raw-->
+<!--                    form. Send me your comments please.</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div class="infoRight">-->
+<!--            <div class="image"></div>-->
+<!--            <div class="createDate">-->
+<!--                <p class="title">Publication date: </p>-->
+<!--                <br>-->
+<!--                <p class="value"> May 13, 2022</p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->

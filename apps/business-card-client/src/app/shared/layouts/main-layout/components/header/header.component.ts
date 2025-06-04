@@ -23,10 +23,10 @@ export class HeaderComponent {
             title: 'Home',
             link: '/home'
         },
-        {
-            title: 'Projects',
-            link: '/projects'
-        },
+        // {
+        //     title: 'Projects',
+        //     link: '/projects'
+        // },
         {
             title: 'Blog',
             link: '/blog'

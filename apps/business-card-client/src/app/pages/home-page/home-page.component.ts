@@ -10,7 +10,7 @@ import { LevelIndicatorComponent } from '../../shared/components/level-indicator
 import { TagComponent } from '../../shared/components/tag/tag.component';
 
 @Component({
-    selector: 'app-body',
+    selector: 'bc-home-page',
     templateUrl: './home-page.component.html',
     styleUrls: ['./home-page.component.scss'],
     imports: [

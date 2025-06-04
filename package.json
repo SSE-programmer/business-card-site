@@ -22,14 +22,15 @@
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
     "rxjs": "~7.5.0",
+    "telegram": "^2.26.22",
     "tslib": "^2.3.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "^19.2.4",
     "@angular-devkit/schematics": "^19.2.4",
     "@angular/compiler-cli": "^19.2.3",
-    "@nx/devkit": "^21.1.0",
     "@nx/angular": "21.1.0",
+    "@nx/devkit": "^21.1.0",
     "@nx/workspace": "21.1.0",
     "@schematics/angular": "^19.2.4",
     "@types/aos": "^3.0.7",
