@@ -2,19 +2,13 @@ import { Component, inject, OnInit } from '@angular/core';
 import { TelegramHttpService } from '../../../shared/services/http-services/telegram-http/telegram-http.service';
 import { catchError, map, Observable, of } from 'rxjs';
 import {
-    IMedia,
     isTelegramMessage,
     isTelegramMessageGroup,
     ITelegramMessage,
     ITelegramMessageGroup,
 } from '../../../shared/services/http-services/telegram-http/models/ITelegramMessage';
-import { AsyncPipe, DatePipe, UpperCasePipe } from '@angular/common';
-import { MediaGridComponent } from './components/media-grid/media-grid.component';
-
-interface IExtendedTelegramMessage extends ITelegramMessage {
-    mainMedia?: IMedia;
-    additionalMedia?: IMedia[];
-}
+import { AsyncPipe } from '@angular/common';
+import { PostComponent } from './components/post/post.component';
 
 @Component({
     selector: 'bc-blog-page',
@@ -23,15 +17,13 @@ interface IExtendedTelegramMessage extends ITelegramMessage {
     standalone: true,
     imports: [
         AsyncPipe,
-        DatePipe,
-        UpperCasePipe,
-        MediaGridComponent,
+        PostComponent,
     ],
 })
 export class BlogPageComponent implements OnInit {
     private readonly telegramHttpService = inject(TelegramHttpService);
 
-    public posts$: Observable<IExtendedTelegramMessage[]> | null = null;
+    public posts$: Observable<ITelegramMessage[]> | null = null;
 
     public ngOnInit(): void {
         this.posts$ = this.telegramHttpService.getPosts()
@@ -54,16 +46,9 @@ export class BlogPageComponent implements OnInit {
         return post;
     }
 
-    private _preparePost(data: ITelegramMessage | ITelegramMessageGroup): IExtendedTelegramMessage {
-        if (isTelegramMessage(data)) {
-            return {
-                ...data,
-                mainMedia: data.media?.length ? data.media[0] : undefined,
-            };
-        }
-
+    private _preparePost(data: ITelegramMessage | ITelegramMessageGroup): ITelegramMessage {
         if (isTelegramMessageGroup(data)) {
-            let mainMessage: IExtendedTelegramMessage | undefined = data.messages.find(message => message.mainMessage);
+            let mainMessage: ITelegramMessage | undefined = data.messages.find(message => message.mainMessage);
 
             if (!mainMessage) {
                 mainMessage = data.messages[0];
@@ -83,13 +68,9 @@ export class BlogPageComponent implements OnInit {
                 }
             });
 
-            [mainMessage.mainMedia, ...mainMessage.additionalMedia] = mainMessage.media;
-
             return mainMessage;
         }
 
         return data;
     }
-
-    protected readonly Math = Math;
 }
