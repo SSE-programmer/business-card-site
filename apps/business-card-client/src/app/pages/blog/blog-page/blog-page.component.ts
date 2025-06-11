@@ -8,7 +8,7 @@ import {
     ITelegramMessage,
     ITelegramMessageGroup,
 } from '../../../shared/services/http-services/telegram-http/models/ITelegramMessage';
-import { AsyncPipe, DatePipe } from '@angular/common';
+import { AsyncPipe, DatePipe, UpperCasePipe } from '@angular/common';
 
 interface IExtendedTelegramMessage extends ITelegramMessage {
     mainMedia?: IMedia;
@@ -23,12 +23,15 @@ interface IExtendedTelegramMessage extends ITelegramMessage {
     imports: [
         AsyncPipe,
         DatePipe,
+        UpperCasePipe,
     ],
 })
 export class BlogPageComponent implements OnInit {
     private readonly telegramHttpService = inject(TelegramHttpService);
 
     public posts$: Observable<IExtendedTelegramMessage[]> | null = null;
+
+    protected readonly MAX_VISIBLE_MEDIA_COUNT: number = 6;
 
     public ngOnInit(): void {
         this.posts$ = this.telegramHttpService.getPosts()
@@ -87,4 +90,6 @@ export class BlogPageComponent implements OnInit {
 
         return data;
     }
+
+    protected readonly Math = Math;
 }
