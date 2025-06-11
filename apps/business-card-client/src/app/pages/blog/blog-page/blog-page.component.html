@@ -4,38 +4,29 @@
 @let posts = posts$ | async;
 
 @if (posts?.length) {
-    @for (post of posts; track postsTrackBy(post)) {
-        <div class="post bc-flex bc-flex-col bc-gap-12">
-            <div class="bc-flex bc-gap-4 bc-items-center">
-                <span class="bc-font-patua-one bc-text-16">{{ post.date | date: 'dd MMM yyyy - HH:mm' | uppercase }}</span>
+    <div class="posts-container bc-flex bc-flex-col bc-gap-48 bc-self-center">
+        @for (post of posts; track postsTrackBy(post)) {
+            <div class="post bc-flex bc-flex-col bc-gap-24">
+                <div class="bc-flex bc-gap-4 bc-items-center">
+                    <span class="bc-font-patua-one bc-text-16">{{ post.date | date: 'dd MMM yyyy - HH:mm' | uppercase }}</span>
+                </div>
+
+                <div class="post bc-flex bc-flex-col bc-gap-12">
+                    @let media = post.media;
+
+                    @if (media && media.length) {
+                        <bc-media-grid [media]="media"></bc-media-grid>
+                    }
+
+                    <span>{{ post.text }}</span>
+                </div>
             </div>
 
-            @let media = post.media;
-
-            @if (media && media.length) {
-                <div class="media-grid media-grid-{{Math.min(media.length, MAX_VISIBLE_MEDIA_COUNT)}} bc-flex bc-flex-col bc-gap-8 bc-items-center">
-                    @for (mediaItem of media.slice(0, MAX_VISIBLE_MEDIA_COUNT); track $index) {
-                        <div
-                            class="media-container media-container-{{$index}}"
-                            tabindex="0"
-                        >
-                            <img
-                                class="media"
-                                [src]="mediaItem.photoUrl"
-                                alt="Post`s media"
-                            >
-                        </div>
-                    }
-                </div>
+            @if (!$last) {
+                <div class="bc-w-full bc-h-min bc-default-border"></div>
             }
-
-            <span>{{ post.text }}</span>
-        </div>
-
-        @if (!$last) {
-            <div class="bc-w-full bc-h-min bc-default-border"></div>
         }
-    }
+    </div>
 } @else {
     <div class="bc-flex bc-flex-col bc-justify-center bc-items-center bc-flex-1">
         <span class="bc-font-patua-one bc-text-center">It's empty here for now</span>

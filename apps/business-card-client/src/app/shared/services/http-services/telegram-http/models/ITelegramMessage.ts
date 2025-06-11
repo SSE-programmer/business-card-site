@@ -6,11 +6,7 @@ export interface ITelegramMessage {
     groupedId: BigInteger | undefined;
     date: number;
     text: string | null;
-    media: {
-        type: string;
-        photoUrl?: string | null;
-        message?: string;
-    }[] | null;
+    media: IMedia[] | null;
     views: number | null;
     forwards: number | null;
     replies: {
